@@ -16,12 +16,11 @@ window.JK_CONTENT = {
     title: 'The JKSPORTSBOOK Podcast',
     spotifyUrl: '',
     appleUrl: '',
-    youtubeUrl: '',
-    episodes: []
-    // { id: 'episode-001', title: 'Your episode title', number: 'EP 001',
-    //   duration: '45 min', description: 'Episode description.',
-    //   audioUrl: 'https://your-podcast-host.example/episode.mp3',
-    //   listenUrl: 'https://your-episode-link.example' }
+    youtubeUrl: 'https://www.youtube.com/watch?v=qKvqZYjC1Uc',
+    episodes: [
+      { id: 'current-episode', title: 'The JKSPORTSBOOK Podcast — Current Episode', number: 'WATCH NOW', duration: 'YouTube', description: 'Watch the current JKSPORTSBOOK podcast episode on YouTube.', videoUrl: 'https://www.youtube.com/embed/qKvqZYjC1Uc?si=MlGdnVY7_obR_5rz', listenUrl: 'https://www.youtube.com/watch?v=qKvqZYjC1Uc' }
+    ]
+    // Add future episodes at the beginning of this list.
   },
   // Story IDs appear in this order in the homepage's On the Radar section.
   radarStoryIds: [

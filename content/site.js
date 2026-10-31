@@ -16,7 +16,22 @@ window.JK_CONTENT = {
     //   audioUrl: 'https://your-podcast-host.example/episode.mp3',
     //   listenUrl: 'https://your-episode-link.example' }
   },
+  // Story IDs appear in this order in the homepage's On the Radar section.
+  radarStoryIds: [
+    'westgate-supercontest-history',
+    'basketball-beyond-box-score',
+    'college-football-the-matchup'
+  ],
   stories: [
+    {
+      id: 'westgate-supercontest-history',
+      title: 'Westgate SuperContest History: The Horse. The Myth. The Legend.',
+      sport: 'NFL', category: 'SuperContest History', type: 'feature', art: 'stadium',
+      deck: 'A JKSPORTSBOOK feature on Westgate SuperContest history.',
+      author: 'JKSPORTSBOOK Desk', readTime: 'Coming soon', label: 'Feature preview',
+      body: `<p>Coming soon: <strong>Westgate SuperContest History: The Horse. The Myth. The Legend.</strong></p>
+      <p>The full JKSPORTSBOOK feature will appear here when published.</p>`
+    },
     {
       id: 'welcome-to-jksportsbook', title: 'More than the score. This is JKSPORTSBOOK.',
       sport: 'All', category: 'The Big Picture', type: 'feature', art: 'stadium',

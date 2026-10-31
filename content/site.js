@@ -5,6 +5,13 @@
 window.JK_CONTENT = {
   // Change to false and add your own picks/results when the official desk opens.
   showDemoPicks: true,
+  // Current board for the homepage ticker. Keep these prices as recorded; they are not live market lines.
+  bestBets: [
+    { poster: 'Josh', selection: 'Bucs −2.5', odds: -110 },
+    { poster: 'Q', selection: 'Browns ML', odds: 235 },
+    { poster: 'Bossart', selection: 'Vikings +3.5', odds: -120 },
+    { poster: 'Horse', selection: 'Bears +3', odds: -105 }
+  ],
   podcast: {
     title: 'The JKSPORTSBOOK Podcast',
     spotifyUrl: '',

@@ -1,0 +1,100 @@
+backend:
+  name: turbo-github
+  turbo_site_id: REPLACE_WITH_DECAP_TURBO_SITE_ID
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/jksportsbook/assets/uploads"
+site_url: "https://blacksheepbetting.github.io/jksportsbook/"
+display_url: "https://blacksheepbetting.github.io/jksportsbook/"
+logo_url: "/jksportsbook/assets/favicon.svg"
+
+collections:
+  - name: publishing
+    label: Publishing Desk
+    files:
+      - file: content/editor.json
+        name: editor
+        label: Homepage & Publishing
+        format: json
+        fields:
+          - label: Best Bets Ticker
+            name: bestBets
+            widget: list
+            summary: "{{fields.poster}} — {{fields.selection}} ({{fields.odds}})"
+            fields:
+              - { label: Poster, name: poster, widget: string }
+              - { label: Selection, name: selection, widget: string }
+              - { label: American Odds, name: odds, widget: number, value_type: int }
+          - label: Podcast
+            name: podcast
+            widget: object
+            fields:
+              - { label: Show Title, name: title, widget: string }
+              - { label: Spotify URL, name: spotifyUrl, widget: string, required: false }
+              - { label: Apple Podcasts URL, name: appleUrl, widget: string, required: false }
+              - { label: YouTube Channel or Episode URL, name: youtubeUrl, widget: string, required: false }
+              - label: Episodes
+                name: episodes
+                widget: list
+                fields:
+                  - { label: ID, name: id, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Label, name: number, widget: string }
+                  - { label: Duration, name: duration, widget: string }
+                  - { label: Description, name: description, widget: text }
+                  - { label: YouTube Embed URL, name: videoUrl, widget: string, required: false }
+                  - { label: Thumbnail URL, name: thumbnailUrl, widget: string, required: false }
+                  - { label: Listen URL, name: listenUrl, widget: string }
+          - label: Radar Story Overrides
+            name: storyOverrides
+            widget: list
+            summary: "{{fields.id}} — {{fields.title}}"
+            fields:
+              - { label: Story ID, name: id, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Deck, name: deck, widget: text }
+              - { label: Author, name: author, widget: string }
+              - { label: Read Time, name: readTime, widget: string }
+              - { label: Label, name: label, widget: string }
+              - { label: Body HTML, name: body, widget: markdown }
+          - label: New Stories
+            name: newStories
+            widget: list
+            summary: "{{fields.sport}} — {{fields.title}}"
+            fields:
+              - { label: ID, name: id, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, FPHL, All] }
+              - { label: Category, name: category, widget: string }
+              - { label: Type, name: type, widget: hidden, default: story }
+              - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
+              - { label: Art Label, name: artLabel, widget: string, required: false }
+              - { label: Deck, name: deck, widget: text }
+              - { label: Author, name: author, widget: string }
+              - { label: Read Time, name: readTime, widget: string }
+              - { label: Label, name: label, widget: string }
+              - { label: Body HTML, name: body, widget: markdown }
+          - label: Official Picks
+            name: picks
+            widget: list
+            fields:
+              - { label: ID, name: id, widget: string }
+              - { label: Sport, name: sport, widget: string }
+              - { label: Type, name: type, widget: string }
+              - { label: Matchup, name: matchup, widget: string }
+              - { label: Selection, name: selection, widget: string }
+              - { label: American Odds, name: odds, widget: number, value_type: int }
+              - { label: Units, name: units, widget: number, value_type: float }
+              - { label: Posted At, name: postedAt, widget: string, required: false }
+              - { label: Analysis, name: body, widget: text }
+          - label: Results Ledger
+            name: results
+            widget: list
+            fields:
+              - { label: Sport, name: sport, widget: string }
+              - { label: Type, name: type, widget: string }
+              - { label: Selection, name: selection, widget: string }
+              - { label: American Odds, name: odds, widget: number, value_type: int }
+              - { label: Units, name: units, widget: number, value_type: float }
+              - { label: Result, name: result, widget: select, options: [Win, Loss, Push] }

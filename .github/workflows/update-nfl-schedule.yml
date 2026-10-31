@@ -1,0 +1,33 @@
+name: Update NFL schedule
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/update-nfl-schedule.yml"
+      - "scripts/update_nfl_schedule.py"
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out site
+        uses: actions/checkout@v4
+      - name: Refresh free NFL schedule snapshot
+        run: python scripts/update_nfl_schedule.py
+      - name: Commit updated schedule
+        run: |
+          if git diff --quiet -- data/nfl-schedule.json; then
+            echo "Schedule is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/nfl-schedule.json
+          git commit -m "chore: refresh NFL schedule"
+          git push

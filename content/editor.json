@@ -1,0 +1,58 @@
+{
+  "bestBets": [
+    { "poster": "Josh", "selection": "Bucs −2.5", "odds": -110 },
+    { "poster": "Q", "selection": "Browns ML", "odds": 235 },
+    { "poster": "Bossart", "selection": "Vikings +3.5", "odds": -120 },
+    { "poster": "Horse", "selection": "Bears +3", "odds": -105 }
+  ],
+  "podcast": {
+    "title": "The JKSPORTSBOOK Podcast",
+    "spotifyUrl": "",
+    "appleUrl": "",
+    "youtubeUrl": "https://www.youtube.com/watch?v=qKvqZYjC1Uc",
+    "episodes": [
+      {
+        "id": "current-episode",
+        "title": "The JKSPORTSBOOK Podcast — Current Episode",
+        "number": "WATCH NOW",
+        "duration": "YouTube",
+        "description": "Watch the current JKSPORTSBOOK podcast episode on YouTube.",
+        "videoUrl": "https://www.youtube.com/embed/qKvqZYjC1Uc?si=MlGdnVY7_obR_5rz",
+        "thumbnailUrl": "https://i.ytimg.com/vi/qKvqZYjC1Uc/hqdefault.jpg",
+        "listenUrl": "https://www.youtube.com/watch?v=qKvqZYjC1Uc"
+      }
+    ]
+  },
+  "storyOverrides": [
+    {
+      "id": "westgate-supercontest-history",
+      "title": "Westgate History? Behold a Pale Horse.",
+      "deck": "A JKSPORTSBOOK feature on Westgate SuperContest history.",
+      "author": "JKSPORTSBOOK Desk",
+      "readTime": "Coming soon",
+      "label": "Feature preview",
+      "body": "<p>Coming soon: <strong>Westgate History? Behold a Pale Horse.</strong></p><p>The full JKSPORTSBOOK feature will appear here when published.</p>"
+    },
+    {
+      "id": "fphl-inside-the-fed",
+      "title": "Inside the Fed: Hockey Without Limits. The Story of the FPHL",
+      "deck": "The story of the Federal Prospects Hockey League and the people building a game without limits.",
+      "author": "Josh King",
+      "readTime": "Coming soon",
+      "label": "By Josh King",
+      "body": "<p>Coming soon: <strong>Inside the Fed: Hockey Without Limits. The Story of the FPHL</strong> by Josh King.</p><p>This JKSPORTSBOOK feature will explore the league, its players, and the hockey culture that gives the FPHL its edge.</p>"
+    },
+    {
+      "id": "bossart-signs-with-jk-sportsbook",
+      "title": "Bossart Signs With JK Sportsbook",
+      "deck": "A new voice joins the JKSPORTSBOOK conversation.",
+      "author": "JKSPORTSBOOK Desk",
+      "readTime": "Coming soon",
+      "label": "Announcement",
+      "body": "<p>Coming soon: <strong>Bossart Signs With JK Sportsbook</strong>.</p><p>More details on Bossart’s role and upcoming work will be published here.</p>"
+    }
+  ],
+  "newStories": [],
+  "picks": [],
+  "results": []
+}

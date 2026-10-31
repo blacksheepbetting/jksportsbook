@@ -2,6 +2,10 @@
 
 A black and yellow sports publication: original stories, columns, podcasts, and a transparent picks desk. Built with HTML, CSS, and JavaScript. No dependencies or build step.
 
+## NFL schedule desk
+
+`schedule.html` is the NFL Schedule & Lines page. `data/nfl-schedule.json` is refreshed by `.github/workflows/update-nfl-schedule.yml` every six hours from the public [nflverse schedule release](https://github.com/nflverse/nflverse-data/releases/tag/schedules). The page displays the feed timestamp and keeps future odds clearly marked as coming soon. The workflow only writes schedule data; it never changes a published pick's original odds.
+
 ## Preview
 
 From this folder, run `python3 -m http.server 8000` and visit `http://localhost:8000`.
@@ -75,6 +79,7 @@ Add settled picks to `results` with `sport`, `type`, `selection`, `odds`, `units
 - Picks breakdowns, filters, and bookmarks stored only on the visitor’s device.
 - American odds calculator with input validation, stake-inclusive returns, and separate profit.
 - Results ledger with odds-based net unit calculations.
+- NFL scoreboard strip and dedicated schedule page with automatic free-feed refreshes.
 
 ## Assets
 

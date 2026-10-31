@@ -52,8 +52,9 @@
 
   function renderPodcast() {
     const episode = content.podcast.episodes[0];
-    const embedUrl = youtubeEmbed(episode?.videoUrl || '');
-    const video = embedUrl ? `<div class="youtube-feature"><div class="youtube-feature-head"><span class="eyebrow">CURRENT EPISODE / YOUTUBE</span><a href="${esc(validUrl(episode.listenUrl))}" target="_blank" rel="noopener noreferrer">OPEN ON YOUTUBE ↗</a></div><div class="youtube-frame"><iframe src="${esc(embedUrl)}" title="${esc(episode.title)}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>` : '';
+    const videoLink = validUrl(episode?.listenUrl || '');
+    const thumbnail = validUrl(episode?.thumbnailUrl || '');
+    const video = videoLink ? `<div class="youtube-feature"><div class="youtube-feature-head"><span class="eyebrow">CURRENT EPISODE / YOUTUBE</span><a href="${esc(videoLink)}" target="_blank" rel="noopener noreferrer">OPEN ON YOUTUBE ↗</a></div><a class="youtube-poster" href="${esc(videoLink)}" target="_blank" rel="noopener noreferrer"><img src="${esc(thumbnail)}" alt="Watch ${esc(episode.title)} on YouTube" loading="lazy"><span class="youtube-play" aria-hidden="true">▶</span></a></div>` : '';
     const card = episode
       ? `<div class="episode-card"><div class="episode-icon" aria-hidden="true">▶</div><div class="episode-details"><span class="eyebrow">${esc(episode.number)} / ${esc(episode.duration)}</span><h3>${esc(episode.title)}</h3></div><a class="episode-open" href="#episode/${esc(episode.id)}" aria-label="Open ${esc(episode.title)}">↗</a></div>`
       : '<div class="episode-card"><div class="episode-icon" aria-hidden="true">↗</div><div class="episode-details"><span class="eyebrow">THE OPENING CONVERSATION</span><h3>First episode coming soon.</h3></div><a class="episode-open" href="#podcast-info" aria-label="About the JKSPORTSBOOK podcast">↗</a></div>';

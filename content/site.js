@@ -26,8 +26,8 @@ window.JK_CONTENT = {
   // Story IDs appear in this order in the homepage's On the Radar section.
   radarStoryIds: [
     'westgate-supercontest-history',
-    'basketball-beyond-box-score',
-    'college-football-the-matchup'
+    'fphl-inside-the-fed',
+    'bossart-signs-with-jk-sportsbook'
   ],
   stories: [
     {
@@ -53,6 +53,22 @@ window.JK_CONTENT = {
       <h2>The opening edition</h2>
       <p>This first edition introduces the publication and its sections. The reading features are original launch pieces; the picks and results marked “sample” demonstrate how the desk will work. Official picks and podcast recordings will appear when published.</p>
       <p>Good stories. Honest takes. All sports. Welcome to JKSPORTSBOOK.</p>`
+    },
+    {
+      id: 'fphl-inside-the-fed', title: 'Inside the Fed: Hockey Without Limits. The Story of the FPHL', sport: 'FPHL',
+      category: 'Inside the Fed', type: 'story', art: 'playbook', artLabel: 'FPHL<br>WITHOUT LIMITS.',
+      deck: 'The story of the Federal Prospects Hockey League and the people building a game without limits.',
+      author: 'Josh King', readTime: 'Coming soon', label: 'By Josh King',
+      body: `<p>Coming soon: <strong>Inside the Fed: Hockey Without Limits. The Story of the FPHL</strong> by Josh King.</p>
+      <p>This JKSPORTSBOOK feature will explore the league, its players, and the hockey culture that gives the FPHL its edge.</p>`
+    },
+    {
+      id: 'bossart-signs-with-jk-sportsbook', title: 'Bossart Signs With JK Sportsbook', sport: 'All',
+      category: 'JKSPORTSBOOK News', type: 'story', art: 'playbook', artLabel: 'WELCOME<br>TO THE DESK.',
+      deck: 'A new voice joins the JKSPORTSBOOK conversation.',
+      author: 'JKSPORTSBOOK Desk', readTime: 'Coming soon', label: 'Announcement',
+      body: `<p>Coming soon: <strong>Bossart Signs With JK Sportsbook</strong>.</p>
+      <p>More details on Bossart’s role and upcoming work will be published here.</p>`
     },
     {
       id: 'sunday-starts-before-kickoff', title: 'Sunday starts long before kickoff.', sport: 'NFL',

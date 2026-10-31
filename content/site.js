@@ -25,7 +25,7 @@ window.JK_CONTENT = {
   stories: [
     {
       id: 'westgate-supercontest-history',
-      title: 'Westgate SuperContest History: The Horse. The Myth. The Legend.',
+      title: 'Westgate History? The Horse. The Myth. The Legend',
       sport: 'NFL', category: 'SuperContest History', type: 'feature', art: 'stadium',
       deck: 'A JKSPORTSBOOK feature on Westgate SuperContest history.',
       author: 'JKSPORTSBOOK Desk', readTime: 'Coming soon', label: 'Feature preview',

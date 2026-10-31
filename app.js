@@ -39,6 +39,15 @@
   $('#radar-stories').innerHTML = radarStories.slice(0,3).map((story,index) => `<a class="radar-story" href="#story/${esc(story.id)}"><span class="radar-number">0${index+1}</span><div><span class="category">${esc(story.sport)} / ${esc(story.category)}</span><h3>${esc(story.title)}</h3><span class="meta">${esc(story.label)} &nbsp; · &nbsp; ${esc(story.readTime)}</span></div></a>`).join('');
   $('#columns-grid').innerHTML = stories.filter(story => story.type === 'column').map(story => `<a class="column-card" href="#story/${esc(story.id)}"><span class="column-icon" aria-hidden="true">“</span><span class="category">${esc(story.category)}</span><h3>${esc(story.title)}</h3><p>${esc(story.deck)}</p><div class="column-byline"><span class="avatar" aria-hidden="true">JK</span><span class="byline-name">${esc(story.author)}<small>${esc(story.readTime)} / ${esc(story.label)}</small></span></div></a>`).join('');
 
+  function renderBestBets() {
+    const target = $('#bets-ticker-track');
+    const bets = Array.isArray(content.bestBets) ? content.bestBets : [];
+    if (!target) return;
+    target.innerHTML = bets.length
+      ? bets.map(bet => `<span class="bet-ticker-item"><strong>${esc(bet.poster)}:</strong> ${esc(bet.selection)} <b>${esc(oddsText(bet.odds))}</b></span>`).join('')
+      : '<span class="bets-ticker-loading">No current board posted.</span>';
+  }
+
   function renderPodcast() {
     const episode = content.podcast.episodes[0];
     $('#featured-episode').innerHTML = episode
@@ -136,5 +145,5 @@
   });
 
   $('#year').textContent = new Date().getFullYear();
-  renderStories();renderPodcast();renderPicks();renderResults();route();
+  renderStories();renderPodcast();renderPicks();renderResults();renderBestBets();route();
 })();

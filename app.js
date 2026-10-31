@@ -1,6 +1,6 @@
-(() => {
+(async () => {
   'use strict';
-  const content = window.JK_CONTENT;
+  const content = await (window.JK_EDITOR_READY || Promise.resolve(window.JK_CONTENT));
   const $ = (selector) => document.querySelector(selector);
   const esc = (value) => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
   const oddsText = value => Number(value) > 0 ? `+${value}` : String(value).replace('-', '−');

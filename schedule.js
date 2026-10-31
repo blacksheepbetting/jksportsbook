@@ -17,8 +17,12 @@
   };
   const kickoffLabel = (game) => {
     if (!game.time || game.time === '00:00') return 'TIME TBD';
-    const date = parseDate(game);
-    return `${new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' }).format(date)} ET`;
+    const match = String(game.time).match(/^(\d{1,2}):(\d{2})/);
+    if (!match) return `${esc(game.time)} ET`;
+    const hour = Number(match[1]);
+    const suffix = hour >= 12 ? 'PM' : 'AM';
+    const displayHour = hour % 12 || 12;
+    return `${displayHour}:${match[2]} ${suffix} ET`;
   };
   const isComplete = (game) => game.completed === true || (game.awayScore !== null && game.awayScore !== '' && game.homeScore !== null && game.homeScore !== '');
   const team = (value) => String(value || 'TBD').toUpperCase();

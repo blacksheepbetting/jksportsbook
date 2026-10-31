@@ -43,8 +43,9 @@
     const target = $('#bets-ticker-track');
     const bets = Array.isArray(content.bestBets) ? content.bestBets : [];
     if (!target) return;
+    const items = bets.map(bet => `<span class="bet-ticker-item"><strong>${esc(bet.poster)}:</strong> ${esc(bet.selection)} <b>${esc(oddsText(bet.odds))}</b></span>`).join('');
     target.innerHTML = bets.length
-      ? bets.map(bet => `<span class="bet-ticker-item"><strong>${esc(bet.poster)}:</strong> ${esc(bet.selection)} <b>${esc(oddsText(bet.odds))}</b></span>`).join('')
+      ? `<div class="bets-ticker-marquee">${items}<span aria-hidden="true">${items}</span></div>`
       : '<span class="bets-ticker-loading">No current board posted.</span>';
   }
 

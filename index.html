@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="JKSPORTSBOOK. Independent sports coverage, original columns, podcast conversations, and a transparent picks desk.">
+  <title>JKSPORTSBOOK — More Than the Score</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="content/site.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="topline wrap"><span>INDEPENDENT SPORTS. UNFILTERED OPINIONS.</span><span>THE JKSPORTSBOOK NETWORK <span class="mini-cross">✳</span></span></div>
+    <div class="masthead wrap">
+      <a href="#" class="brand" aria-label="JKSPORTSBOOK home"><span class="brand-mark">JK<span>↗</span></span><span class="brand-word">SPORTSBOOK<span class="brand-tag">MORE THAN THE SCORE.</span></span></a>
+      <nav aria-label="Main navigation" class="main-nav" id="main-nav">
+        <a href="#latest">The Latest</a><a href="#columns">Columns</a><a href="#podcast">The Podcast</a><a href="#picks">Picks Desk</a>
+      </nav>
+      <div class="nav-actions"><button class="icon-button" id="search-open" aria-label="Search stories"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><a class="header-cta" href="#podcast">TUNE IN <span>↗</span></a><button class="icon-button menu-button" id="menu-button" aria-controls="main-nav" aria-expanded="false" aria-label="Open navigation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div>
+    </div>
+    <div class="sport-nav"><div class="wrap"><a class="sport-link active" href="#latest" data-sport="All">ALL SPORTS</a><a class="sport-link" href="#latest" data-sport="NFL">NFL</a><a class="sport-link" href="#latest" data-sport="NBA">NBA</a><a class="sport-link" href="#latest" data-sport="College">COLLEGE</a><a class="sport-link" href="#latest" data-sport="MLB">MLB</a><span class="sport-divider"></span><a href="#results">THE RECORD</a><a href="#calculator">ODDS CALCULATOR <span>↗</span></a></div></div>
+  </header>
+
+  <main id="main">
+    <div class="opening-line"><div class="wrap"><span class="opening-label">THE OPENING LINE <span>↗</span></span><p>A new home for the stories, conversations, and picks that move the game.</p><span class="edition">LAUNCH EDITION / 001</span></div></div>
+    <div class="wrap content-wrap">
+      <div class="edition-row"><span><span class="status-dot"></span> THE JKSPORTSBOOK DAILY</span><span id="edition-date">SPORTS. CULTURE. PERSPECTIVE.</span></div>
+      <section class="lead-grid" aria-label="Featured coverage">
+        <a class="lead-story" href="#story/welcome-to-jksportsbook">
+          <img class="stadium-image" src="assets/stadium.jpg" alt="A football field under stadium lights at night" fetchpriority="high" width="1672" height="941">
+          <div class="lead-shade"></div><div class="lead-top"><span class="tag yellow">THE BIG PICTURE</span><span class="image-index">01 / JK ORIGINALS</span></div>
+          <div class="lead-copy"><span class="eyebrow">WELCOME TO JKSPORTSBOOK</span><h1>MORE THAN<br>THE <span>SCORE.</span></h1><p>The stories behind the game. The takes worth debating.<br class="desktop-break"> And a seat at the table for every fan.</p><span class="read-link">GET TO KNOW JKSPORTSBOOK <span class="round-arrow">↗</span></span></div>
+        </a>
+        <aside class="radar"><div class="section-top"><h2>ON THE RADAR</h2><span class="small-cross">✳</span></div><div id="radar-stories"></div><a class="text-link radar-bottom" href="#latest">ALL STORIES <span>↗</span></a></aside>
+      </section>
+
+      <section id="latest" class="section latest-section" aria-labelledby="latest-title">
+        <div class="section-heading"><div><span class="section-kicker">THE NEWSROOM</span><h2 id="latest-title">Fresh off the press<span>.</span></h2></div><span class="section-aside">A DIFFERENT ANGLE ON THE GAME.</span></div>
+        <div class="filter-line"><div class="filter-tabs" role="group" aria-label="Filter stories by sport"><button class="filter active" data-filter="All" aria-pressed="true">All stories</button><button class="filter" data-filter="NFL" aria-pressed="false">NFL</button><button class="filter" data-filter="NBA" aria-pressed="false">NBA</button><button class="filter" data-filter="College" aria-pressed="false">College</button><button class="filter" data-filter="MLB" aria-pressed="false">MLB</button></div><span class="preview-label">ORIGINAL LAUNCH FEATURES</span></div>
+        <div class="stories-grid" id="stories-grid"></div><p class="empty-message" id="stories-empty" hidden>No stories in this section yet. Explore another sport.</p>
+      </section>
+
+      <section id="podcast" class="podcast-section" aria-labelledby="podcast-title">
+        <div class="podcast-art" aria-hidden="true"><div class="podcast-art-top">JK ORIGINAL AUDIO <span>↗</span></div><div class="podcast-art-title">OFF<br>THE<br><span>RECORD.</span></div><div class="waveform"></div><div class="podcast-art-bottom">THE JKSPORTSBOOK PODCAST</div></div>
+        <div class="podcast-copy"><span class="eyebrow yellow-text"><span class="status-dot"></span> THE PODCAST</span><h2 id="podcast-title">Big games.<br>Bigger conversations.</h2><p>Pull up a chair. Sports, the stories behind them, and the debates that don’t end at the final whistle.</p><div id="featured-episode"></div><div class="podcast-platforms" id="podcast-platforms"><span>YOUR NEXT LISTEN STARTS HERE.</span></div></div>
+      </section>
+
+      <section id="columns" class="section" aria-labelledby="columns-title"><div class="section-heading"><div><span class="section-kicker">POINT OF VIEW</span><h2 id="columns-title">A little perspective<span>.</span></h2></div><span class="section-aside">ORIGINAL COLUMNS. STRONG POINTS OF VIEW.</span></div><div class="columns-grid" id="columns-grid"></div></section>
+
+      <section id="picks" class="section picks-section" aria-labelledby="picks-title"><div class="section-heading"><div><span class="section-kicker">THE PICKS DESK</span><h2 id="picks-title">Every pick has a story<span>.</span></h2></div><a class="text-link" href="#results">SEE THE RECORD <span>↗</span></a></div><div class="picks-layout"><div><div class="picks-toolbar"><span class="desk-status"><span class="status-dot"></span> <span id="picks-status">SAMPLE BOARD</span></span><div class="pick-filters" role="group" aria-label="Filter picks"><button class="pick-filter active" data-pick-filter="All" aria-pressed="true">All</button><button class="pick-filter" data-pick-filter="NFL" aria-pressed="false">NFL</button><button class="pick-filter" data-pick-filter="NBA" aria-pressed="false">NBA</button><button class="pick-filter" data-pick-filter="Saved" aria-pressed="false">Saved <span id="saved-count">0</span></button></div></div><p class="demo-notice" id="picks-notice">Illustrative examples only. No official picks or current odds have been published.</p><div id="picks-list"></div><p id="picks-empty" class="empty-message" hidden>No picks here yet.</p></div><aside id="calculator" class="calculator"><span class="section-kicker">KNOW YOUR NUMBERS</span><h3>Do the math.</h3><p>Explore a hypothetical return before you make a decision.</p><form id="odds-form"><label for="odds">American odds</label><input type="number" id="odds" value="-110" step="1" required aria-describedby="odds-help"><span id="odds-help" class="field-help">Use −100 or lower, or +100 or higher.</span><label for="stake">Hypothetical stake ($)</label><input type="number" id="stake" value="25" min="0.01" max="1000000" step="0.01" required><button class="button button-dark" type="submit">CALCULATE RETURN <span>↗</span></button></form><div class="calculator-result" aria-live="polite" id="calculator-result"><span>Potential profit</span><strong>$22.73</strong><small>Total return: $47.73 · Includes your $25.00 stake</small></div><p class="calculator-disclaimer">For illustration. A calculation is not a prediction or a guarantee.</p></aside></div></section>
+
+      <section id="results" class="section results-section" aria-labelledby="results-title"><div class="section-heading"><div><span class="section-kicker">THE FULL PICTURE</span><h2 id="results-title">Keep the receipts<span>.</span></h2></div><span class="preview-label" id="results-label">SAMPLE LEDGER</span></div><p id="results-notice" class="results-intro">A transparent record starts with showing every result. These entries demonstrate the layout; they are not JKSPORTSBOOK’s performance.</p><div class="table-scroll"><table><caption class="sr-only">Picks results, with sample entries clearly identified</caption><thead><tr><th scope="col">SPORT / TYPE</th><th scope="col">SELECTION</th><th scope="col">ODDS</th><th scope="col">STAKE</th><th scope="col">RESULT</th><th scope="col">NET UNITS</th></tr></thead><tbody id="results-body"></tbody></table></div><p class="results-footnote">Win profit uses American odds; losses deduct the stated stake and pushes return it. Units are a consistent measure of stake, not a dollar promise.</p></section>
+
+      <section class="manifesto"><span class="manifesto-mark" aria-hidden="true">JK↗</span><div><span class="section-kicker">THE GAME DESERVES A CONVERSATION.</span><h2>GOOD STORIES.<br>HONEST TAKES.<br><span>ALL SPORTS.</span></h2></div><a class="button button-dark" href="#story/welcome-to-jksportsbook">THIS IS JKSPORTSBOOK <span>↗</span></a></section>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="wrap"><div class="footer-top"><a href="#" class="footer-brand">JK<span>SPORTSBOOK</span><sup>↗</sup></a><nav aria-label="Footer navigation"><a href="#latest">Stories</a><a href="#podcast">Podcast</a><a href="#columns">Columns</a><a href="#picks">Picks</a></nav><a href="#main" class="back-top">BACK TO TOP ↑</a></div><div class="footer-bottom"><p>© <span id="year">2026</span> JKSPORTSBOOK. More than the score.</p><p>21+ audience. Sports commentary and entertainment. No bets accepted. Play responsibly.</p><button class="footer-about" id="about-open">About this launch</button></div></div></footer>
+
+  <dialog class="reader-dialog" id="reader-dialog" aria-labelledby="reader-title"><div class="dialog-toolbar"><a class="dialog-brand" href="#">JKSPORTSBOOK <span>↗</span></a><button class="icon-button" id="reader-close" aria-label="Close article">✕</button></div><article id="reader-content"></article></dialog>
+  <dialog class="search-dialog" id="search-dialog" aria-labelledby="search-title"><div class="dialog-toolbar"><h2 id="search-title">Find your next read.</h2><button class="icon-button" id="search-close" aria-label="Close search">✕</button></div><label class="sr-only" for="search-input">Search stories and columns</label><input type="search" id="search-input" placeholder="Search stories, sports, or topics…" autocomplete="off"><div class="search-results" id="search-results" aria-live="polite"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript">Please enable JavaScript to browse stories, picks, and podcast details.</p></noscript>
+</body>
+</html>

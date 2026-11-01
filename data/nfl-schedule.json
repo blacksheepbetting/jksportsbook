@@ -2,7 +2,7 @@
   "source": "nflverse",
   "sourceUrl": "https://github.com/nflverse/nflverse-data/releases/tag/schedules",
   "season": 2026,
-  "updatedAt": "2026-11-01T13:24:54Z",
+  "updatedAt": "2026-11-01T22:01:49Z",
   "games": [
     {
       "id": "2026_01_NE_SEA",
@@ -1526,9 +1526,9 @@
       "time": "13:00",
       "awayTeam": "BAL",
       "homeTeam": "BUF",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 10,
+      "homeScore": 36,
+      "completed": true
     },
     {
       "id": "2026_08_TEN_CIN",
@@ -1540,9 +1540,9 @@
       "time": "13:00",
       "awayTeam": "TEN",
       "homeTeam": "CIN",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 36,
+      "homeScore": 43,
+      "completed": true
     },
     {
       "id": "2026_08_ARI_DAL",
@@ -1554,9 +1554,9 @@
       "time": "13:00",
       "awayTeam": "ARI",
       "homeTeam": "DAL",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 33,
+      "homeScore": 30,
+      "completed": true
     },
     {
       "id": "2026_08_MIN_DET",
@@ -1568,9 +1568,9 @@
       "time": "13:00",
       "awayTeam": "MIN",
       "homeTeam": "DET",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 15,
+      "homeScore": 19,
+      "completed": true
     },
     {
       "id": "2026_08_IND_JAX",
@@ -1582,9 +1582,9 @@
       "time": "13:00",
       "awayTeam": "IND",
       "homeTeam": "JAX",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 7,
+      "homeScore": 42,
+      "completed": true
     },
     {
       "id": "2026_08_LV_NYJ",
@@ -1596,9 +1596,9 @@
       "time": "13:00",
       "awayTeam": "LV",
       "homeTeam": "NYJ",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 38,
+      "homeScore": 33,
+      "completed": true
     },
     {
       "id": "2026_08_CLE_PIT",
@@ -1610,9 +1610,9 @@
       "time": "13:00",
       "awayTeam": "CLE",
       "homeTeam": "PIT",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 6,
+      "homeScore": 27,
+      "completed": true
     },
     {
       "id": "2026_08_ATL_TB",
@@ -1624,9 +1624,9 @@
       "time": "13:00",
       "awayTeam": "ATL",
       "homeTeam": "TB",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 0,
+      "homeScore": 16,
+      "completed": true
     },
     {
       "id": "2026_08_LAC_LA",

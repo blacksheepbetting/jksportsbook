@@ -2,7 +2,7 @@
   "source": "nflverse",
   "sourceUrl": "https://github.com/nflverse/nflverse-data/releases/tag/schedules",
   "season": 2026,
-  "updatedAt": "2026-11-01T22:01:49Z",
+  "updatedAt": "2026-11-02T06:02:01Z",
   "games": [
     {
       "id": "2026_01_NE_SEA",
@@ -1638,9 +1638,9 @@
       "time": "16:05",
       "awayTeam": "LAC",
       "homeTeam": "LA",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 9,
+      "homeScore": 24,
+      "completed": true
     },
     {
       "id": "2026_08_KC_DEN",
@@ -1652,9 +1652,9 @@
       "time": "16:25",
       "awayTeam": "KC",
       "homeTeam": "DEN",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 24,
+      "homeScore": 28,
+      "completed": true
     },
     {
       "id": "2026_08_NE_MIA",
@@ -1666,9 +1666,9 @@
       "time": "16:25",
       "awayTeam": "NE",
       "homeTeam": "MIA",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 24,
+      "homeScore": 19,
+      "completed": true
     },
     {
       "id": "2026_08_PHI_WAS",
@@ -1680,9 +1680,9 @@
       "time": "20:20",
       "awayTeam": "PHI",
       "homeTeam": "WAS",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 10,
+      "homeScore": 27,
+      "completed": true
     },
     {
       "id": "2026_08_CHI_SEA",

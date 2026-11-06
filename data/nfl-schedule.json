@@ -2,7 +2,7 @@
   "source": "nflverse",
   "sourceUrl": "https://github.com/nflverse/nflverse-data/releases/tag/schedules",
   "season": 2026,
-  "updatedAt": "2026-11-05T19:56:53Z",
+  "updatedAt": "2026-11-06T06:44:50Z",
   "games": [
     {
       "id": "2026_01_NE_SEA",
@@ -1708,9 +1708,9 @@
       "time": "20:15",
       "awayTeam": "JAX",
       "homeTeam": "BAL",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 33,
+      "homeScore": 10,
+      "completed": true
     },
     {
       "id": "2026_09_CIN_ATL",

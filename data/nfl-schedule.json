@@ -2,7 +2,7 @@
   "source": "nflverse",
   "sourceUrl": "https://github.com/nflverse/nflverse-data/releases/tag/schedules",
   "season": 2026,
-  "updatedAt": "2026-11-08T13:24:54Z",
+  "updatedAt": "2026-11-08T22:04:32Z",
   "games": [
     {
       "id": "2026_01_NE_SEA",
@@ -1722,9 +1722,9 @@
       "time": "09:30",
       "awayTeam": "CIN",
       "homeTeam": "ATL",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 34,
+      "homeScore": 17,
+      "completed": true
     },
     {
       "id": "2026_09_DEN_CAR",
@@ -1736,9 +1736,9 @@
       "time": "13:00",
       "awayTeam": "DEN",
       "homeTeam": "CAR",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 26,
+      "homeScore": 21,
+      "completed": true
     },
     {
       "id": "2026_09_DAL_IND",
@@ -1750,9 +1750,9 @@
       "time": "13:00",
       "awayTeam": "DAL",
       "homeTeam": "IND",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 27,
+      "homeScore": 23,
+      "completed": true
     },
     {
       "id": "2026_09_NYJ_KC",
@@ -1764,9 +1764,9 @@
       "time": "13:00",
       "awayTeam": "NYJ",
       "homeTeam": "KC",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 12,
+      "homeScore": 35,
+      "completed": true
     },
     {
       "id": "2026_09_DET_MIA",
@@ -1778,9 +1778,9 @@
       "time": "13:00",
       "awayTeam": "DET",
       "homeTeam": "MIA",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 19,
+      "homeScore": 9,
+      "completed": true
     },
     {
       "id": "2026_09_CLE_NO",
@@ -1792,9 +1792,9 @@
       "time": "13:00",
       "awayTeam": "CLE",
       "homeTeam": "NO",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 22,
+      "homeScore": 23,
+      "completed": true
     },
     {
       "id": "2026_09_NYG_PHI",
@@ -1806,9 +1806,9 @@
       "time": "13:00",
       "awayTeam": "NYG",
       "homeTeam": "PHI",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 19,
+      "homeScore": 11,
+      "completed": true
     },
     {
       "id": "2026_09_LA_WAS",
@@ -1820,9 +1820,9 @@
       "time": "13:00",
       "awayTeam": "LA",
       "homeTeam": "WAS",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 20,
+      "homeScore": 13,
+      "completed": true
     },
     {
       "id": "2026_09_HOU_LAC",

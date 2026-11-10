@@ -2,7 +2,7 @@
   "source": "nflverse",
   "sourceUrl": "https://github.com/nflverse/nflverse-data/releases/tag/schedules",
   "season": 2026,
-  "updatedAt": "2026-11-10T07:17:32Z",
+  "updatedAt": "2026-11-10T19:43:31Z",
   "games": [
     {
       "id": "2026_01_NE_SEA",
@@ -1845,7 +1845,7 @@
       "gameType": "REG",
       "date": "2026-11-08",
       "weekday": "Sunday",
-      "time": "16:05",
+      "time": "16:25",
       "awayTeam": "LV",
       "homeTeam": "SF",
       "awayScore": 17,

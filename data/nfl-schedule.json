@@ -2,7 +2,7 @@
   "source": "nflverse",
   "sourceUrl": "https://github.com/nflverse/nflverse-data/releases/tag/schedules",
   "season": 2026,
-  "updatedAt": "2026-11-09T22:21:14Z",
+  "updatedAt": "2026-11-10T07:17:32Z",
   "games": [
     {
       "id": "2026_01_NE_SEA",
@@ -1904,9 +1904,9 @@
       "time": "20:15",
       "awayTeam": "BUF",
       "homeTeam": "MIN",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 23,
+      "homeScore": 6,
+      "completed": true
     },
     {
       "id": "2026_10_WAS_NYG",

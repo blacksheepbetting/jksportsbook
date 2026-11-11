@@ -85,3 +85,22 @@
  .betting-feature h3{font-size:29px}
  .podcast-copy{padding:26px 22px}
 }
+
+/* Column series destinations */
+.column-series-heading{display:flex;justify-content:space-between;align-items:center;margin-top:31px;padding-top:14px;border-top:1px solid var(--line)}
+.column-series-heading .section-kicker{margin:0}
+.column-series-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:13px}
+.column-series-card{scroll-margin-top:24px;min-height:165px;padding:23px;background:#ebe9e0;border-top:3px solid #111}
+.column-series-card h3{font:34px/1 var(--display);margin:8px 0 10px}
+.column-series-card p{max-width:530px;color:#62625b;font-size:12px;line-height:1.65}
+.column-series-card .meta{margin-top:15px}
+.column-series-dark{background:#171717;color:#fff;border-top-color:var(--yellow)}
+.column-series-dark p{color:#c5c5bd}
+.column-series-dark .category,.column-series-dark .meta{color:#c5c5bd}
+@media(max-width:640px){
+ .column-series-heading{align-items:flex-start;gap:8px;flex-direction:column}
+ .column-series-heading .section-aside{font-size:7px}
+ .column-series-grid{grid-template-columns:1fr}
+ .column-series-card{min-height:145px;padding:19px}
+ .column-series-card h3{font-size:31px}
+}

@@ -206,6 +206,7 @@ collections:
               - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, FPHL, All] }
               - { label: Category, name: category, widget: string }
               - { label: Column Series, name: series, widget: select, options: [{ label: General Columns, value: "" }, { label: JK Sportsline, value: "jk-sportsline" }, { label: The Becker Report, value: "becker-report" }], required: false }
+              - { label: Betting Desk Section, name: deskSection, widget: select, options: [{ label: Not a betting feature, value: "" }, { label: Game of the Week, value: "game-of-week" }, { label: NFL / CFB Futures, value: "futures" }], required: false }
               - { label: Type, name: type, widget: select, options: [story, column], default: story }
               - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
               - { label: Art Label, name: artLabel, widget: string, required: false }

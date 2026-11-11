@@ -255,19 +255,18 @@ collections:
               - { label: Read Time, name: readTime, widget: string }
               - { label: Label, name: label, widget: string }
               - { label: Body HTML, name: body, widget: markdown }
-          - label: New Stories & Columns
+          - label: New Newsroom Stories
             name: newStories
             widget: list
             summary: "{{fields.sport}} — {{fields.title}}"
-            hint: "For a weekly series post, set Type to column and choose JK Sportsline or The Becker Report; it will appear on that series page."
+            hint: "For General Columns, JK Sportsline, or The Becker Report, use the matching list in Weekly Columns."
             fields:
               - { label: ID, name: id, widget: string }
               - { label: Title, name: title, widget: string }
               - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, FPHL, All] }
               - { label: Category, name: category, widget: string }
-              - { label: Column Series, name: series, widget: select, options: [{ label: General Columns, value: "" }, { label: JK Sportsline, value: "jk-sportsline" }, { label: The Becker Report, value: "becker-report" }], required: false , hint: "Choose the dedicated series page for this article." }
               - { label: Betting Desk Section, name: deskSection, widget: select, options: [{ label: Not a betting feature, value: "" }, { label: Game of the Week, value: "game-of-week" }, { label: NFL / CFB Futures, value: "futures" }], required: false }
-              - { label: Type, name: type, widget: select, options: [story, column], default: story }
+              - { label: Type, name: type, widget: select, options: [story], default: story }
               - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
               - { label: Art Label, name: artLabel, widget: string, required: false }
               - { label: Deck, name: deck, widget: text }
@@ -298,3 +297,73 @@ collections:
               - { label: American Odds, name: odds, widget: number, value_type: int }
               - { label: Units, name: units, widget: number, value_type: float }
               - { label: Result, name: result, widget: select, options: [Win, Loss, Push] }
+
+  - name: weekly_columns
+    label: Weekly Columns
+    files:
+      - file: content/columns/general.json
+        name: general_columns
+        label: General Columns
+        format: json
+        fields:
+          - label: Articles
+            name: articles
+            widget: list
+            summary: "{{fields.title}}"
+            hint: "Add the newest article at the top. The list order controls how articles appear on the page."
+            fields:
+              - { label: Story ID, name: id, widget: string, hint: "Use a unique lowercase URL slug, such as jks-2026-11-12-season-preview." }
+              - { label: Title, name: title, widget: string }
+              - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, FPHL, All] }
+              - { label: Category, name: category, widget: string }
+              - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
+              - { label: Art Label, name: artLabel, widget: string, required: false }
+              - { label: Deck, name: deck, widget: text }
+              - { label: Author, name: author, widget: string }
+              - { label: Read Time, name: readTime, widget: string }
+              - { label: Label, name: label, widget: string }
+              - { label: Article Body, name: body, widget: markdown }
+      - file: content/columns/jk-sportsline.json
+        name: jk_sportsline
+        label: JK Sportsline
+        format: json
+        fields:
+          - label: Articles
+            name: articles
+            widget: list
+            summary: "{{fields.title}}"
+            hint: "Add the newest article at the top. The list order controls how articles appear on the page."
+            fields:
+              - { label: Story ID, name: id, widget: string, hint: "Use a unique lowercase URL slug, such as jks-2026-11-12-season-preview." }
+              - { label: Title, name: title, widget: string }
+              - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, FPHL, All] }
+              - { label: Category, name: category, widget: string }
+              - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
+              - { label: Art Label, name: artLabel, widget: string, required: false }
+              - { label: Deck, name: deck, widget: text }
+              - { label: Author, name: author, widget: string }
+              - { label: Read Time, name: readTime, widget: string }
+              - { label: Label, name: label, widget: string }
+              - { label: Article Body, name: body, widget: markdown }
+      - file: content/columns/becker-report.json
+        name: becker_report
+        label: The Becker Report
+        format: json
+        fields:
+          - label: Articles
+            name: articles
+            widget: list
+            summary: "{{fields.title}}"
+            hint: "Add the newest article at the top. The list order controls how articles appear on the page."
+            fields:
+              - { label: Story ID, name: id, widget: string, hint: "Use a unique lowercase URL slug, such as jks-2026-11-12-season-preview." }
+              - { label: Title, name: title, widget: string }
+              - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, FPHL, All] }
+              - { label: Category, name: category, widget: string }
+              - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
+              - { label: Art Label, name: artLabel, widget: string, required: false }
+              - { label: Deck, name: deck, widget: text }
+              - { label: Author, name: author, widget: string }
+              - { label: Read Time, name: readTime, widget: string }
+              - { label: Label, name: label, widget: string }
+              - { label: Article Body, name: body, widget: markdown }

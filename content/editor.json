@@ -80,5 +80,82 @@
       "title": "The Becker Report",
       "description": "A dedicated home for The Becker Report and its point of view."
     }
+  },
+  "siteCopy": {
+    "masthead": {
+      "strapline": "INDEPENDENT SPORTS. UNFILTERED OPINIONS.",
+      "network": "THE JKSPORTSBOOK NETWORK",
+      "brandTagline": "MORE THAN THE SCORE."
+    },
+    "opening": {
+      "label": "THE OPENING LINE",
+      "message": "A new home for the stories, conversations, and picks that move the game.",
+      "edition": "LAUNCH EDITION / 001",
+      "dailyLabel": "THE JKSPORTSBOOK DAILY",
+      "dailyTagline": "SPORTS. CULTURE. PERSPECTIVE."
+    },
+    "navigation": {
+      "latest": "The Latest",
+      "columns": "Columns",
+      "allColumns": "All Columns",
+      "jkSportsline": "JK Sportsline",
+      "beckerReport": "The Becker Report",
+      "shows": "Shows",
+      "betting": "Betting",
+      "bettingDesk": "Betting Desk",
+      "bestBets": "Best Bets",
+      "gameOfWeek": "Game of the Week",
+      "futures": "NFL / CFB Futures",
+      "allSports": "ALL SPORTS",
+      "nfl": "NFL",
+      "nba": "NBA",
+      "college": "COLLEGE",
+      "mlb": "MLB",
+      "fphl": "FPHL",
+      "schedule": "NFL SCHEDULE & LINES",
+      "calculator": "ODDS CALCULATOR",
+      "tuneIn": "TUNE IN",
+      "tickerLabel": "BEST BETS / CURRENT BOARD",
+      "tickerLink": "VIEW PICKS"
+    },
+    "home": {
+      "newsroomKicker": "THE NEWSROOM",
+      "newsroomTitle": "Fresh off the press",
+      "newsroomAside": "A DIFFERENT ANGLE ON THE GAME.",
+      "columnsKicker": "POINT OF VIEW",
+      "columnsTitle": "A little perspective",
+      "columnsAside": "ORIGINAL COLUMNS. STRONG POINTS OF VIEW.",
+      "seriesKicker": "OUR RECURRING COLUMNS",
+      "seriesAside": "EDIT SERIES DETAILS AND ASSIGN POSTS IN THE ADMIN PANEL."
+    },
+    "shows": {
+      "kicker": "JKSPORTSBOOK SHOWS / PODCAST",
+      "titleLine1": "Big games.",
+      "titleLine2": "Bigger conversations.",
+      "description": "Pull up a chair. Sports, the stories behind them, and the debates that don’t end at the final whistle."
+    },
+    "betting": {
+      "kicker": "THE BETTING DESK",
+      "title": "The game, from every angle",
+      "aside": "PICKS. MATCHUPS. FUTURES.",
+      "description": "A home for the posted picks, the matchup of the week, and long-range NFL and college football outlooks.",
+      "bestBetsKicker": "01 / BEST BETS",
+      "bestBetsTitle": "Every pick has a story",
+      "gameKicker": "02 / WEEKLY MATCHUP",
+      "gameTitle": "Game of the Week",
+      "gameDescription": "Matchup notes and a full breakdown will live here when the weekly feature is published.",
+      "futuresKicker": "03 / SEASON-LONG OUTLOOK",
+      "futuresTitle": "NFL / CFB Futures",
+      "futuresDescription": "Long-range football analysis, with the assumptions and context behind each outlook."
+    },
+    "results": {
+      "kicker": "THE FULL PICTURE",
+      "title": "Keep the receipts",
+      "description": "A transparent record starts with showing every result. These entries demonstrate the layout; they are not JKSPORTSBOOK’s performance."
+    },
+    "footer": {
+      "tagline": "JKSPORTSBOOK. More than the score.",
+      "responsibleNote": "21+ audience. Sports commentary and entertainment. No bets accepted. Play responsibly."
+    }
   }
 }

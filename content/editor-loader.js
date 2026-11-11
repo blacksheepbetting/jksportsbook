@@ -4,6 +4,7 @@ window.JK_EDITOR_READY = fetch('content/editor.json?v=admin-1', { cache: 'no-sto
   .then(editor => {
     const content = window.JK_CONTENT;
     if (Array.isArray(editor.bestBets)) content.bestBets = editor.bestBets;
+    if (editor.columnSeries && typeof editor.columnSeries === 'object') content.columnSeries = { ...(content.columnSeries || {}), ...editor.columnSeries };
     if (editor.podcast && typeof editor.podcast === 'object') {
       content.podcast = { ...content.podcast, ...editor.podcast };
       if (Array.isArray(editor.podcast.episodes)) content.podcast.episodes = editor.podcast.episodes;

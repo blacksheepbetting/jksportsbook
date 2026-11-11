@@ -41,7 +41,10 @@
       target.innerHTML=episodes.length?episodes.map((ep,index)=>{
         const thumb=ep.thumbnailUrl&&(()=>{try{return new URL(ep.thumbnailUrl).protocol==='https:'}catch{return false}})()?'<img src="'+esc(ep.thumbnailUrl)+'" alt="" loading="lazy">':'';
         const href=ep.listenUrl&&(()=>{try{return new URL(ep.listenUrl).protocol==='https:'}catch{return false}})()?ep.listenUrl:'#';
-        return '<article class="show-episode">'+(thumb?'<a class="show-thumbnail" href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">'+thumb+'<span>▶</span></a>':'')+'<div class="show-episode-copy"><span class="section-kicker">'+esc(ep.number||'EPISODE '+(index+1))+' / '+esc(ep.duration||'')+'</span><h2>'+esc(ep.title)+'</h2><p>'+esc(ep.description||'')+'</p><a class="button button-dark" href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">WATCH / LISTEN ↗</a></div></article>';
+        const video=ep.videoUrl&&(()=>{try{const u=new URL(ep.videoUrl);return u.protocol==='https:'&&['www.youtube.com','youtube.com','www.youtube-nocookie.com','youtube-nocookie.com'].includes(u.hostname)&&u.pathname.startsWith('/embed/')?u.href:''}catch{return ''}})();
+        const media=video?'<div class="show-player"><iframe src="'+esc(video)+'" title="'+esc(ep.title||'JKSPORTSBOOK episode')+'" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>':(thumb?'<a class="show-thumbnail" href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">'+thumb+'<span>▶</span></a>':'');
+        const watchLabel=pageCopy.watchListen||'WATCH / LISTEN';
+        return '<article class="show-episode">'+media+'<div class="show-episode-copy"><span class="section-kicker">'+esc(ep.number||'EPISODE '+(index+1))+' / '+esc(ep.duration||'')+'</span><h2>'+esc(ep.title)+'</h2><p>'+esc(ep.description||'')+'</p><a class="button button-dark" href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">'+esc(watchLabel)+' ↗</a></div></article>';
       }).join('') : '<p class="landing-empty">'+esc(pageCopy.noEpisodes || 'New episodes will appear here when they’re published.')+'</p>';
     }
     const title=document.querySelector('[data-podcast-title]');

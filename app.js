@@ -103,7 +103,7 @@
       const net = result.result === 'Win' ? Number(result.units) * (Number(result.odds) > 0 ? Number(result.odds)/100 : 100/Math.abs(Number(result.odds))) : result.result === 'Loss' ? -Number(result.units) : 0;
       return `<tr><td>${esc(result.sport)} / ${esc(result.type)}</td><td>${esc(result.selection)}</td><td>${esc(oddsText(result.odds))}</td><td>${esc(result.units)}u</td><td><span class="result-tag ${result.result === 'Win' ? 'win' : ''}">${esc(result.result.toUpperCase())}</span></td><td>${net > 0 ? '+' : ''}${net.toFixed(2)}u</td></tr>`;
     }).join('') || '<tr><td colspan="6">No settled picks yet. Every official result will appear here.</td></tr>';
-    if (!content.showDemoPicks) { $('#results-label').textContent = 'OFFICIAL LEDGER'; $('#results-notice').textContent = 'The record of published picks, with stake, original odds, and net units. Every win, loss, and push belongs here.'; }
+    if (!content.showDemoPicks) { $('#results-label').textContent = 'OFFICIAL LEDGER'; $('#results-notice').textContent = content.siteCopy?.results?.description || 'The record of published picks, with stake, original odds, and net units. Every win, loss, and push belongs here.'; }
   }
 
   function showToast(text) { $('#toast').textContent = text; $('#toast').classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(()=>$('#toast').classList.remove('show'),2600); }

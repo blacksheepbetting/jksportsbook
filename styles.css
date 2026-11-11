@@ -18,3 +18,70 @@
 
 /* Moving best-bets marquee */
 .bets-ticker-track{display:block;overflow:hidden}.bets-ticker-marquee{display:flex;width:max-content;align-items:center;animation:betsMarquee 26s linear infinite;will-change:transform}.bets-ticker-marquee>span{display:flex;align-items:center}.bets-ticker-track:hover .bets-ticker-marquee{animation-play-state:paused}@keyframes betsMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.bets-ticker-marquee{animation:none}}
+
+/* Editorial polish and the new Betting / Shows navigation */
+.opening-line{background:#e9e7de;border-block:1px solid #d4d1c5}
+.opening-label{background:var(--yellow);border-right:0;padding:5px 10px}
+.section{padding-top:72px}
+.section-heading{margin-bottom:29px}
+.section-heading h2{font-family:var(--display);font-weight:400;font-size:clamp(36px,4.1vw,48px);letter-spacing:-.2px}
+.stories-grid{gap:30px}
+.story-card{padding:0 0 22px;border-bottom:1px solid var(--line);transition:transform .2s ease}
+.story-card:hover{transform:translateY(-3px)}
+.story-art{margin-bottom:20px}
+.podcast-section{margin-top:74px;box-shadow:0 14px 30px #1111}
+.podcast-copy{padding:38px}
+.columns-grid{gap:18px}
+.column-card{border-top-width:3px;transition:transform .2s ease,background .2s ease}
+.column-card:hover{transform:translateY(-3px)}
+.nav-dropdown{position:relative;display:flex;align-items:center}
+.nav-dropdown>summary{list-style:none;cursor:pointer;position:relative;padding:13px 0;font-size:13px;font-weight:700}
+.nav-dropdown>summary::-webkit-details-marker{display:none}
+.nav-dropdown>summary>span{color:var(--yellow);margin-left:4px}
+.nav-dropdown[open]>summary,.nav-dropdown:hover>summary{color:var(--yellow)}
+.nav-dropdown-menu{position:absolute;z-index:25;top:calc(100% + 4px);left:-16px;min-width:205px;padding:7px;background:#202020;border:1px solid #3c3c3c;box-shadow:0 12px 24px #0005}
+.nav-dropdown-menu a{display:block;padding:11px 12px;color:#e7e7e0;font-size:11px;font-weight:700;white-space:nowrap}
+.nav-dropdown-menu a:hover,.nav-dropdown-menu a:focus-visible{background:var(--yellow);color:#111}
+.betting-hub{background:#e9e8e2;padding:34px;border-top:4px solid #111}
+.betting-hub .section-heading{margin-bottom:14px}
+.betting-intro{max-width:650px;color:#62625b;font-size:14px;line-height:1.75;margin-bottom:25px}
+.betting-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid #ceccc2;background:var(--paper)}
+.betting-nav>a{display:grid;grid-template-columns:34px 1fr 18px;align-items:center;gap:10px;padding:20px 17px;border-right:1px solid #ceccc2;transition:background .18s}
+.betting-nav>a:last-child{border-right:0}
+.betting-nav>a:hover{background:#fff}
+.betting-number{font:14px monospace;color:#8a7b33}
+.betting-nav strong{display:block;font-size:14px;font-weight:900;line-height:1.25}
+.betting-nav small{display:block;margin-top:5px;color:#6a6a62;font-size:10px}
+.betting-nav b{font-size:19px;color:#8c7400}
+.betting-feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:16px}
+.betting-feature{scroll-margin-top:24px;min-height:205px;padding:24px;background:var(--paper);border-top:2px solid var(--yellow)}
+.betting-feature h3{font:32px/1.04 var(--display);margin:12px 0}
+.betting-feature p{max-width:480px;color:#686861;font-size:12px;line-height:1.7}
+.betting-feature .text-link{margin-top:20px}
+.betting-feature-dark{background:#171717;color:#fff;border-top-color:var(--yellow)}
+.betting-feature-dark p{color:#c5c5bd}
+.betting-feature-dark .section-kicker{color:var(--yellow)}
+.betting-feature-dark .text-link{color:#fff}
+.anchor-alias{display:block;position:relative;top:-12px;scroll-margin-top:18px}
+@media(max-width:900px){
+ .main-nav{gap:18px}
+ .betting-hub{padding:27px}
+}
+@media(max-width:640px){
+ .main-nav.open{align-items:stretch}
+ .main-nav.open .nav-dropdown{display:block}
+ .main-nav.open .nav-dropdown>summary{padding:11px 0}
+ .nav-dropdown-menu{position:static;min-width:0;margin:4px 0 8px;box-shadow:none}
+ .nav-dropdown-menu a{white-space:normal;padding:10px}
+ .betting-hub{padding:22px 17px}
+ .betting-hub .section-heading{align-items:flex-start}
+ .betting-hub .section-aside{display:none}
+ .betting-intro{font-size:12px;margin-bottom:18px}
+ .betting-nav{grid-template-columns:1fr}
+ .betting-nav>a{border-right:0;border-bottom:1px solid #ceccc2;padding:15px}
+ .betting-nav>a:last-child{border-bottom:0}
+ .betting-feature-grid{grid-template-columns:1fr}
+ .betting-feature{min-height:0;padding:20px}
+ .betting-feature h3{font-size:29px}
+ .podcast-copy{padding:26px 22px}
+}

@@ -26,6 +26,101 @@ collections:
               - { label: Poster, name: poster, widget: string }
               - { label: Selection, name: selection, widget: string }
               - { label: American Odds, name: odds, widget: number, value_type: int }
+          - label: Site Copy
+            name: siteCopy
+            widget: object
+            fields:
+              - label: Masthead
+                name: masthead
+                widget: object
+                fields:
+                  - { label: Top Strapline, name: strapline, widget: string }
+                  - { label: Network Label, name: network, widget: string }
+                  - { label: Brand Tagline, name: brandTagline, widget: string }
+              - label: Opening Banner
+                name: opening
+                widget: object
+                fields:
+                  - { label: Banner Label, name: label, widget: string }
+                  - { label: Banner Message, name: message, widget: text }
+                  - { label: Edition Label, name: edition, widget: string }
+                  - { label: Daily Label, name: dailyLabel, widget: string }
+                  - { label: Daily Tagline, name: dailyTagline, widget: string }
+              - label: Navigation
+                name: navigation
+                widget: object
+                fields:
+                  - { label: Latest Tab, name: latest, widget: string }
+                  - { label: Columns Tab, name: columns, widget: string }
+                  - { label: All Columns Link, name: allColumns, widget: string }
+                  - { label: JK Sportsline Link, name: jkSportsline, widget: string }
+                  - { label: Becker Report Link, name: beckerReport, widget: string }
+                  - { label: Shows Tab, name: shows, widget: string }
+                  - { label: Betting Tab, name: betting, widget: string }
+                  - { label: Betting Desk Link, name: bettingDesk, widget: string }
+                  - { label: Best Bets Link, name: bestBets, widget: string }
+                  - { label: Game of the Week Link, name: gameOfWeek, widget: string }
+                  - { label: NFL / CFB Futures Link, name: futures, widget: string }
+                  - { label: All Sports Filter, name: allSports, widget: string }
+                  - { label: NFL Filter, name: nfl, widget: string }
+                  - { label: NBA Filter, name: nba, widget: string }
+                  - { label: College Filter, name: college, widget: string }
+                  - { label: MLB Filter, name: mlb, widget: string }
+                  - { label: FPHL Filter, name: fphl, widget: string }
+                  - { label: Schedule Link, name: schedule, widget: string }
+                  - { label: Odds Calculator Link, name: calculator, widget: string }
+                  - { label: Tune In Button, name: tuneIn, widget: string }
+                  - { label: Ticker Label, name: tickerLabel, widget: string }
+                  - { label: Ticker Link, name: tickerLink, widget: string }
+              - label: Homepage Sections
+                name: home
+                widget: object
+                fields:
+                  - { label: Newsroom Kicker, name: newsroomKicker, widget: string }
+                  - { label: Newsroom Heading, name: newsroomTitle, widget: string }
+                  - { label: Newsroom Aside, name: newsroomAside, widget: string }
+                  - { label: Columns Kicker, name: columnsKicker, widget: string }
+                  - { label: Columns Heading, name: columnsTitle, widget: string }
+                  - { label: Columns Aside, name: columnsAside, widget: string }
+                  - { label: Series Kicker, name: seriesKicker, widget: string }
+                  - { label: Series Prompt, name: seriesAside, widget: string }
+              - label: Shows
+                name: shows
+                widget: object
+                fields:
+                  - { label: Section Label, name: kicker, widget: string }
+                  - { label: Heading Line 1, name: titleLine1, widget: string }
+                  - { label: Heading Line 2, name: titleLine2, widget: string }
+                  - { label: Description, name: description, widget: text }
+              - label: Betting Sections
+                name: betting
+                widget: object
+                fields:
+                  - { label: Section Label, name: kicker, widget: string }
+                  - { label: Betting Desk Heading, name: title, widget: string }
+                  - { label: Betting Desk Aside, name: aside, widget: string }
+                  - { label: Betting Desk Description, name: description, widget: text }
+                  - { label: Best Bets Label, name: bestBetsKicker, widget: string }
+                  - { label: Best Bets Heading, name: bestBetsTitle, widget: string }
+                  - { label: Game of the Week Label, name: gameKicker, widget: string }
+                  - { label: Game of the Week Heading, name: gameTitle, widget: string }
+                  - { label: Game of the Week Description, name: gameDescription, widget: text }
+                  - { label: Futures Label, name: futuresKicker, widget: string }
+                  - { label: Futures Heading, name: futuresTitle, widget: string }
+                  - { label: Futures Description, name: futuresDescription, widget: text }
+              - label: Results Section
+                name: results
+                widget: object
+                fields:
+                  - { label: Section Label, name: kicker, widget: string }
+                  - { label: Heading, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+              - label: Footer
+                name: footer
+                widget: object
+                fields:
+                  - { label: Tagline, name: tagline, widget: string }
+                  - { label: Responsible Play Note, name: responsibleNote, widget: string }
           - label: Column Series
             name: columnSeries
             widget: object

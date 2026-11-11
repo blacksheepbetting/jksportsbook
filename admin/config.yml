@@ -142,6 +142,7 @@ collections:
                   - { label: Picks Link, name: picksLink, widget: string }
                   - { label: Game Kicker, name: gameKicker, widget: string }
                   - { label: Game Title, name: gameTitle, widget: string }
+                  - { label: Game Description, name: gameDescription, widget: text }
                   - { label: Futures Kicker, name: futuresKicker, widget: string }
                   - { label: Futures Title, name: futuresTitle, widget: string }
                   - { label: Futures Description, name: futuresDescription, widget: string }

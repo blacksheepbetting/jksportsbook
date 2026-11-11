@@ -21,7 +21,9 @@
     <div class="masthead wrap">
       <a href="#" class="brand" aria-label="JKSPORTSBOOK home"><span class="brand-mark">JK<span>↗</span></span><span class="brand-word">SPORTSBOOK<span class="brand-tag">MORE THAN THE SCORE.</span></span></a>
       <nav aria-label="Main navigation" class="main-nav" id="main-nav">
-        <a href="#latest">The Latest</a><a href="#columns">Columns</a><a href="#shows">Shows</a>
+        <a href="#latest">The Latest</a>
+        <details class="nav-dropdown"><summary>Columns <span aria-hidden="true">⌄</span></summary><div class="nav-dropdown-menu"><a href="#columns">All Columns</a><a href="#jk-sportsline">JK Sportsline</a><a href="#becker-report">The Becker Report</a></div></details>
+        <a href="#shows">Shows</a>
         <details class="nav-dropdown"><summary>Betting <span aria-hidden="true">⌄</span></summary><div class="nav-dropdown-menu"><a href="#betting">Betting Desk</a><a href="#best-bets">Best Bets</a><a href="#game-of-week">Game of the Week</a><a href="#futures">NFL / CFB Futures</a></div></details>
       </nav>
       <div class="nav-actions"><button class="icon-button" id="search-open" aria-label="Search stories"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><a class="header-cta" href="#shows">TUNE IN <span>↗</span></a><button class="icon-button menu-button" id="menu-button" aria-controls="main-nav" aria-expanded="false" aria-label="Open navigation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div>
@@ -55,7 +57,10 @@
         <div class="podcast-copy"><span class="eyebrow yellow-text"><span class="status-dot"></span> JKSPORTSBOOK SHOWS / PODCAST</span><h2 id="podcast-title">Big games.<br>Bigger conversations.</h2><p>Pull up a chair. Sports, the stories behind them, and the debates that don’t end at the final whistle.</p><div id="featured-episode"></div><div class="podcast-platforms" id="podcast-platforms"><span>YOUR NEXT LISTEN STARTS HERE.</span></div></div>
       </section>
 
-      <section id="columns" class="section" aria-labelledby="columns-title"><div class="section-heading"><div><span class="section-kicker">POINT OF VIEW</span><h2 id="columns-title">A little perspective<span>.</span></h2></div><span class="section-aside">ORIGINAL COLUMNS. STRONG POINTS OF VIEW.</span></div><div class="columns-grid" id="columns-grid"></div></section>
+      <section id="columns" class="section" aria-labelledby="columns-title"><div class="section-heading"><div><span class="section-kicker">POINT OF VIEW</span><h2 id="columns-title">A little perspective<span>.</span></h2></div><span class="section-aside">ORIGINAL COLUMNS. STRONG POINTS OF VIEW.</span></div><div class="columns-grid" id="columns-grid"></div><div class="column-series-heading"><span class="section-kicker">OUR RECURRING COLUMNS</span><span class="section-aside">NEW POSTS WILL APPEAR HERE AS THEY’RE PUBLISHED.</span></div><div class="column-series-grid">
+          <article id="jk-sportsline" class="column-series-card"><span class="category">JK ORIGINAL / COLUMN SERIES</span><h3>JK Sportsline</h3><p>A dedicated home for JK Sportsline columns and commentary.</p><span class="meta">ARTICLES WILL APPEAR HERE AS PUBLISHED</span></article>
+          <article id="becker-report" class="column-series-card column-series-dark"><span class="category">JK ORIGINAL / COLUMN SERIES</span><h3>The Becker Report</h3><p>A dedicated home for The Becker Report and its point of view.</p><span class="meta">ARTICLES WILL APPEAR HERE AS PUBLISHED</span></article>
+        </div></section>
 
             <section id="betting" class="section betting-hub" aria-labelledby="betting-title">
         <div class="section-heading"><div><span class="section-kicker">THE BETTING DESK</span><h2 id="betting-title">The game, from every angle<span>.</span></h2></div><span class="section-aside">PICKS. MATCHUPS. FUTURES.</span></div>

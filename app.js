@@ -40,6 +40,24 @@
   $('#radar-stories').innerHTML = radarStories.slice(0,3).map((story,index) => `<a class="radar-story" href="#story/${esc(story.id)}"><span class="radar-number">0${index+1}</span><div><span class="category">${esc(story.sport)} / ${esc(story.category)}</span><h3>${esc(story.title)}</h3><span class="meta">${esc(story.label)} &nbsp; · &nbsp; ${esc(story.readTime)}</span></div></a>`).join('');
   $('#columns-grid').innerHTML = stories.filter(story => story.type === 'column').map(story => `<a class="column-card" href="#story/${esc(story.id)}"><span class="column-icon" aria-hidden="true">“</span><span class="category">${esc(story.category)}</span><h3>${esc(story.title)}</h3><p>${esc(story.deck)}</p><div class="column-byline"><span class="avatar" aria-hidden="true">JK</span><span class="byline-name">${esc(story.author)}<small>${esc(story.readTime)} / ${esc(story.label)}</small></span></div></a>`).join('');
 
+  function renderColumnSeries() {
+    const defaults = {
+      jkSportsline: { title: 'JK Sportsline', description: 'A dedicated home for JK Sportsline columns and commentary.' },
+      beckerReport: { title: 'The Becker Report', description: 'A dedicated home for The Becker Report and its point of view.' }
+    };
+    for (const [key, seriesId] of [['jkSportsline','jk-sportsline'],['beckerReport','becker-report']]) {
+      const card = document.querySelector('[data-column-series="' + key + '"]');
+      if (!card) continue;
+      const details = { ...defaults[key], ...(content.columnSeries?.[key] || {}) };
+      card.querySelector('.column-series-title').textContent = details.title || defaults[key].title;
+      card.querySelector('.column-series-description').textContent = details.description || defaults[key].description;
+      const posts = stories.filter(story => story.type === 'column' && story.series === seriesId);
+      const list = card.querySelector('.column-series-posts');
+      const status = card.querySelector('.column-series-status');
+      list.innerHTML = posts.map(story => '<a class="column-series-post" href="#story/' + esc(story.id) + '"><span class="category">' + esc(story.category) + '</span><strong>' + esc(story.title) + '</strong><span class="meta">' + esc(story.author) + ' / ' + esc(story.readTime) + '</span></a>').join('');
+      if (posts.length) status.textContent = posts.length + ' COLUMN' + (posts.length === 1 ? '' : 'S') + ' PUBLISHED';
+    }
+  }
   function renderBestBets() {
     const target = $('#bets-ticker-track');
     const bets = Array.isArray(content.bestBets) ? content.bestBets : [];
@@ -151,5 +169,5 @@
   });
 
   $('#year').textContent = new Date().getFullYear();
-  renderStories();renderPodcast();renderPicks();renderResults();renderBestBets();route();
+  renderStories();renderPodcast();renderColumnSeries();renderPicks();renderResults();renderBestBets();route();
 })();

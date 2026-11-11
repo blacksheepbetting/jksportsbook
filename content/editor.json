@@ -126,7 +126,15 @@
       "columnsTitle": "A little perspective",
       "columnsAside": "ORIGINAL COLUMNS. STRONG POINTS OF VIEW.",
       "seriesKicker": "OUR RECURRING COLUMNS",
-      "seriesAside": "EDIT SERIES DETAILS AND ASSIGN POSTS IN THE ADMIN PANEL."
+      "seriesAside": "EDIT SERIES DETAILS AND ASSIGN POSTS IN THE ADMIN PANEL.",
+      "heroEyebrow": "WELCOME TO JKSPORTSBOOK",
+      "heroTitleLine1": "MORE THAN",
+      "heroTitleLine2": "SCORE.",
+      "heroDescription": "The stories behind the game. The takes worth debating. And a seat at the table for every fan.",
+      "heroLink": "GET TO KNOW JKSPORTSBOOK",
+      "radarTitle": "ON THE RADAR",
+      "allStoriesLink": "ALL STORIES",
+      "previewLabel": "ORIGINAL LAUNCH FEATURES"
     },
     "shows": {
       "kicker": "JKSPORTSBOOK SHOWS / PODCAST",
@@ -151,11 +159,26 @@
     "results": {
       "kicker": "THE FULL PICTURE",
       "title": "Keep the receipts",
-      "description": "A transparent record starts with showing every result. These entries demonstrate the layout; they are not JKSPORTSBOOK’s performance."
+      "description": "A transparent record shows every result, including wins, losses, and pushes.",
+      "footnote": "Win profit uses American odds; losses deduct the stated stake and pushes return it. Units are a consistent measure of stake, not a dollar promise."
     },
     "footer": {
       "tagline": "JKSPORTSBOOK. More than the score.",
       "responsibleNote": "21+ audience. Sports commentary and entertainment. No bets accepted. Play responsibly."
+    },
+    "calculator": {
+      "kicker": "KNOW YOUR NUMBERS",
+      "title": "Do the math.",
+      "description": "Explore a hypothetical return before you make a decision.",
+      "button": "CALCULATE RETURN",
+      "disclaimer": "For illustration. A calculation is not a prediction or a guarantee."
+    },
+    "manifesto": {
+      "kicker": "THE GAME DESERVES A CONVERSATION.",
+      "lineOne": "GOOD STORIES.",
+      "lineTwo": "HONEST TAKES.",
+      "lineThree": "ALL SPORTS.",
+      "button": "THIS IS JKSPORTSBOOK"
     }
   }
 }

@@ -116,6 +116,45 @@ collections:
                   - { label: Futures Label, name: futuresKicker, widget: string }
                   - { label: Futures Heading, name: futuresTitle, widget: string }
                   - { label: Futures Description, name: futuresDescription, widget: text }
+              - label: Landing Pages
+                name: pages
+                widget: object
+                fields:
+                  - { label: Columns Kicker, name: columnsKicker, widget: string }
+                  - { label: Columns Title, name: columnsTitle, widget: string }
+                  - { label: Columns Description, name: columnsDescription, widget: string }
+                  - { label: All Columns Kicker, name: allColumnsKicker, widget: string }
+                  - { label: All Columns Title, name: allColumnsTitle, widget: string }
+                  - { label: Jk Sportsline Kicker, name: jkSportslineKicker, widget: string }
+                  - { label: Becker Report Kicker, name: beckerReportKicker, widget: string }
+                  - { label: Shows Kicker, name: showsKicker, widget: string }
+                  - { label: Shows Title, name: showsTitle, widget: string }
+                  - { label: Shows Description, name: showsDescription, widget: string }
+                  - { label: Show List Kicker, name: showListKicker, widget: string }
+                  - { label: Betting Kicker, name: bettingKicker, widget: string }
+                  - { label: Betting Title, name: bettingTitle, widget: string }
+                  - { label: Betting Description, name: bettingDescription, widget: text }
+                  - { label: Best Bets Kicker, name: bestBetsKicker, widget: string }
+                  - { label: Best Bets Title, name: bestBetsTitle, widget: string }
+                  - { label: Best Bets Aside, name: bestBetsAside, widget: string }
+                  - { label: Picks Kicker, name: picksKicker, widget: string }
+                  - { label: Picks Title, name: picksTitle, widget: string }
+                  - { label: Picks Link, name: picksLink, widget: string }
+                  - { label: Game Kicker, name: gameKicker, widget: string }
+                  - { label: Game Title, name: gameTitle, widget: string }
+                  - { label: Futures Kicker, name: futuresKicker, widget: string }
+                  - { label: Futures Title, name: futuresTitle, widget: string }
+                  - { label: Futures Description, name: futuresDescription, widget: string }
+                  - { label: Fphl Kicker, name: fphlKicker, widget: string }
+                  - { label: Fphl Title, name: fphlTitle, widget: string }
+                  - { label: Fphl Description, name: fphlDescription, widget: string }
+                  - { label: Fphl Section Kicker, name: fphlSectionKicker, widget: string }
+                  - { label: Fphl Section Title, name: fphlSectionTitle, widget: string }
+                  - { label: No Stories, name: noStories, widget: string }
+                  - { label: No Episodes, name: noEpisodes, widget: string }
+                  - { label: No Bets, name: noBets, widget: string }
+                  - { label: No Picks, name: noPicks, widget: string }
+                  - { label: Betting Disclaimer, name: bettingDisclaimer, widget: text }
               - label: Odds Calculator
                 name: calculator
                 widget: object

@@ -34,6 +34,21 @@
       if(list)list.innerHTML=articles(found);
     });
   }
+  if(kind==='series'){
+    const seriesId=root?.dataset.series||'';
+    const series=content.columnSeries?.[seriesId]||{};
+    const kickerKey=seriesId==='jk-sportsline'?'pages.jkSportslineKicker':'pages.beckerReportKicker';
+    const kicker=document.querySelector('[data-series-kicker]');
+    const title=document.querySelector('[data-series-title]');
+    const description=document.querySelector('[data-series-description]');
+    const list=document.querySelector('[data-series-articles]');
+    const kickerText=get(kickerKey);
+    if(kicker&&typeof kickerText==='string')kicker.textContent=kickerText;
+    if(title&&series.title)title.textContent=series.title;
+    if(description&&series.description)description.textContent=series.description;
+    const seriesArticles=stories.filter(story=>story.type==='column'&&story.series===seriesId);
+    if(list)list.innerHTML=articles(seriesArticles);
+  }
   if(kind==='shows'){
     const target=document.querySelector('[data-show-list]');
     const episodes=content.podcast?.episodes||[];

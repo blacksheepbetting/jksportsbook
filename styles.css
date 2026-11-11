@@ -104,3 +104,11 @@
  .column-series-card{min-height:145px;padding:19px}
  .column-series-card h3{font-size:31px}
 }
+
+.column-series-posts{margin-top:14px;border-top:1px solid #c9c7bd}
+.column-series-post{display:block;padding:12px 0;border-bottom:1px solid #c9c7bd}
+.column-series-post strong{display:block;font-size:14px;line-height:1.35}
+.column-series-post .category{margin-bottom:5px}
+.column-series-post .meta{margin-top:5px}
+.column-series-dark .column-series-posts,.column-series-dark .column-series-post{border-color:#484842}
+.column-series-dark .column-series-post .meta{color:#c5c5bd}

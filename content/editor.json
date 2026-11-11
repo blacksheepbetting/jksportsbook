@@ -70,5 +70,15 @@
   ],
   "newStories": [],
   "picks": [],
-  "results": []
+  "results": [],
+  "columnSeries": {
+    "jkSportsline": {
+      "title": "JK Sportsline",
+      "description": "A dedicated home for JK Sportsline columns and commentary."
+    },
+    "beckerReport": {
+      "title": "The Becker Report",
+      "description": "A dedicated home for The Becker Report and its point of view."
+    }
+  }
 }

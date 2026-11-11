@@ -131,22 +131,22 @@ collections:
                   - { label: Shows Title, name: showsTitle, widget: string }
                   - { label: Shows Description, name: showsDescription, widget: string }
                   - { label: Show List Kicker, name: showListKicker, widget: string }
-              - { label: Watch / Listen Button, name: watchListen, widget: string }
-              - { label: Schedule Scoreboard Label, name: scheduleScoreboardLabel, widget: string }
-              - { label: Schedule Opening Label, name: scheduleOpeningLabel, widget: string }
-              - { label: Schedule Opening Message, name: scheduleOpeningMessage, widget: text }
-              - { label: Schedule Edition Label, name: scheduleOpeningEdition, widget: string }
-              - { label: Schedule Headline Line 1, name: scheduleTitleLine1, widget: string }
-              - { label: Schedule Headline Line 2, name: scheduleTitleLine2, widget: string }
-              - { label: Schedule Description, name: scheduleDescription, widget: text }
-              - { label: Schedule Source Label, name: scheduleSourceLabel, widget: string }
-              - { label: All Games Filter, name: scheduleAllGames, widget: string }
-              - { label: Upcoming Filter, name: scheduleUpcoming, widget: string }
-              - { label: Results Filter, name: scheduleResults, widget: string }
-              - { label: Lines Section Label, name: scheduleLinesKicker, widget: string }
-              - { label: Lines Section Heading, name: scheduleLinesTitle, widget: string }
-              - { label: Lines Section Description, name: scheduleLinesDescription, widget: text }
-              - { label: Best Bets Link Text, name: scheduleBestBetsLink, widget: string }
+                  - { label: Watch / Listen Button, name: watchListen, widget: string }
+                  - { label: Schedule Scoreboard Label, name: scheduleScoreboardLabel, widget: string }
+                  - { label: Schedule Opening Label, name: scheduleOpeningLabel, widget: string }
+                  - { label: Schedule Opening Message, name: scheduleOpeningMessage, widget: text }
+                  - { label: Schedule Edition Label, name: scheduleOpeningEdition, widget: string }
+                  - { label: Schedule Headline Line 1, name: scheduleTitleLine1, widget: string }
+                  - { label: Schedule Headline Line 2, name: scheduleTitleLine2, widget: string }
+                  - { label: Schedule Description, name: scheduleDescription, widget: text }
+                  - { label: Schedule Source Label, name: scheduleSourceLabel, widget: string }
+                  - { label: All Games Filter, name: scheduleAllGames, widget: string }
+                  - { label: Upcoming Filter, name: scheduleUpcoming, widget: string }
+                  - { label: Results Filter, name: scheduleResults, widget: string }
+                  - { label: Lines Section Label, name: scheduleLinesKicker, widget: string }
+                  - { label: Lines Section Heading, name: scheduleLinesTitle, widget: string }
+                  - { label: Lines Section Description, name: scheduleLinesDescription, widget: text }
+                  - { label: Best Bets Link Text, name: scheduleBestBetsLink, widget: string }
                   - { label: Betting Kicker, name: bettingKicker, widget: string }
                   - { label: Betting Title, name: bettingTitle, widget: string }
                   - { label: Betting Description, name: bettingDescription, widget: text }

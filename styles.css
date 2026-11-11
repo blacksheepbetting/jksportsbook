@@ -202,3 +202,6 @@
 .show-episode-copy .button{display:inline-flex}
 @media(max-width:900px){.landing-article-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.show-episode{grid-template-columns:34% 1fr}}
 @media(max-width:640px){.landing-page{padding-top:30px}.landing-hero{padding:24px 0 20px}.landing-hero-dark{padding:28px 20px}.landing-hero>p{font-size:12px}.landing-subnav a{font-size:10px;margin-right:16px;padding-right:8px}.landing-section{padding-top:35px}.landing-article-grid{grid-template-columns:1fr}.series-landing-dark{padding:26px 16px}.landing-bet{grid-template-columns:65px 1fr 50px;gap:8px;padding:13px 10px;font-size:11px}.show-episode{grid-template-columns:1fr}.show-thumbnail{min-height:190px}.show-episode-copy{padding:22px}.show-episode-copy h2{font-size:28px}}
+
+/* Admin-fed podcast video on the Shows landing page. */
+.show-player{position:relative;aspect-ratio:16/9;min-height:190px;background:#242424;overflow:hidden}.show-player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}

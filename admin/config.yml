@@ -127,6 +127,8 @@ collections:
                   - { label: All Columns Title, name: allColumnsTitle, widget: string }
                   - { label: Jk Sportsline Kicker, name: jkSportslineKicker, widget: string }
                   - { label: Becker Report Kicker, name: beckerReportKicker, widget: string }
+                  - { label: Weekly Articles Kicker, name: seriesArticlesKicker, widget: string }
+                  - { label: Weekly Articles Heading, name: seriesArticlesTitle, widget: string }
                   - { label: Shows Kicker, name: showsKicker, widget: string }
                   - { label: Shows Title, name: showsTitle, widget: string }
                   - { label: Shows Description, name: showsDescription, widget: string }
@@ -257,13 +259,13 @@ collections:
             name: newStories
             widget: list
             summary: "{{fields.sport}} — {{fields.title}}"
-            hint: "New posts appear in the matching sport, column series, FPHL, or betting section."
+            hint: "For a weekly series post, set Type to column and choose JK Sportsline or The Becker Report; it will appear on that series page."
             fields:
               - { label: ID, name: id, widget: string }
               - { label: Title, name: title, widget: string }
               - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, FPHL, All] }
               - { label: Category, name: category, widget: string }
-              - { label: Column Series, name: series, widget: select, options: [{ label: General Columns, value: "" }, { label: JK Sportsline, value: "jk-sportsline" }, { label: The Becker Report, value: "becker-report" }], required: false }
+              - { label: Column Series, name: series, widget: select, options: [{ label: General Columns, value: "" }, { label: JK Sportsline, value: "jk-sportsline" }, { label: The Becker Report, value: "becker-report" }], required: false , hint: "Choose the dedicated series page for this article." }
               - { label: Betting Desk Section, name: deskSection, widget: select, options: [{ label: Not a betting feature, value: "" }, { label: Game of the Week, value: "game-of-week" }, { label: NFL / CFB Futures, value: "futures" }], required: false }
               - { label: Type, name: type, widget: select, options: [story, column], default: story }
               - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }

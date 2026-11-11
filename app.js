@@ -176,5 +176,7 @@
   });
 
   $('#year').textContent = new Date().getFullYear();
-  applySiteCopy();renderStories();renderPodcast();renderColumnSeries();renderPicks();renderResults();renderBestBets();route();
+  applySiteCopy();const requestedSport = new URLSearchParams(location.search).get('sport');
+  const validSports = ['NFL','NBA','College','MLB'];
+  renderStories(validSports.includes(requestedSport) ? requestedSport : 'All');renderPodcast();renderColumnSeries();renderPicks();renderResults();renderBestBets();route();
 })();

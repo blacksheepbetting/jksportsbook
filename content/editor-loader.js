@@ -1,7 +1,13 @@
-/* Applies admin-edited overrides on top of the launch content. */
-window.JK_EDITOR_READY = fetch('content/editor.json?v=sitecopy-3', { cache: 'no-store' })
+/* Loads admin-managed page copy, articles, picks, and podcast episodes. */
+const JK_COLUMN_FEEDS = [
+  { path: 'content/columns/general.json', series: '' },
+  { path: 'content/columns/jk-sportsline.json', series: 'jk-sportsline' },
+  { path: 'content/columns/becker-report.json', series: 'becker-report' }
+];
+
+window.JK_EDITOR_READY = fetch('content/editor.json?v=sitecopy-5', { cache: 'no-store' })
   .then(response => response.ok ? response.json() : {})
-  .then(editor => {
+  .then(async editor => {
     const content = window.JK_CONTENT;
     if (Array.isArray(editor.bestBets)) content.bestBets = editor.bestBets;
     if (editor.siteCopy && typeof editor.siteCopy === 'object') content.siteCopy = { ...(content.siteCopy || {}), ...editor.siteCopy };
@@ -15,6 +21,28 @@ window.JK_EDITOR_READY = fetch('content/editor.json?v=sitecopy-3', { cache: 'no-
       content.stories = content.stories.map(story => overrides.has(story.id) ? { ...story, ...overrides.get(story.id) } : story);
     }
     if (Array.isArray(editor.newStories) && editor.newStories.length) content.stories = [...editor.newStories, ...content.stories];
+
+    const columnDocs = await Promise.all(JK_COLUMN_FEEDS.map(async feed => {
+      try {
+        const response = await fetch(feed.path + '?v=columns-1', { cache: 'no-store' });
+        if (!response.ok) return [];
+        const document = await response.json();
+        if (!Array.isArray(document.articles)) return [];
+        return document.articles
+          .filter(article => article && article.id)
+          .map(article => ({ ...article, type: 'column', series: feed.series }));
+      } catch {
+        return [];
+      }
+    }));
+    const managedColumns = new Map();
+    columnDocs.flat().forEach(article => managedColumns.set(article.id, article));
+    if (managedColumns.size) {
+      const managed = [...managedColumns.values()];
+      const managedIds = new Set(managed.map(article => article.id));
+      content.stories = [...managed, ...content.stories.filter(story => !managedIds.has(story.id))];
+    }
+
     if (Array.isArray(editor.picks) && editor.picks.length) { content.picks = editor.picks; content.showDemoPicks = false; }
     if (Array.isArray(editor.results) && editor.results.length) { content.results = editor.results; content.showDemoPicks = false; }
     return content;

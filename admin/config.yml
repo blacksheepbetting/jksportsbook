@@ -76,6 +76,14 @@ collections:
                 name: home
                 widget: object
                 fields:
+                  - { label: Hero Eyebrow, name: heroEyebrow, widget: string }
+                  - { label: Hero Headline Line 1, name: heroTitleLine1, widget: string }
+                  - { label: Hero Headline Line 2, name: heroTitleLine2, widget: string }
+                  - { label: Hero Description, name: heroDescription, widget: text }
+                  - { label: Hero Link Text, name: heroLink, widget: string }
+                  - { label: Radar Heading, name: radarTitle, widget: string }
+                  - { label: All Stories Link, name: allStoriesLink, widget: string }
+                  - { label: Latest Filter Label, name: previewLabel, widget: string }
                   - { label: Newsroom Kicker, name: newsroomKicker, widget: string }
                   - { label: Newsroom Heading, name: newsroomTitle, widget: string }
                   - { label: Newsroom Aside, name: newsroomAside, widget: string }
@@ -108,6 +116,24 @@ collections:
                   - { label: Futures Label, name: futuresKicker, widget: string }
                   - { label: Futures Heading, name: futuresTitle, widget: string }
                   - { label: Futures Description, name: futuresDescription, widget: text }
+              - label: Odds Calculator
+                name: calculator
+                widget: object
+                fields:
+                  - { label: Section Label, name: kicker, widget: string }
+                  - { label: Heading, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+                  - { label: Calculate Button, name: button, widget: string }
+                  - { label: Disclaimer, name: disclaimer, widget: text }
+              - label: Closing Banner
+                name: manifesto
+                widget: object
+                fields:
+                  - { label: Kicker, name: kicker, widget: string }
+                  - { label: Headline Line 1, name: lineOne, widget: string }
+                  - { label: Headline Line 2, name: lineTwo, widget: string }
+                  - { label: Headline Line 3, name: lineThree, widget: string }
+                  - { label: Button Text, name: button, widget: string }
               - label: Results Section
                 name: results
                 widget: object
@@ -115,6 +141,7 @@ collections:
                   - { label: Section Label, name: kicker, widget: string }
                   - { label: Heading, name: title, widget: string }
                   - { label: Description, name: description, widget: text }
+                  - { label: Footnote, name: footnote, widget: text }
               - label: Footer
                 name: footer
                 widget: object

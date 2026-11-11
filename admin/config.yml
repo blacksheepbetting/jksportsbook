@@ -26,6 +26,22 @@ collections:
               - { label: Poster, name: poster, widget: string }
               - { label: Selection, name: selection, widget: string }
               - { label: American Odds, name: odds, widget: number, value_type: int }
+          - label: Column Series
+            name: columnSeries
+            widget: object
+            fields:
+              - label: JK Sportsline
+                name: jkSportsline
+                widget: object
+                fields:
+                  - { label: Display Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+              - label: The Becker Report
+                name: beckerReport
+                widget: object
+                fields:
+                  - { label: Display Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
           - label: Podcast
             name: podcast
             widget: object
@@ -67,7 +83,8 @@ collections:
               - { label: Title, name: title, widget: string }
               - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, FPHL, All] }
               - { label: Category, name: category, widget: string }
-              - { label: Type, name: type, widget: hidden, default: story }
+              - { label: Column Series, name: series, widget: select, options: [{ label: General Columns, value: "" }, { label: JK Sportsline, value: "jk-sportsline" }, { label: The Becker Report, value: "becker-report" }], required: false }
+              - { label: Type, name: type, widget: select, options: [story, column], default: story }
               - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
               - { label: Art Label, name: artLabel, widget: string, required: false }
               - { label: Deck, name: deck, widget: text }

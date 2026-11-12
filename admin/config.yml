@@ -18,6 +18,14 @@ collections:
         label: Site Content & Landing Pages
         format: json
         fields:
+          - label: Under the Radar Story IDs
+            name: radarStoryIds
+            widget: list
+            hint: "Story IDs appear in order in the homepage Under the Radar section."
+            field:
+              label: Story ID
+              name: storyId
+              widget: string
           - label: Best Bets Ticker
             name: bestBets
             widget: list

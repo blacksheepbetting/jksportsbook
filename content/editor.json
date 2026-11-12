@@ -59,15 +59,6 @@
       "body": "<h2>Dear Players of the Federal Prospects Hockey League,</h2>\n\n<i><p>My name is Joshua King.</p>\n\n <p>Prior to entering minor league hockey, I built my career managing successful ball and roller hockey clubs, where strong organization, top-tier branding, and robust NIL opportunities consistently attracted top talent.</p>\n\n<p>When I attended my first FPHL game less than a year ago, I immediately saw untapped potential in the league. Since becoming an agent, I have built a strong roster—particularly for European players—by ensuring my clients earn top market value through comprehensive NIL programs, including upgraded housing and personal transport.</p>\n\n<p>The FPHL has enormous potential as an independent league, unburdened by rigid, traditional systems. Moving forward, I am transitioning from agent work to team ownership. My goal is to build dynamic, high-energy rosters featuring players with distinct playstyles and strong individual brands.</p>\n\n<p> I am hosting a segment on Inside the Fed, co-hosted by Shaun Weiss, where I will discuss these plans and the future of the league in more detail.</i></p>\n\nBest regards,\n\nJoshua King",
       "type": "column",
       "series": "jk-sportsline"
-    },
-    {
-      "id": "bossart-signs-with-jk-sportsbook",
-      "title": "Bossart Signs With JK Sportsbook",
-      "deck": "A new voice joins the JKSPORTSBOOK conversation.",
-      "author": "JKSPORTSBOOK Desk",
-      "readTime": "Coming soon",
-      "label": "Announcement",
-      "body": "<p>Coming soon: <strong>Bossart Signs With JK Sportsbook</strong>.</p><p>More details on Bossart’s role and upcoming work will be published here.</p>"
     }
   ],
   "newStories": [],
@@ -238,5 +229,10 @@
       "bestBetsKicker": "01 / BEST BETS",
       "description": "A home for the posted picks, the matchup of the week, and long-range NFL and college football outlooks."
     }
-  }
+  },
+  "radarStoryIds": [
+    "westgate-supercontest-history",
+    "fphl-inside-the-fed",
+    "why-im-helping-build-jksportsbook"
+  ]
 }

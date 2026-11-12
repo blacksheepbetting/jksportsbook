@@ -26,7 +26,7 @@ window.JK_CONTENT = {
   radarStoryIds: [
     'westgate-supercontest-history',
     'fphl-inside-the-fed',
-    'bossart-signs-with-jk-sportsbook'
+    'why-im-helping-build-jksportsbook'
   ],
   stories: [
     {
@@ -60,14 +60,6 @@ window.JK_CONTENT = {
       author: 'Josh King', readTime: 'Coming soon', label: 'By Josh King',
       body: `<p>Coming soon: <strong>Inside the Fed: Hockey Without Limits. The Story of the FPHL</strong> by Josh King.</p>
       <p>This JKSPORTSBOOK feature will explore the league, its players, and the hockey culture that gives the FPHL its edge.</p>`
-    },
-    {
-      id: 'bossart-signs-with-jk-sportsbook', title: 'Bossart Signs With JK Sportsbook', sport: 'All',
-      category: 'JKSPORTSBOOK News', type: 'story', art: 'playbook', artLabel: 'WELCOME<br>TO THE DESK.',
-      deck: 'A new voice joins the JKSPORTSBOOK conversation.',
-      author: 'JKSPORTSBOOK Desk', readTime: 'Coming soon', label: 'Announcement',
-      body: `<p>Coming soon: <strong>Bossart Signs With JK Sportsbook</strong>.</p>
-      <p>More details on Bossart’s role and upcoming work will be published here.</p>`
     },
     {
       id: 'sunday-starts-before-kickoff', title: 'Sunday starts long before kickoff.', sport: 'NFL',

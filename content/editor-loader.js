@@ -10,6 +10,7 @@ window.JK_EDITOR_READY = fetch('content/editor.json?v=sitecopy-5', { cache: 'no-
   .then(async editor => {
     const content = window.JK_CONTENT;
     if (Array.isArray(editor.bestBets)) content.bestBets = editor.bestBets;
+    if (Array.isArray(editor.radarStoryIds)) content.radarStoryIds = editor.radarStoryIds;
     if (editor.siteCopy && typeof editor.siteCopy === 'object') content.siteCopy = { ...(content.siteCopy || {}), ...editor.siteCopy };
     if (editor.columnSeries && typeof editor.columnSeries === 'object') content.columnSeries = { ...(content.columnSeries || {}), ...editor.columnSeries };
     if (editor.podcast && typeof editor.podcast === 'object') {

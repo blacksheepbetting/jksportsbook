@@ -110,7 +110,8 @@
 
   function showReader({title,category,deck,author='JKSPORTSBOOK Desk',readTime='',body}) {
     if (search.open) search.close();
-    $('#reader-content').innerHTML = `<span class="category">${esc(category)}</span><h1 id="reader-title">${esc(title)}</h1>${deck ? `<p class="reader-deck">${esc(deck)}</p>` : ''}<div class="reader-meta">${esc(author)}${readTime ? ` &nbsp; / &nbsp; ${esc(readTime)}` : ''}</div><div class="article-body">${body}</div><div class="reader-end">JKSPORTSBOOK / MORE THAN THE SCORE.</div>`;
+    const authorCard = String(author ?? '').trim().toLowerCase() === 'josh king' ? '<aside class="article-author-card" aria-label="About the author"><img src="assets/josh-king.jpg?v=josh-profile-20261112" alt="Portrait of Josh King" loading="lazy" decoding="async"><div><span class="section-kicker">ABOUT THE AUTHOR</span><h2>Josh King</h2><p>JK Sportsline</p><a href="jk-sportsline.html">MORE FROM JOSH <span aria-hidden="true">↗</span></a></div></aside>' : '';
+    $('#reader-content').innerHTML = `<span class="category">${esc(category)}</span><h1 id="reader-title">${esc(title)}</h1>${deck ? `<p class="reader-deck">${esc(deck)}</p>` : ''}<div class="reader-meta">${esc(author)}${readTime ? ` &nbsp; / &nbsp; ${esc(readTime)}` : ''}</div><div class="article-body">${body}</div>${authorCard}<div class="reader-end">JKSPORTSBOOK / MORE THAN THE SCORE.</div>`;
     if (!reader.open) { previousFocus = document.activeElement; reader.showModal(); }
     reader.scrollTop = 0;
     document.title = `${title} — JKSPORTSBOOK`;

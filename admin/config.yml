@@ -7,7 +7,7 @@ media_folder: "assets/uploads"
 public_folder: "/jksportsbook/assets/uploads"
 site_url: "https://blacksheepbetting.github.io/jksportsbook/"
 display_url: "https://blacksheepbetting.github.io/jksportsbook/"
-logo_url: "/jksportsbook/assets/favicon.svg"
+logo_url: "/jksportsbook/assets/jksportsbook-logo.png?v=logo-20261112"
 
 collections:
   - name: publishing

@@ -254,6 +254,8 @@ collections:
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
               - { label: Label, name: label, widget: string }
+              - { label: Content Type, name: type, widget: select, options: [story, column], default: story }
+              - { label: Column Series, name: series, widget: select, options: [{ label: Not a column, value: "" }, { label: JK Sportsline, value: "jk-sportsline" }, { label: The Becker Report, value: "becker-report" }], required: false }
               - { label: Body HTML, name: body, widget: markdown }
           - label: New Newsroom Stories
             name: newStories

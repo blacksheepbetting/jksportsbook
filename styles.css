@@ -236,3 +236,4 @@
  .article-author-card{gap:13px;margin-top:27px;padding:13px}
  .article-author-card img{flex-basis:70px;width:70px;height:84px}
 }
+.article-body strong{font-weight:900}

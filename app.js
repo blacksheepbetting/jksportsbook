@@ -95,9 +95,9 @@
     const feature = content.featuredVideo || {};
     const videoId = youtubeVideoId(feature.youtubeUrl || '');
     if (!videoId) return;
-    const title = String(feature.title || 'The Horse Interview');
-    const eyebrow = String(feature.eyebrow || 'BEHOLD A PALE HORSE / EXCLUSIVE INTERVIEW');
-    const description = String(feature.description || 'Josh King’s exclusive conversation with Behold a Pale Horse.');
+    const title = String(feature.title || 'Behold a Pale Horse');
+    const eyebrow = String(feature.eyebrow || 'A 65 MINUTES EXCLUSIVE:');
+    const description = String(feature.description || 'Josh King’s exclusive interview with the most controversial account on X.');
     const watchUrl = 'https://www.youtube.com/watch?v=' + encodeURIComponent(videoId);
     const thumbnailUrl = 'https://i.ytimg.com/vi/' + encodeURIComponent(videoId) + '/hqdefault.jpg';
     target.innerHTML = '<img class="stadium-image" src="' + esc(thumbnailUrl) + '" alt="' + esc(title) + ' thumbnail" fetchpriority="high" width="480" height="360">' +

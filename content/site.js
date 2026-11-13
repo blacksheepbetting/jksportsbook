@@ -23,9 +23,9 @@ window.JK_CONTENT = {
     title: 'The JKSPORTSBOOK Podcast',
     spotifyUrl: '',
     appleUrl: '',
-    youtubeUrl: 'https://www.youtube.com/watch?v=qKvqZYjC1Uc',
+    youtubeUrl: 'https://www.youtube.com/watch?v=DpiVE8BMugk',
     episodes: [
-      { id: 'current-episode', title: 'NFL Week 10 Podcast ft. Shaun Weiss', number: 'NFL WEEK 10', duration: 'YouTube', description: 'Shaun Weiss joins the show for our NFL Week 10 episode.', videoUrl: 'https://www.youtube.com/embed/qKvqZYjC1Uc', thumbnailUrl: 'https://i.ytimg.com/vi/qKvqZYjC1Uc/hqdefault.jpg', listenUrl: 'https://www.youtube.com/watch?v=qKvqZYjC1Uc' }
+      { id: 'current-episode', title: 'NFL Week 10 Podcast ft. Shaun Weiss', number: 'NFL WEEK 10', duration: 'YouTube', description: 'Shaun Weiss joins the show for our NFL Week 10 episode.', videoUrl: 'https://www.youtube.com/embed/DpiVE8BMugk', thumbnailUrl: 'https://i.ytimg.com/vi/DpiVE8BMugk/hqdefault.jpg', listenUrl: 'https://www.youtube.com/watch?v=DpiVE8BMugk' }
     ]
     // Add future episodes at the beginning of this list.
   },

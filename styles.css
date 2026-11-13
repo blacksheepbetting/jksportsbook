@@ -261,3 +261,14 @@
 .podcast-art{aspect-ratio:1;background:#171717;padding:0;max-height:410px}.podcast-art-image{display:block;width:100%;height:100%;object-fit:contain}
 
 .podcast-art{aspect-ratio:1;background:#171717;padding:0;max-height:410px}.podcast-art-image{display:block;width:100%;height:100%;object-fit:contain}
+
+/* Center the podcast feature without cover art */
+.podcast-section{display:block;padding:clamp(28px,5vw,56px)}
+.podcast-copy{max-width:900px;margin:0 auto;padding:0;text-align:center}
+.podcast-copy>.eyebrow{justify-content:center}
+.podcast-copy h2{max-width:100%;margin:15px auto 18px}
+.podcast-copy>p{max-width:620px;margin-inline:auto}
+#featured-episode{max-width:860px;margin:0 auto}
+.youtube-feature-head{justify-content:center;flex-wrap:wrap;gap:10px 22px}
+.episode-card{max-width:860px;margin:20px auto 0;text-align:left}
+.podcast-platforms{justify-content:center}

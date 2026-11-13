@@ -237,3 +237,6 @@
  .article-author-card img{flex-basis:70px;width:70px;height:84px}
 }
 .article-body strong{font-weight:900}
+
+/* Three editorial series at desktop widths */
+@media(min-width:900px){.column-series-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.column-series-card h3{font-size:29px}}

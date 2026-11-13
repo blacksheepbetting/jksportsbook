@@ -50,9 +50,10 @@
   function renderColumnSeries() {
     const defaults = {
       jkSportsline: { title: 'JK Sportsline', description: 'A dedicated home for JK Sportsline columns and commentary.' },
-      beckerReport: { title: 'The Becker Report', description: 'A dedicated home for The Becker Report and its point of view.' }
+      beckerReport: { title: 'The Becker Report', description: 'A dedicated home for The Becker Report and its point of view.' },
+      bossartsBoard: { title: "Bossart's Board", description: 'CBB coverage, analysis, and perspective from Bossart.' }
     };
-    for (const [key, seriesId] of [['jkSportsline','jk-sportsline'],['beckerReport','becker-report']]) {
+    for (const [key, seriesId] of [['jkSportsline','jk-sportsline'],['beckerReport','becker-report'],['bossartsBoard','bossarts-board']]) {
       const card = document.querySelector('[data-column-series="' + key + '"]');
       if (!card) continue;
       const details = { ...defaults[key], ...(content.columnSeries?.[key] || {}) };

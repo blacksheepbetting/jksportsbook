@@ -72,6 +72,10 @@
     "beckerReport": {
       "title": "The Becker Report",
       "description": "A dedicated home for The Becker Report and its point of view."
+    },
+    "bossartsBoard": {
+      "title": "Bossart's Board",
+      "description": "CBB coverage, analysis, and perspective from Bossart."
     }
   },
   "siteCopy": {
@@ -143,7 +147,8 @@
       "scheduleOpeningEdition": "NFL DESK / LIVE FEED",
       "scheduleResults": "Results",
       "beckerReportKicker": "JK ORIGINAL / COLUMN SERIES",
-      "columnsDescription": "Distinct voices, recurring series, and room for a point of view."
+      "columnsDescription": "Distinct voices, recurring series, and room for a point of view.",
+      "bossartsBoardKicker": "CBB / COLUMN SERIES"
     },
     "navigation": {
       "allSports": "ALL SPORTS",
@@ -167,7 +172,8 @@
       "gameOfWeek": "Game of the Week",
       "tuneIn": "TUNE IN",
       "columns": "Columns",
-      "betting": "Betting"
+      "betting": "Betting",
+      "bossartsBoard": "Bossart's Board"
     },
     "masthead": {
       "strapline": "INDEPENDENT COVERAGE. UNFILTERED OPINIONS.",

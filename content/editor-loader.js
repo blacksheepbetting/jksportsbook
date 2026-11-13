@@ -6,7 +6,7 @@ const JK_COLUMN_FEEDS = [
   { path: 'content/columns/bossarts-board.json', series: 'bossarts-board' }
 ];
 
-window.JK_EDITOR_READY = fetch('content/editor.json?v=sitecopy-6', { cache: 'no-store' })
+window.JK_EDITOR_READY = fetch('content/editor.json?v=sitecopy-7', { cache: 'no-store' })
   .then(response => response.ok ? response.json() : {})
   .then(async editor => {
     const content = window.JK_CONTENT;
@@ -14,6 +14,7 @@ window.JK_EDITOR_READY = fetch('content/editor.json?v=sitecopy-6', { cache: 'no-
     if (Array.isArray(editor.radarStoryIds)) content.radarStoryIds = editor.radarStoryIds;
     if (editor.siteCopy && typeof editor.siteCopy === 'object') content.siteCopy = { ...(content.siteCopy || {}), ...editor.siteCopy };
     if (editor.columnSeries && typeof editor.columnSeries === 'object') content.columnSeries = { ...(content.columnSeries || {}), ...editor.columnSeries };
+    if (editor.featuredVideo && typeof editor.featuredVideo === 'object') content.featuredVideo = { ...(content.featuredVideo || {}), ...editor.featuredVideo };
     if (editor.podcast && typeof editor.podcast === 'object') {
       content.podcast = { ...content.podcast, ...editor.podcast };
       if (Array.isArray(editor.podcast.episodes)) content.podcast.episodes = editor.podcast.episodes;

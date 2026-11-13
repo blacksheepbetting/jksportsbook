@@ -12,6 +12,13 @@ window.JK_CONTENT = {
     { poster: 'Bossart', selection: 'Vikings +3.5', odds: -120 },
     { poster: 'Horse', selection: 'Bears +3', odds: -105 }
   ],
+  featuredVideo: {
+    youtubeUrl: 'https://www.youtube.com/watch?v=EIHViakKLdM',
+    title: 'The Horse Interview',
+    eyebrow: 'BEHOLD A PALE HORSE / EXCLUSIVE INTERVIEW',
+    description: 'Josh King’s exclusive conversation with Behold a Pale Horse.',
+    startSeconds: 0
+  },
   podcast: {
     title: 'The JKSPORTSBOOK Podcast',
     spotifyUrl: '',
@@ -40,7 +47,7 @@ window.JK_CONTENT = {
     },
     {
       id: 'welcome-to-jksportsbook', title: 'More than the score. This is JKSPORTSBOOK.',
-      sport: 'All', category: 'The Big Picture', type: 'feature', art: 'stadium',
+      sport: 'All', category: 'The Big Picture', type: 'story', art: 'stadium',
       deck: 'The stories behind the game. The takes worth debating. And a seat at the table for every fan.',
       author: 'JKSPORTSBOOK Desk', readTime: '3 min read', label: 'Launch feature',
       body: `<p>Every game ends with a score. The conversation rarely ends there.</p>

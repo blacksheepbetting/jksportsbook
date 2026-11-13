@@ -26,6 +26,15 @@ collections:
               label: Story ID
               name: storyId
               widget: string
+          - label: Featured Interview
+            name: featuredVideo
+            widget: object
+            fields:
+              - { label: YouTube Video URL, name: youtubeUrl, widget: string }
+              - { label: Display Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Interview Label, name: eyebrow, widget: string }
+              - { label: Start Time in Seconds, name: startSeconds, widget: number, value_type: int }
           - label: Best Bets Ticker
             name: bestBets
             widget: list
@@ -85,11 +94,6 @@ collections:
                 name: home
                 widget: object
                 fields:
-                  - { label: Hero Eyebrow, name: heroEyebrow, widget: string }
-                  - { label: Hero Headline Line 1, name: heroTitleLine1, widget: string }
-                  - { label: Hero Headline Line 2, name: heroTitleLine2, widget: string }
-                  - { label: Hero Description, name: heroDescription, widget: text }
-                  - { label: Hero Link Text, name: heroLink, widget: string }
                   - { label: Radar Heading, name: radarTitle, widget: string }
                   - { label: All Stories Link, name: allStoriesLink, widget: string }
                   - { label: Latest Filter Label, name: previewLabel, widget: string }

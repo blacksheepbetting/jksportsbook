@@ -10,9 +10,9 @@
   <link rel="stylesheet" href="styles.css?v=josh-profile-20261112">
   <link rel="stylesheet" href="youtube.css">
   <script src="content/site.js?v=podcast-youtube-2" defer></script>
-  <script src="content/editor-loader.js?v=sitecopy-6" defer></script>
+  <script src="content/editor-loader.js?v=sitecopy-7" defer></script>
   <script src="schedule.js?v=nfl-schedule-2" defer></script>
-  <script src="app.js?v=bossarts-board-20261113" defer></script>
+  <script src="app.js?v=horse-interview-20261113" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -38,11 +38,11 @@
     <div class="wrap content-wrap">
       <div class="edition-row"><span><span class="status-dot"></span> <span data-site-copy="opening.dailyLabel">THE JKSPORTSBOOK DAILY</span></span><span id="edition-date" data-site-copy="opening.dailyTagline">SPORTS. CULTURE. PERSPECTIVE.</span></div>
       <section class="lead-grid" aria-label="Featured coverage">
-        <a class="lead-story" href="#story/welcome-to-jksportsbook">
-          <img class="stadium-image" src="assets/stadium.jpg" alt="A football field under stadium lights at night" fetchpriority="high" width="1672" height="941">
-          <div class="lead-shade"></div><div class="lead-top"><span class="tag yellow">THE BIG PICTURE</span><span class="image-index">01 / JK ORIGINALS</span></div>
-          <div class="lead-copy"><span class="eyebrow" data-site-copy="home.heroEyebrow">WELCOME TO JKSPORTSBOOK</span><h1><span data-site-copy="home.heroTitleLine1">MORE THAN</span><br>THE <span data-site-copy="home.heroTitleLine2">SCORE.</span></h1><p data-site-copy="home.heroDescription">The stories behind the game. The takes worth debating. And a seat at the table for every fan.</p><span class="read-link"><span data-site-copy="home.heroLink">GET TO KNOW JKSPORTSBOOK</span> <span class="round-arrow">↗</span></span></div>
-        </a>
+        <section class="lead-story featured-video-card" aria-label="Featured interview" data-featured-video>
+          <img class="stadium-image" src="https://i.ytimg.com/vi/EIHViakKLdM/hqdefault.jpg" alt="The Horse Interview on YouTube" fetchpriority="high" width="480" height="360">
+          <div class="lead-shade"></div><div class="lead-top"><span class="tag yellow">FEATURED INTERVIEW</span><span class="image-index">BEHOLD A PALE HORSE</span></div>
+          <div class="lead-copy"><span class="eyebrow">BEHOLD A PALE HORSE / EXCLUSIVE INTERVIEW</span><h1><span>THE HORSE INTERVIEW</span></h1><p>Josh King’s exclusive conversation with Behold a Pale Horse.</p><div class="featured-video-actions"><button class="featured-video-play" type="button" data-play-featured-video aria-label="Play The Horse Interview"><span>PLAY INTERVIEW</span><span class="round-arrow" aria-hidden="true">▶</span></button><a class="featured-video-youtube-link" href="https://www.youtube.com/watch?v=EIHViakKLdM" target="_blank" rel="noopener noreferrer">OPEN ON YOUTUBE ↗</a></div></div>
+        </section>
         <aside class="radar"><div class="section-top"><h2 data-site-copy="home.radarTitle">ON THE RADAR</h2><span class="small-cross">✳</span></div><div id="radar-stories"></div><a class="text-link radar-bottom" href="#latest"><span data-site-copy="home.allStoriesLink">ALL STORIES</span> <span>↗</span></a></aside>
       </section>
 
@@ -87,6 +87,10 @@
   </main>
   <footer class="site-footer"><div class="wrap"><div class="footer-top"><a href="#" class="footer-brand">JK<span>SPORTSBOOK</span><sup>↗</sup></a><nav aria-label="Footer navigation"><a href="#latest">Stories</a><a href="shows.html">Shows</a><a href="columns.html">Columns</a><a href="betting.html">Betting</a></nav><a href="#main" class="back-top">BACK TO TOP ↑</a></div><div class="footer-bottom"><p>© <span id="year">2026</span> <span data-site-copy="footer.tagline">JKSPORTSBOOK. More than the score.</span></p><p data-site-copy="footer.responsibleNote">21+ audience. Sports commentary and entertainment. No bets accepted. Play responsibly.</p><button class="footer-about" id="about-open">About this launch</button></div></div></footer>
 
+  <dialog class="video-dialog" id="featured-video-dialog" aria-labelledby="featured-video-dialog-title">
+    <div class="dialog-toolbar"><strong id="featured-video-dialog-title">The Horse Interview</strong><button class="icon-button" id="featured-video-close" aria-label="Close video">✕</button></div>
+    <div class="featured-video-dialog-content"><div class="featured-video-frame-wrap"><iframe id="featured-video-frame" src="about:blank" title="The Horse Interview" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><a id="featured-video-youtube" href="https://www.youtube.com/watch?v=EIHViakKLdM" target="_blank" rel="noopener noreferrer">OPEN ON YOUTUBE ↗</a></div>
+  </dialog>
   <dialog class="reader-dialog" id="reader-dialog" aria-labelledby="reader-title"><div class="dialog-toolbar"><a class="dialog-brand" href="#">JKSPORTSBOOK <span>↗</span></a><button class="icon-button" id="reader-close" aria-label="Close article">✕</button></div><article id="reader-content"></article></dialog>
   <dialog class="search-dialog" id="search-dialog" aria-labelledby="search-title"><div class="dialog-toolbar"><h2 id="search-title">Find your next read.</h2><button class="icon-button" id="search-close" aria-label="Close search">✕</button></div><label class="sr-only" for="search-input">Search stories and columns</label><input type="search" id="search-input" placeholder="Search stories, sports, or topics…" autocomplete="off"><div class="search-results" id="search-results" aria-live="polite"></div></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>

@@ -7,6 +7,19 @@
   const money = value => value.toLocaleString('en-US', {style:'currency',currency:'USD'});
   const validUrl = value => { try { const url = new URL(value); return url.protocol === 'https:' ? url.href : ''; } catch { return ''; } };
   const youtubeEmbed = value => { try { const url = new URL(value); return url.protocol === 'https:' && ['www.youtube.com','youtube.com'].includes(url.hostname) && url.pathname.startsWith('/embed/') ? url.href : ''; } catch { return ''; } };
+  const youtubeVideoId = value => {
+    try {
+      const url = new URL(value);
+      if (url.protocol !== 'https:') return '';
+      let id = '';
+      if (url.hostname === 'youtu.be') id = url.pathname.split('/').filter(Boolean)[0] || '';
+      else if (['youtube.com','www.youtube.com','m.youtube.com','youtube-nocookie.com','www.youtube-nocookie.com'].includes(url.hostname)) {
+        if (url.pathname === '/watch') id = url.searchParams.get('v') || '';
+        else if (url.pathname.startsWith('/embed/') || url.pathname.startsWith('/shorts/')) id = url.pathname.split('/')[2] || '';
+      }
+      return /^[A-Za-z0-9_-]{11}$/.test(id) ? id : '';
+    } catch { return ''; }
+  };
   const stories = content.stories;
   const picks = content.showDemoPicks ? content.demoPicks : content.picks;
   let saved;
@@ -74,6 +87,41 @@
     target.innerHTML = bets.length
       ? `<div class="bets-ticker-marquee">${items}<span aria-hidden="true">${items}</span></div>`
       : '<span class="bets-ticker-loading">No current board posted.</span>';
+  }
+
+  function renderFeaturedVideo() {
+    const target = $('[data-featured-video]');
+    if (!target) return;
+    const feature = content.featuredVideo || {};
+    const videoId = youtubeVideoId(feature.youtubeUrl || '');
+    if (!videoId) return;
+    const title = String(feature.title || 'The Horse Interview');
+    const eyebrow = String(feature.eyebrow || 'BEHOLD A PALE HORSE / EXCLUSIVE INTERVIEW');
+    const description = String(feature.description || 'Josh King’s exclusive conversation with Behold a Pale Horse.');
+    const watchUrl = 'https://www.youtube.com/watch?v=' + encodeURIComponent(videoId);
+    const thumbnailUrl = 'https://i.ytimg.com/vi/' + encodeURIComponent(videoId) + '/hqdefault.jpg';
+    target.innerHTML = '<img class="stadium-image" src="' + esc(thumbnailUrl) + '" alt="' + esc(title) + ' thumbnail" fetchpriority="high" width="480" height="360">' +
+      '<div class="lead-shade"></div><div class="lead-top"><span class="tag yellow">FEATURED INTERVIEW</span><span class="image-index">JKSPORTSBOOK / VIDEO</span></div>' +
+      '<div class="lead-copy"><span class="eyebrow">' + esc(eyebrow) + '</span><h1><span>' + esc(title) + '</span></h1><p>' + esc(description) + '</p>' +
+      '<div class="featured-video-actions"><button class="featured-video-play" type="button" data-play-featured-video aria-label="Play ' + esc(title) + '"><span>PLAY INTERVIEW</span><span class="round-arrow" aria-hidden="true">▶</span></button>' +
+      '<a class="featured-video-youtube-link" href="' + esc(watchUrl) + '" target="_blank" rel="noopener noreferrer">OPEN ON YOUTUBE ↗</a></div></div>';
+    const dialog = $('#featured-video-dialog');
+    const frame = $('#featured-video-frame');
+    const dialogTitle = $('#featured-video-dialog-title');
+    const sourceLink = $('#featured-video-youtube');
+    sourceLink.href = watchUrl;
+    sourceLink.addEventListener('click', event => event.stopPropagation());
+    dialogTitle.textContent = title;
+    target.querySelector('[data-play-featured-video]').addEventListener('click', () => {
+      const startSeconds = Math.max(0, Math.floor(Number(feature.startSeconds) || 0));
+      const start = startSeconds ? '&start=' + startSeconds : '';
+      frame.title = title;
+      frame.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(videoId) + '?autoplay=1&rel=0' + start;
+      dialog.showModal();
+    });
+    $('#featured-video-close').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('close', () => { frame.src = 'about:blank'; });
+    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
   }
 
   function renderPodcast() {
@@ -180,5 +228,5 @@
   $('#year').textContent = new Date().getFullYear();
   applySiteCopy();const requestedSport = new URLSearchParams(location.search).get('sport');
   const validSports = ['NFL','NBA','College','MLB'];
-  renderStories(validSports.includes(requestedSport) ? requestedSport : 'All');renderPodcast();renderColumnSeries();renderPicks();renderResults();renderBestBets();route();
+  renderStories(validSports.includes(requestedSport) ? requestedSport : 'All');renderFeaturedVideo();renderPodcast();renderColumnSeries();renderPicks();renderResults();renderBestBets();route();
 })();

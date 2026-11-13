@@ -241,5 +241,12 @@
       "bestBetsKicker": "01 / BEST BETS",
       "description": "A home for the posted picks, the matchup of the week, and long-range NFL and college football outlooks."
     }
+  },
+  "featuredVideo": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=EIHViakKLdM",
+    "title": "The Horse Interview",
+    "eyebrow": "BEHOLD A PALE HORSE / EXCLUSIVE INTERVIEW",
+    "description": "Josh King’s exclusive conversation with Behold a Pale Horse.",
+    "startSeconds": 0
   }
 }

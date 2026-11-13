@@ -74,7 +74,6 @@ collections:
                   - { label: Becker Report Link, name: beckerReport, widget: string }
                   - { label: "Bossart's Board Link", name: bossartsBoard, widget: string }
                   - { label: The Touchline Link, name: theTouchline, widget: string }
-                  - { label: Soccer Tab, name: soccer, widget: string }
                   - { label: Shows Tab, name: shows, widget: string }
                   - { label: Betting Tab, name: betting, widget: string }
                   - { label: Betting Desk Link, name: bettingDesk, widget: string }

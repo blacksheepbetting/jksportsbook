@@ -15,7 +15,7 @@ window.JK_CONTENT = {
   featuredVideo: {
     youtubeUrl: 'https://www.youtube.com/watch?v=EIHViakKLdM',
     title: 'Behold a Pale Horse',
-    eyebrow: 'A 65 MINUTES EXCLUSIVE:',
+    eyebrow: 'A 65 MINUTES EXCLUSIVE',
     description: 'Josh King’s exclusive interview with the most controversial account on X.',
     startSeconds: 0
   },

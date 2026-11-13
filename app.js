@@ -96,13 +96,13 @@
     const videoId = youtubeVideoId(feature.youtubeUrl || '');
     if (!videoId) return;
     const title = String(feature.title || 'Behold a Pale Horse');
-    const eyebrow = String(feature.eyebrow || 'A 65 MINUTES EXCLUSIVE:');
+    const badge = String(feature.eyebrow || 'A 65 MINUTES EXCLUSIVE');
     const description = String(feature.description || 'Josh King’s exclusive interview with the most controversial account on X.');
     const watchUrl = 'https://www.youtube.com/watch?v=' + encodeURIComponent(videoId);
     const thumbnailUrl = 'https://i.ytimg.com/vi/' + encodeURIComponent(videoId) + '/hqdefault.jpg';
     target.innerHTML = '<img class="stadium-image" src="' + esc(thumbnailUrl) + '" alt="' + esc(title) + ' thumbnail" fetchpriority="high" width="480" height="360">' +
-      '<div class="lead-shade"></div><div class="lead-top"><span class="tag yellow">FEATURED INTERVIEW</span><span class="image-index">JKSPORTSBOOK / VIDEO</span></div>' +
-      '<div class="lead-copy"><span class="eyebrow">' + esc(eyebrow) + '</span><h1><span>' + esc(title) + '</span></h1><p>' + esc(description) + '</p>' +
+      '<div class="lead-shade"></div><div class="lead-top"><span class="tag yellow">' + esc(badge) + '</span><span class="image-index">JKSPORTSBOOK / VIDEO</span></div>' +
+      '<div class="lead-copy"><span class="eyebrow">JOSH KING / EXCLUSIVE INTERVIEW</span><h1><span>' + esc(title) + '</span></h1><p>' + esc(description) + '</p>' +
       '<div class="featured-video-actions"><button class="featured-video-play" type="button" data-play-featured-video aria-label="Play ' + esc(title) + '"><span>PLAY INTERVIEW</span><span class="round-arrow" aria-hidden="true">▶</span></button>' +
       '<a class="featured-video-youtube-link" href="' + esc(watchUrl) + '" target="_blank" rel="noopener noreferrer">OPEN ON YOUTUBE ↗</a></div></div>';
     const dialog = $('#featured-video-dialog');

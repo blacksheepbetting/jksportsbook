@@ -3,10 +3,11 @@ const JK_COLUMN_FEEDS = [
   { path: 'content/columns/general.json', series: '' },
   { path: 'content/columns/jk-sportsline.json', series: 'jk-sportsline' },
   { path: 'content/columns/becker-report.json', series: 'becker-report' },
-  { path: 'content/columns/bossarts-board.json', series: 'bossarts-board' }
+  { path: 'content/columns/bossarts-board.json', series: 'bossarts-board' },
+  { path: 'content/columns/the-touchline.json', series: 'the-touchline' }
 ];
 
-window.JK_EDITOR_READY = fetch('content/editor.json?v=sitecopy-7', { cache: 'no-store' })
+window.JK_EDITOR_READY = fetch('content/editor.json?v=sitecopy-touchline-20261113', { cache: 'no-store' })
   .then(response => response.ok ? response.json() : {})
   .then(async editor => {
     const content = window.JK_CONTENT;
@@ -27,7 +28,7 @@ window.JK_EDITOR_READY = fetch('content/editor.json?v=sitecopy-7', { cache: 'no-
 
     const columnDocs = await Promise.all(JK_COLUMN_FEEDS.map(async feed => {
       try {
-        const response = await fetch(feed.path + '?v=columns-2', { cache: 'no-store' });
+        const response = await fetch(feed.path + '?v=columns-touchline-20261113', { cache: 'no-store' });
         if (!response.ok) return [];
         const document = await response.json();
         if (!Array.isArray(document.articles)) return [];

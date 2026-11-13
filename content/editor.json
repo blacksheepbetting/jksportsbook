@@ -56,6 +56,10 @@
     "bossartsBoard": {
       "title": "Bossart's Board",
       "description": "CBB coverage, analysis, and perspective from Bossart."
+    },
+    "theTouchline": {
+      "title": "The Touchline",
+      "description": "A weekly look at the matches, moments, and storylines shaping the global game."
     }
   },
   "picks": [],
@@ -154,7 +158,8 @@
       "scheduleOpeningEdition": "NFL DESK / LIVE FEED",
       "scheduleResults": "Results",
       "beckerReportKicker": "JK ORIGINAL / COLUMN SERIES",
-      "columnsDescription": "Distinct voices, recurring series, and room for a point of view."
+      "columnsDescription": "Distinct voices, recurring series, and room for a point of view.",
+      "theTouchlineKicker": "SOCCER / WEEKLY COLUMN"
     },
     "navigation": {
       "allSports": "ALL SPORTS",
@@ -179,7 +184,9 @@
       "gameOfWeek": "Game of the Week",
       "tuneIn": "TUNE IN",
       "columns": "Columns",
-      "betting": "Betting"
+      "betting": "Betting",
+      "theTouchline": "The Touchline",
+      "soccer": "SOCCER"
     },
     "masthead": {
       "strapline": "INDEPENDENT COVERAGE. UNFILTERED OPINIONS.",

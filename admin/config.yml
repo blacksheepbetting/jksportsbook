@@ -73,6 +73,8 @@ collections:
                   - { label: JK Sportsline Link, name: jkSportsline, widget: string }
                   - { label: Becker Report Link, name: beckerReport, widget: string }
                   - { label: "Bossart's Board Link", name: bossartsBoard, widget: string }
+                  - { label: The Touchline Link, name: theTouchline, widget: string }
+                  - { label: Soccer Tab, name: soccer, widget: string }
                   - { label: Shows Tab, name: shows, widget: string }
                   - { label: Betting Tab, name: betting, widget: string }
                   - { label: Betting Desk Link, name: bettingDesk, widget: string }
@@ -83,6 +85,7 @@ collections:
                   - { label: NFL Filter, name: nfl, widget: string }
                   - { label: NBA Filter, name: nba, widget: string }
                   - { label: College Filter, name: college, widget: string }
+                  - { label: Soccer Tab, name: soccer, widget: string }
                   - { label: MLB Filter, name: mlb, widget: string }
                   - { label: FPHL Filter, name: fphl, widget: string }
                   - { label: Schedule Link, name: schedule, widget: string }
@@ -141,6 +144,7 @@ collections:
                   - { label: Jk Sportsline Kicker, name: jkSportslineKicker, widget: string }
                   - { label: Becker Report Kicker, name: beckerReportKicker, widget: string }
                   - { label: "Bossart's Board Kicker", name: bossartsBoardKicker, widget: string }
+                  - { label: The Touchline Kicker, name: theTouchlineKicker, widget: string }
                   - { label: Weekly Articles Kicker, name: seriesArticlesKicker, widget: string }
                   - { label: Weekly Articles Heading, name: seriesArticlesTitle, widget: string }
                   - { label: Shows Kicker, name: showsKicker, widget: string }
@@ -242,6 +246,12 @@ collections:
                 fields:
                   - { label: Display Title, name: title, widget: string }
                   - { label: Description, name: description, widget: text }
+              - label: The Touchline
+                name: theTouchline
+                widget: object
+                fields:
+                  - { label: Display Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
           - label: Podcast
             name: podcast
             widget: object
@@ -275,17 +285,17 @@ collections:
               - { label: Read Time, name: readTime, widget: string }
               - { label: Label, name: label, widget: string }
               - { label: Content Type, name: type, widget: select, options: [story, column], default: story }
-              - { label: Column Series, name: series, widget: select, options: [{ label: Not a column, value: "" }, { label: JK Sportsline, value: "jk-sportsline" }, { label: The Becker Report, value: "becker-report" }, { label: "Bossart's Board", value: "bossarts-board" }], required: false }
+              - { label: Column Series, name: series, widget: select, options: [{ label: Not a column, value: "" }, { label: JK Sportsline, value: "jk-sportsline" }, { label: The Becker Report, value: "becker-report" }, { label: "Bossart's Board", value: "bossarts-board" }, { label: The Touchline, value: "the-touchline" }], required: false }
               - { label: Body HTML, name: body, widget: markdown }
           - label: New Newsroom Stories
             name: newStories
             widget: list
             summary: "{{fields.sport}} — {{fields.title}}"
-            hint: "For General Columns, JK Sportsline, The Becker Report, or Bossart's Board, use the matching list in Weekly Columns."
+            hint: "For General Columns, JK Sportsline, The Becker Report, Bossart's Board, or The Touchline, use the matching list in Weekly Columns."
             fields:
               - { label: ID, name: id, widget: string }
               - { label: Title, name: title, widget: string }
-              - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, FPHL, All] }
+              - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, Soccer, FPHL, All] }
               - { label: Category, name: category, widget: string }
               - { label: Betting Desk Section, name: deskSection, widget: select, options: [{ label: Not a betting feature, value: "" }, { label: Game of the Week, value: "game-of-week" }, { label: NFL / CFB Futures, value: "futures" }], required: false }
               - { label: Type, name: type, widget: select, options: [story], default: story }
@@ -336,7 +346,7 @@ collections:
             fields:
               - { label: Story ID, name: id, widget: string, hint: "Use a unique lowercase URL slug, such as jks-2026-11-12-season-preview." }
               - { label: Title, name: title, widget: string }
-              - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, FPHL, All] }
+              - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, Soccer, FPHL, All] }
               - { label: Category, name: category, widget: string }
               - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
               - { label: Art Label, name: artLabel, widget: string, required: false }
@@ -358,7 +368,7 @@ collections:
             fields:
               - { label: Story ID, name: id, widget: string, hint: "Use a unique lowercase URL slug, such as jks-2026-11-12-season-preview." }
               - { label: Title, name: title, widget: string }
-              - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, FPHL, All] }
+              - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, Soccer, FPHL, All] }
               - { label: Category, name: category, widget: string }
               - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
               - { label: Art Label, name: artLabel, widget: string, required: false }
@@ -380,7 +390,7 @@ collections:
             fields:
               - { label: Story ID, name: id, widget: string, hint: "Use a unique lowercase URL slug, such as jks-2026-11-12-season-preview." }
               - { label: Title, name: title, widget: string }
-              - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, FPHL, All] }
+              - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, Soccer, FPHL, All] }
               - { label: Category, name: category, widget: string }
               - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
               - { label: Art Label, name: artLabel, widget: string, required: false }
@@ -402,7 +412,29 @@ collections:
             fields:
               - { label: Story ID, name: id, widget: string, hint: "Use a unique lowercase URL slug, such as bossart-2026-11-12-cbb-preview." }
               - { label: Title, name: title, widget: string }
-              - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, FPHL, All] }
+              - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, Soccer, FPHL, All] }
+              - { label: Category, name: category, widget: string }
+              - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
+              - { label: Art Label, name: artLabel, widget: string, required: false }
+              - { label: Deck, name: deck, widget: text }
+              - { label: Author, name: author, widget: string }
+              - { label: Read Time, name: readTime, widget: string }
+              - { label: Label, name: label, widget: string }
+              - { label: Article Body, name: body, widget: markdown }
+      - file: content/columns/the-touchline.json
+        name: the_touchline
+        label: "The Touchline"
+        format: json
+        fields:
+          - label: Articles
+            name: articles
+            widget: list
+            summary: "{{fields.title}}"
+            hint: "Add the newest article at the top. The list order controls how articles appear on the page."
+            fields:
+              - { label: Story ID, name: id, widget: string, hint: "Use a unique lowercase URL slug, such as touchline-2026-11-13-soccer-column." }
+              - { label: Title, name: title, widget: string }
+              - { label: Sport, name: sport, widget: select, options: [Soccer] }
               - { label: Category, name: category, widget: string }
               - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
               - { label: Art Label, name: artLabel, widget: string, required: false }

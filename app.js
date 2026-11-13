@@ -76,10 +76,38 @@
       const posts = stories.filter(story => story.type === 'column' && story.series === seriesId);
       const list = card.querySelector('.column-series-posts');
       const status = card.querySelector('.column-series-status');
-      list.innerHTML = posts.map(story => '<a class="column-series-post" href="#story/' + esc(story.id) + '"><span class="category">' + esc(story.category) + '</span><strong>' + esc(story.title) + '</strong><span class="meta">' + esc(story.author) + ' / ' + esc(story.readTime) + '</span></a>').join('');
+      list.innerHTML = posts.slice(0, 2).map(story => '<a class="column-series-post" href="#story/' + esc(story.id) + '"><span class="category">' + esc(story.category) + '</span><strong>' + esc(story.title) + '</strong><span class="meta">' + esc(story.author) + ' / ' + esc(story.readTime) + '</span></a>').join('');
       if (posts.length) status.textContent = posts.length + ' COLUMN' + (posts.length === 1 ? '' : 'S') + ' PUBLISHED';
     }
   }
+  function setupColumnSeriesCarousel() {
+    const track = document.querySelector('[data-column-series-track]');
+    if (!track) return;
+    const controls = [...document.querySelectorAll('[data-column-series-scroll]')];
+    const step = () => {
+      const card = track.querySelector('.column-series-card');
+      const styles = getComputedStyle(track);
+      const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+      return card ? card.getBoundingClientRect().width + gap : track.clientWidth;
+    };
+    const updateControls = () => {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      controls.forEach(button => {
+        button.disabled = button.dataset.columnSeriesScroll === 'prev'
+          ? track.scrollLeft <= 2
+          : track.scrollLeft >= maxScroll - 2;
+      });
+    };
+    controls.forEach(button => button.addEventListener('click', () => {
+      const direction = button.dataset.columnSeriesScroll === 'next' ? 1 : -1;
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      track.scrollBy({ left: direction * step(), behavior: reducedMotion ? 'auto' : 'smooth' });
+    }));
+    track.addEventListener('scroll', () => requestAnimationFrame(updateControls), { passive: true });
+    window.addEventListener('resize', updateControls);
+    updateControls();
+  }
+
   function renderBestBets() {
     const target = $('#bets-ticker-track');
     const bets = Array.isArray(content.bestBets) ? content.bestBets : [];
@@ -229,5 +257,5 @@
   $('#year').textContent = new Date().getFullYear();
   applySiteCopy();const requestedSport = new URLSearchParams(location.search).get('sport');
   const validSports = ['NFL','NBA','College','MLB','Soccer'];
-  renderStories(validSports.includes(requestedSport) ? requestedSport : 'All');renderFeaturedVideo();renderPodcast();renderColumnSeries();renderPicks();renderResults();renderBestBets();route();
+  renderStories(validSports.includes(requestedSport) ? requestedSport : 'All');renderFeaturedVideo();renderPodcast();renderColumnSeries();setupColumnSeriesCarousel();renderPicks();renderResults();renderBestBets();route();
 })();

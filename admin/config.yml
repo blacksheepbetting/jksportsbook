@@ -390,6 +390,7 @@ collections:
               - { label: Story ID, name: id, widget: string, hint: "Use a unique lowercase URL slug, such as jks-2026-11-12-season-preview." }
               - { label: Title, name: title, widget: string }
               - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, Soccer, FPHL, All] }
+              - { label: Betting Desk Section, name: deskSection, widget: select, options: [{ label: Not a betting feature, value: "" }, { label: Game of the Week, value: "game-of-week" }, { label: NFL / CFB Futures, value: "futures" }], required: false }
               - { label: Category, name: category, widget: string }
               - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
               - { label: Art Label, name: artLabel, widget: string, required: false }

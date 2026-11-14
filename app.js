@@ -110,7 +110,7 @@
     ? content.radarStoryIds.map(id => stories.find(story => story.id === id)).filter(Boolean)
     : stories.filter(story => story.type === 'story');
   $('#radar-stories').innerHTML = radarStories.slice(0,3).map((story,index) => `<a class="radar-story" href="#story/${esc(story.id)}"><span class="radar-number">0${index+1}</span><div><span class="category">${esc(story.sport)} / ${esc(story.category)}</span><h3>${esc(story.title)}</h3><span class="meta">${esc(story.label)} &nbsp; · &nbsp; ${esc(story.readTime)}</span></div></a>`).join('');
-  $('#columns-grid').innerHTML = stories.filter(story => story.type === 'column').map(story => `<a class="column-card" href="#story/${esc(story.id)}"><span class="column-icon" aria-hidden="true">“</span><span class="category">${esc(story.category)}</span><h3>${esc(story.title)}</h3><p>${esc(story.deck)}</p><div class="column-byline"><span class="avatar" aria-hidden="true">JK</span><span class="byline-name">${esc(story.author)}<small>${esc(story.readTime)} / ${esc(story.label)}</small></span></div></a>`).join('');
+  $('#columns-grid').innerHTML = stories.filter(story => story.type === 'column' || Boolean(story.series)).map(story => `<a class="column-card" href="#story/${esc(story.id)}"><span class="column-icon" aria-hidden="true">“</span><span class="category">${esc(story.category)}</span><h3>${esc(story.title)}</h3><p>${esc(story.deck)}</p><div class="column-byline"><span class="avatar" aria-hidden="true">JK</span><span class="byline-name">${esc(story.author)}<small>${esc(story.readTime)} / ${esc(story.label)}</small></span></div></a>`).join('');
   setupPointOfViewCarousel();
 
   function setupPointOfViewCarousel() {

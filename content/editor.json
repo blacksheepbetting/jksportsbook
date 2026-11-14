@@ -119,6 +119,42 @@
       "title": "A Letter to the FPHL: Building What Comes Next",
       "type": "column",
       "id": "fphl-inside-the-fed"
+    },
+    {
+      "id": "welcome-to-jksportsbook",
+      "title": "More than the score. This is JKSPORTSBOOK.",
+      "deck": "The stories behind the game. The takes worth debating. And a seat at the table for every fan.",
+      "author": "JKSPORTSBOOK Desk",
+      "readTime": "3 min read",
+      "label": "The Becker Report",
+      "type": "story",
+      "series": "becker-report",
+      "coverImage": "auto",
+      "body": "<p>Every game ends with a score. The conversation rarely ends there.</p>\n      <p>There is the decision everyone is still debating. The adjustment that changed the second half. The player whose work does not fit neatly into a highlight clip. The game you watched with friends, and the argument that somehow carried into the next morning.</p>\n      <p>That is the space JKSPORTSBOOK is being built for: sports, with a point of view.</p>\n      <h2>A home for the whole conversation</h2>\n      <p>Start with the newsroom for original stories and analysis. Spend a little longer with the columns, where one idea gets room to breathe. Pull up the podcast when a conversation deserves more than a headline.</p>\n      <p>Then there is the picks desk. Every official pick should have a clear selection, a recorded price, a stated stake, and a reason. The record should include the losses and the passes, alongside the wins.</p>\n      <h2>The opening edition</h2>\n      <p>This first edition introduces the publication and its sections. The reading features are original launch pieces; the picks and results marked “sample” demonstrate how the desk will work. Official picks and podcast recordings will appear when published.</p>\n      <p>Good stories. Honest takes. All sports. Welcome to JKSPORTSBOOK.</p>"
+    },
+    {
+      "id": "sunday-starts-before-kickoff",
+      "title": "Sunday starts long before kickoff.",
+      "deck": "A game plan for watching football with a little more context and a lot better questions.",
+      "author": "JKSPORTSBOOK Desk",
+      "readTime": "4 min read",
+      "label": "The Becker Report",
+      "type": "story",
+      "series": "becker-report",
+      "coverImage": "auto",
+      "body": "<p>The first play is never really the beginning. Before the ball is snapped, there is a week of decisions hiding behind it: personnel, protection, formation, and what a coaching staff thinks its opponent will expect.</p>\n      <p>Watching with that in mind makes a familiar Sunday feel a little different. The question becomes less “who made the play?” and more “why was that play available?”</p>\n      <h2>Start with the matchup</h2>\n      <p>A team’s identity is useful context, but a matchup is specific. Watch how an offense tries to protect its weaknesses, which defenders are asked to make difficult choices, and what changes when the down and distance changes.</p>\n      <p>A completion can be a fine outcome for the defense if it forces a difficult third down. A short run can be valuable to an offense if it reveals how a front intends to respond. One result does not tell you the whole design.</p>\n      <h2>Watch what changes</h2>\n      <p>When a team finds something that works, the next question is how its opponent responds. Does a safety move closer to the line? Does the offense change its personnel? Does a successful pressure force a quicker passing game?</p>\n      <p>Those adjustments are the conversation within the game. Follow them, and the final score begins to feel like the end of a story you actually watched unfold.</p>"
+    },
+    {
+      "id": "basketball-beyond-box-score",
+      "title": "The box score doesn’t tell the whole story.",
+      "deck": "Spacing, matchups, and the work that happens when a player never touches the ball.",
+      "author": "JKSPORTSBOOK Desk",
+      "readTime": "4 min read",
+      "label": "The Becker Report",
+      "type": "story",
+      "series": "becker-report",
+      "coverImage": "auto",
+      "body": "<p>A box score can tell you who scored. It can tell you who rebounded, who assisted, and who struggled to make shots. It cannot show you every decision that made those numbers possible.</p>\n      <p>Sometimes the most useful player in a possession is standing one pass away, keeping a defender just far enough from the action.</p>\n      <h2>Look away from the ball</h2>\n      <p>Watch a possession from the weak side. Notice the cut that moves a help defender, the screen that creates a favorable matchup, and the shooter whose positioning makes a drive possible.</p>\n      <p>None of that means points and shooting efficiency do not matter. It means the numbers become more interesting when you can connect them to the choices on the floor.</p>\n      <h2>A different kind of impact</h2>\n      <p>A defender can influence a game without collecting a block. An offensive player can create a shot without receiving an assist. Basketball is full of useful work that does not fit into a simple individual total.</p>\n      <p>The next time you watch, follow one player for three possessions without waiting for that player to get the ball. You might see a different game.</p>"
     }
   ],
   "newStories": [],

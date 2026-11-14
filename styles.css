@@ -317,3 +317,24 @@
 @media(prefers-reduced-motion:reduce){
   #columns-grid{scroll-behavior:auto}
 }
+
+/* Fresh Off the Press carousel */
+.stories-heading-actions{display:flex;align-items:center;gap:1rem}
+.stories-carousel-controls{display:flex;align-items:center;gap:.5rem;flex:none}
+#stories-grid{display:flex;gap:28px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+#stories-grid::-webkit-scrollbar{display:none}
+#stories-grid>.story-card{flex:0 0 calc((100% - 56px)/3);min-width:0;scroll-snap-align:start}
+@media(max-width:1000px){
+  #stories-grid>.story-card{flex-basis:calc((100% - 28px)/2)}
+}
+@media(max-width:760px){
+  .stories-heading-actions{align-items:flex-end;justify-content:space-between;gap:.75rem}
+  .stories-carousel-controls .column-series-control{width:2.5rem;height:2.5rem}
+  #stories-grid{gap:1rem;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 .25rem 1rem;margin-right:-.25rem}
+  #stories-grid>.story-card{flex:0 0 min(86%,27rem);display:block;padding:0 0 20px;border-bottom:1px solid var(--line)}
+  #stories-grid>.story-card .story-art{height:145px;margin-bottom:15px}
+  #stories-grid>.story-card p{display:block;font-size:11px;margin-top:8px}
+}
+@media(prefers-reduced-motion:reduce){
+  #stories-grid{scroll-behavior:auto}
+}

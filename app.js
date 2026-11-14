@@ -38,10 +38,44 @@
     return `<div class="story-art art-playbook" aria-hidden="true"><div class="playbook-lines"></div><svg class="playbook-diagram" viewBox="0 0 250 160"><g><circle cx="35" cy="130" r="7"/><circle cx="80" cy="130" r="7"/><circle cx="125" cy="130" r="7"/><circle cx="170" cy="130" r="7"/><circle cx="215" cy="130" r="7"/><path d="M35 122V70l35-30M62 40h8v8M80 122V86h60V40m-5 7 5-7 5 7M170 122V65l32-28m-9 1 9-1-1 9M111 65l12 12m0-12-12 12M28 38l12 12m0-12L28 50M201 82l12 12m0-12-12 12"/></g></svg><span class="art-label">${label}</span></div>`;
   }
 
+  function setupStoriesCarousel() {
+    const track = $('#stories-grid');
+    const controls = [...document.querySelectorAll('[data-stories-scroll]')];
+    if (!track || !controls.length) return;
+    const step = () => {
+      const card = track.querySelector('.story-card');
+      const styles = getComputedStyle(track);
+      const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+      return card ? card.getBoundingClientRect().width + gap : track.clientWidth;
+    };
+    const updateControls = () => {
+      const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+      controls.forEach(button => {
+        button.disabled = button.dataset.storiesScroll === 'prev'
+          ? track.scrollLeft <= 2
+          : track.scrollLeft >= maxScroll - 2;
+      });
+    };
+    if (track.dataset.storiesCarouselReady !== 'true') {
+      track.dataset.storiesCarouselReady = 'true';
+      controls.forEach(button => button.addEventListener('click', () => {
+        const direction = button.dataset.storiesScroll === 'next' ? 1 : -1;
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        track.scrollBy({ left: direction * step(), behavior: reducedMotion ? 'auto' : 'smooth' });
+      }));
+      track.addEventListener('scroll', () => requestAnimationFrame(updateControls), { passive: true });
+      window.addEventListener('resize', updateControls);
+    }
+    updateControls();
+  }
+
   function renderStories(filter = 'All') {
     const filtered = stories.filter(story => story.type === 'story' && (filter === 'All' || story.sport === filter));
-    const visible = filter === 'All' ? filtered.slice(0, 3) : filtered;
-    $('#stories-grid').innerHTML = visible.map(story => `<a class="story-card" href="#story/${esc(story.id)}">${art(story)}<span class="category">${esc(story.sport)} / ${esc(story.category)}</span><h3>${esc(story.title)}</h3><p>${esc(story.deck)}</p><span class="meta">${esc(story.author)} &nbsp; / &nbsp; ${esc(story.readTime)}</span></a>`).join('');
+    const visible = filtered;
+    const track = $('#stories-grid');
+    track.innerHTML = visible.map(story => `<a class="story-card" href="#story/${esc(story.id)}">${art(story)}<span class="category">${esc(story.sport)} / ${esc(story.category)}</span><h3>${esc(story.title)}</h3><p>${esc(story.deck)}</p><span class="meta">${esc(story.author)} &nbsp; / &nbsp; ${esc(story.readTime)}</span></a>`).join('');
+    track.scrollLeft = 0;
+    setupStoriesCarousel();
     $('#stories-empty').hidden = visible.length > 0;
     document.querySelectorAll('[data-filter]').forEach(button => { const active = button.dataset.filter === filter; button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active)); });
     document.querySelectorAll('[data-sport]').forEach(link => link.classList.toggle('active', link.dataset.sport === filter));

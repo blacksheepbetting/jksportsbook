@@ -79,7 +79,6 @@ collections:
                   - { label: Betting Desk Link, name: bettingDesk, widget: string }
                   - { label: Best Bets Link, name: bestBets, widget: string }
                   - { label: Game of the Week Link, name: gameOfWeek, widget: string }
-                  - { label: NFL / CFB Futures Link, name: futures, widget: string }
                   - { label: All Sports Filter, name: allSports, widget: string }
                   - { label: NFL Filter, name: nfl, widget: string }
                   - { label: NBA Filter, name: nba, widget: string }
@@ -128,9 +127,6 @@ collections:
                   - { label: Game of the Week Label, name: gameKicker, widget: string }
                   - { label: Game of the Week Heading, name: gameTitle, widget: string }
                   - { label: Game of the Week Description, name: gameDescription, widget: text }
-                  - { label: Futures Label, name: futuresKicker, widget: string }
-                  - { label: Futures Heading, name: futuresTitle, widget: string }
-                  - { label: Futures Description, name: futuresDescription, widget: text }
               - label: Landing Pages
                 name: pages
                 widget: object
@@ -178,9 +174,6 @@ collections:
                   - { label: Game Kicker, name: gameKicker, widget: string }
                   - { label: Game Title, name: gameTitle, widget: string }
                   - { label: Game Description, name: gameDescription, widget: text }
-                  - { label: Futures Kicker, name: futuresKicker, widget: string }
-                  - { label: Futures Title, name: futuresTitle, widget: string }
-                  - { label: Futures Description, name: futuresDescription, widget: string }
                   - { label: Fphl Kicker, name: fphlKicker, widget: string }
                   - { label: Fphl Title, name: fphlTitle, widget: string }
                   - { label: Fphl Description, name: fphlDescription, widget: string }
@@ -209,14 +202,6 @@ collections:
                   - { label: Headline Line 2, name: lineTwo, widget: string }
                   - { label: Headline Line 3, name: lineThree, widget: string }
                   - { label: Button Text, name: button, widget: string }
-              - label: Results Section
-                name: results
-                widget: object
-                fields:
-                  - { label: Section Label, name: kicker, widget: string }
-                  - { label: Heading, name: title, widget: string }
-                  - { label: Description, name: description, widget: text }
-                  - { label: Footnote, name: footnote, widget: text }
               - label: Footer
                 name: footer
                 widget: object
@@ -296,7 +281,7 @@ collections:
               - { label: Title, name: title, widget: string }
               - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, Soccer, FPHL, All] }
               - { label: Category, name: category, widget: string }
-              - { label: Betting Desk Section, name: deskSection, widget: select, options: [{ label: Not a betting feature, value: "" }, { label: Game of the Week, value: "game-of-week" }, { label: NFL / CFB Futures, value: "futures" }], required: false }
+              - { label: Betting Desk Section, name: deskSection, widget: select, options: [{ label: Not a betting feature, value: "" }, { label: Game of the Week, value: "game-of-week" }], required: false }
               - { label: Type, name: type, widget: select, options: [story], default: story }
               - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
               - { label: Art Label, name: artLabel, widget: string, required: false }
@@ -318,25 +303,6 @@ collections:
               - { label: Units, name: units, widget: number, value_type: float }
               - { label: Posted At, name: postedAt, widget: string, required: false }
               - { label: Analysis, name: body, widget: text }
-          - label: Results Ledger
-            name: results
-            widget: list
-            fields:
-              - { label: Sport, name: sport, widget: string }
-              - { label: Type, name: type, widget: string }
-              - { label: Selection, name: selection, widget: string }
-              - { label: American Odds, name: odds, widget: number, value_type: int }
-              - { label: Units, name: units, widget: number, value_type: float }
-              - { label: Result, name: result, widget: select, options: [Win, Loss, Push] }
-
-  - name: weekly_columns
-    label: Weekly Columns
-    files:
-      - file: content/columns/general.json
-        name: general_columns
-        label: General Columns
-        format: json
-        fields:
           - label: Articles
             name: articles
             widget: list
@@ -390,7 +356,7 @@ collections:
               - { label: Story ID, name: id, widget: string, hint: "Use a unique lowercase URL slug, such as jks-2026-11-12-season-preview." }
               - { label: Title, name: title, widget: string }
               - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, Soccer, FPHL, All] }
-              - { label: Betting Desk Section, name: deskSection, widget: select, options: [{ label: Not a betting feature, value: "" }, { label: Game of the Week, value: "game-of-week" }, { label: NFL / CFB Futures, value: "futures" }], required: false }
+              - { label: Betting Desk Section, name: deskSection, widget: select, options: [{ label: Not a betting feature, value: "" }, { label: Game of the Week, value: "game-of-week" }], required: false }
               - { label: Category, name: category, widget: string }
               - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
               - { label: Art Label, name: artLabel, widget: string, required: false }

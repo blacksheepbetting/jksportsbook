@@ -7,7 +7,7 @@ const JK_COLUMN_FEEDS = [
   { path: 'content/columns/the-touchline.json', series: 'the-touchline' }
 ];
 
-window.JK_EDITOR_READY = fetch('content/editor.json?v=sitecopy-touchline-20261113', { cache: 'no-store' })
+window.JK_EDITOR_READY = fetch('content/editor.json?v=site-cleanup-20261113', { cache: 'no-store' })
   .then(response => response.ok ? response.json() : {})
   .then(async editor => {
     const content = window.JK_CONTENT;

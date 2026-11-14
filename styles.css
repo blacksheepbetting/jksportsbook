@@ -287,3 +287,27 @@
 @media(max-width:900px){.podcast-section{grid-template-columns:1fr}.podcast-monogram{display:flex;min-height:0;height:auto;max-width:260px;width:100%;margin:0 auto 24px;padding:0}.podcast-lockup{max-height:190px}.podcast-copy{max-width:800px;margin:0 auto;text-align:center}.podcast-copy>.eyebrow{justify-content:center}.podcast-copy h2{max-width:100%;margin:15px auto 18px}.podcast-copy>p{max-width:620px;margin-inline:auto}#featured-episode{max-width:860px;margin:0 auto}.youtube-feature-head{justify-content:center;flex-wrap:wrap;gap:10px 22px}.episode-card{max-width:860px;margin:20px auto 0}.podcast-platforms{justify-content:center}}
 
 @media(max-width:640px){.podcast-monogram{max-width:min(68vw,210px);margin-bottom:18px}.podcast-lockup{max-height:155px}}
+
+/* Homepage cleanup and mobile Point of View carousel */
+.columns-heading-actions{display:flex;align-items:center;gap:1rem}
+.column-articles-controls{display:none}
+.calculator-section-inner{display:grid;grid-template-columns:minmax(0,.9fr) minmax(320px,1.1fr);gap:clamp(2rem,6vw,6rem);align-items:center}
+.calculator-section-intro h2{font-size:clamp(2.5rem,5vw,5rem);line-height:.98;margin:.4rem 0 1rem}
+.calculator-section-intro p{max-width:34rem;color:var(--muted,#777);font-size:1.1rem;line-height:1.7}
+.calculator-standalone{width:100%;max-width:none}
+.betting-nav{grid-template-columns:repeat(2,minmax(0,1fr))}
+.betting-feature-grid{grid-template-columns:1fr}
+@media(max-width:760px){
+  .columns-heading-actions{align-items:flex-end;justify-content:space-between;gap:.75rem}
+  .column-articles-controls{display:flex;gap:.5rem;flex:none}
+  .column-articles-controls .column-series-control{width:2.5rem;height:2.5rem}
+  #columns-grid{display:flex;gap:1rem;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 .25rem 1rem;margin-right:-.25rem;-webkit-overflow-scrolling:touch}
+  #columns-grid::-webkit-scrollbar{display:none}
+  #columns-grid>.column-card{flex:0 0 min(86%,27rem);min-width:0;scroll-snap-align:start}
+  .calculator-section-inner{grid-template-columns:1fr;gap:1.5rem}
+  .calculator-section-intro h2{font-size:clamp(2.4rem,11vw,4rem)}
+  .betting-nav{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  #columns-grid{scroll-behavior:auto}
+}

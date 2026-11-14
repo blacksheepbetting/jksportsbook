@@ -72,7 +72,7 @@
     const picks=document.querySelector('[data-pick-list]');
     const board=content.showDemoPicks?(content.demoPicks||[]):(content.picks||[]);
     if(picks)picks.innerHTML=board.length?board.map(p=>'<article class="landing-article"><span class="category">'+esc(p.sport)+' / '+esc(p.type)+(content.showDemoPicks?' / SAMPLE':'')+'</span><h3>'+esc(p.matchup)+'</h3><p><strong>'+esc(p.selection)+' '+(Number(p.odds)>0?'+':'')+esc(p.odds)+'</strong></p><p>'+esc(p.body||p.note||'')+'</p><span class="meta">'+esc(p.postedAt||'')+'</span></article>').join('') : '<p class="landing-empty">'+esc(pageCopy.noPicks || 'No official picks have been posted yet.')+'</p>';
-    for(const [section,id] of [['game-of-week','game-of-week'],['futures','futures']]){
+    for(const [section,id] of [['game-of-week','game-of-week']]){
       const target=document.querySelector('[data-betting-section="'+section+'"]');
       if(!target)continue;
       const found=stories.filter(s=>s.deskSection===section);

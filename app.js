@@ -52,6 +52,39 @@
     : stories.filter(story => story.type === 'story');
   $('#radar-stories').innerHTML = radarStories.slice(0,3).map((story,index) => `<a class="radar-story" href="#story/${esc(story.id)}"><span class="radar-number">0${index+1}</span><div><span class="category">${esc(story.sport)} / ${esc(story.category)}</span><h3>${esc(story.title)}</h3><span class="meta">${esc(story.label)} &nbsp; · &nbsp; ${esc(story.readTime)}</span></div></a>`).join('');
   $('#columns-grid').innerHTML = stories.filter(story => story.type === 'column').map(story => `<a class="column-card" href="#story/${esc(story.id)}"><span class="column-icon" aria-hidden="true">“</span><span class="category">${esc(story.category)}</span><h3>${esc(story.title)}</h3><p>${esc(story.deck)}</p><div class="column-byline"><span class="avatar" aria-hidden="true">JK</span><span class="byline-name">${esc(story.author)}<small>${esc(story.readTime)} / ${esc(story.label)}</small></span></div></a>`).join('');
+  setupPointOfViewCarousel();
+
+  function setupPointOfViewCarousel() {
+    const track = $('#columns-grid');
+    const controls = [...document.querySelectorAll('[data-pov-scroll]')];
+    if (!track || !controls.length) return;
+    const step = () => {
+      const card = track.querySelector('.column-card');
+      const styles = getComputedStyle(track);
+      const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+      return card ? card.getBoundingClientRect().width + gap : track.clientWidth;
+    };
+    const updateControls = () => {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      controls.forEach(button => {
+        button.disabled = button.dataset.povScroll === 'prev'
+          ? track.scrollLeft <= 2
+          : track.scrollLeft >= maxScroll - 2;
+      });
+    };
+    if (track.dataset.povCarouselReady !== 'true') {
+      track.dataset.povCarouselReady = 'true';
+      controls.forEach(button => button.addEventListener('click', () => {
+        if (!window.matchMedia('(max-width: 760px)').matches) return;
+        const direction = button.dataset.povScroll === 'next' ? 1 : -1;
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        track.scrollBy({ left: direction * step(), behavior: reducedMotion ? 'auto' : 'smooth' });
+      }));
+      track.addEventListener('scroll', () => requestAnimationFrame(updateControls), { passive: true });
+      window.addEventListener('resize', updateControls);
+    }
+    updateControls();
+  }
 
   function applySiteCopy() {
     const root = content.siteCopy || {};
@@ -167,6 +200,7 @@
   }
 
   function renderPicks() {
+    if (!$('#picks-list')) return;
     const filtered = picks.filter(pick => activePickFilter === 'All' || (activePickFilter === 'Saved' ? saved.has(pick.id) : pick.sport === activePickFilter));
     $('#picks-list').innerHTML = filtered.map(pick => `<article class="pick-card"><div><div class="pick-meta"><b>${esc(pick.sport)} / ${esc(pick.type)}</b>${content.showDemoPicks ? 'ILLUSTRATIVE EXAMPLE' : esc(pick.postedAt || 'OFFICIAL PICK')}</div><h3>${esc(pick.matchup)}</h3><div class="pick-selection"><strong>${esc(pick.selection)}</strong><span class="odds-badge">${esc(oddsText(pick.odds))}</span><span class="unit-badge">${esc(pick.units)} UNIT${Number(pick.units) === 1 ? '' : 'S'}</span></div></div><div class="pick-controls"><button class="save-pick" data-save="${esc(pick.id)}" aria-pressed="${saved.has(pick.id)}" aria-label="${saved.has(pick.id) ? 'Unsave' : 'Save'} ${esc(pick.selection)}"><svg viewBox="0 0 20 24" aria-hidden="true"><path d="M4 2h12v19l-6-4-6 4z"/></svg></button><a class="pick-open" href="#pick/${esc(pick.id)}" aria-label="Read analysis for ${esc(pick.selection)}">↗</a></div></article>`).join('');
     $('#picks-empty').hidden = filtered.length > 0;
@@ -176,6 +210,7 @@
   }
 
   function renderResults() {
+    if (!$('#results-body')) return;
     const results = content.showDemoPicks ? content.demoResults : content.results;
     $('#results-body').innerHTML = results.map(result => {
       const net = result.result === 'Win' ? Number(result.units) * (Number(result.odds) > 0 ? Number(result.odds)/100 : 100/Math.abs(Number(result.odds))) : result.result === 'Loss' ? -Number(result.units) : 0;

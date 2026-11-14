@@ -15,7 +15,7 @@ collections:
     files:
       - file: content/editor.json
         name: editor
-        label: Site Content & Landing Pages
+        label: Betting Desk, Site Copy & Landing Pages
         format: json
         fields:
           - label: Under the Radar Story IDs
@@ -114,7 +114,7 @@ collections:
                   - { label: Heading Line 1, name: titleLine1, widget: string }
                   - { label: Heading Line 2, name: titleLine2, widget: string }
                   - { label: Description, name: description, widget: text }
-              - label: Betting Sections
+              - label: Betting Desk - Homepage
                 name: betting
                 widget: object
                 fields:
@@ -122,11 +122,6 @@ collections:
                   - { label: Betting Desk Heading, name: title, widget: string }
                   - { label: Betting Desk Aside, name: aside, widget: string }
                   - { label: Betting Desk Description, name: description, widget: text }
-                  - { label: Best Bets Label, name: bestBetsKicker, widget: string }
-                  - { label: Best Bets Heading, name: bestBetsTitle, widget: string }
-                  - { label: Game of the Week Label, name: gameKicker, widget: string }
-                  - { label: Game of the Week Heading, name: gameTitle, widget: string }
-                  - { label: Game of the Week Description, name: gameDescription, widget: text }
               - label: Landing Pages
                 name: pages
                 widget: object
@@ -162,18 +157,18 @@ collections:
                   - { label: Lines Section Heading, name: scheduleLinesTitle, widget: string }
                   - { label: Lines Section Description, name: scheduleLinesDescription, widget: text }
                   - { label: Best Bets Link Text, name: scheduleBestBetsLink, widget: string }
-                  - { label: Betting Kicker, name: bettingKicker, widget: string }
-                  - { label: Betting Title, name: bettingTitle, widget: string }
-                  - { label: Betting Description, name: bettingDescription, widget: text }
+                  - { label: Betting Page Label, name: bettingKicker, widget: string }
+                  - { label: Betting Page Heading, name: bettingTitle, widget: string }
+                  - { label: Betting Page Description, name: bettingDescription, widget: text }
                   - { label: Best Bets Kicker, name: bestBetsKicker, widget: string }
                   - { label: Best Bets Title, name: bestBetsTitle, widget: string }
                   - { label: Best Bets Aside, name: bestBetsAside, widget: string }
                   - { label: Picks Kicker, name: picksKicker, widget: string }
                   - { label: Picks Title, name: picksTitle, widget: string }
                   - { label: Picks Link, name: picksLink, widget: string }
-                  - { label: Game Kicker, name: gameKicker, widget: string }
-                  - { label: Game Title, name: gameTitle, widget: string }
-                  - { label: Game Description, name: gameDescription, widget: text }
+                  - { label: Game of the Week Section Label, name: gameKicker, widget: string }
+                  - { label: Game of the Week Heading, name: gameTitle, widget: string }
+                  - { label: Game of the Week Introduction, name: gameDescription, widget: text }
                   - { label: Fphl Kicker, name: fphlKicker, widget: string }
                   - { label: Fphl Title, name: fphlTitle, widget: string }
                   - { label: Fphl Description, name: fphlDescription, widget: string }
@@ -271,17 +266,17 @@ collections:
               - { label: Content Type, name: type, widget: select, options: [story, column], default: story }
               - { label: Column Series, name: series, widget: select, options: [{ label: Not a column, value: "" }, { label: JK Sportsline, value: "jk-sportsline" }, { label: The Becker Report, value: "becker-report" }, { label: "Bossart's Board", value: "bossarts-board" }, { label: The Touchline, value: "the-touchline" }], required: false }
               - { label: Body HTML, name: body, widget: markdown }
-          - label: New Newsroom Stories
+          - label: Articles & Match Analysis
             name: newStories
             widget: list
             summary: "{{fields.sport}} — {{fields.title}}"
-            hint: "For General Columns, JK Sportsline, The Becker Report, Bossart's Board, or The Touchline, use the matching list in Weekly Columns."
+            hint: "For Game of the Week analysis, add a story here and choose Game of the Week under Betting Page Feature. For recurring column articles, use the matching Weekly Columns collection."
             fields:
               - { label: ID, name: id, widget: string }
               - { label: Title, name: title, widget: string }
               - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, Soccer, FPHL, All] }
               - { label: Category, name: category, widget: string }
-              - { label: Betting Desk Section, name: deskSection, widget: select, options: [{ label: Not a betting feature, value: "" }, { label: Game of the Week, value: "game-of-week" }], required: false }
+              - { label: Betting Page Feature, name: deskSection, widget: select, options: [{ label: Not a betting feature, value: "" }, { label: Game of the Week, value: "game-of-week" }], required: false, hint: "Choose Game of the Week to place this article in the Betting page match analysis." }
               - { label: Type, name: type, widget: select, options: [story], default: story }
               - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
               - { label: Art Label, name: artLabel, widget: string, required: false }
@@ -289,8 +284,8 @@ collections:
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
               - { label: Label, name: label, widget: string }
-              - { label: Body HTML, name: body, widget: markdown }
-          - label: Official Picks
+              - { label: Story / Matchup Analysis, name: body, widget: markdown }
+          - label: Official Best Bets & Analysis
             name: picks
             widget: list
             fields:
@@ -302,7 +297,7 @@ collections:
               - { label: American Odds, name: odds, widget: number, value_type: int }
               - { label: Units, name: units, widget: number, value_type: float }
               - { label: Posted At, name: postedAt, widget: string, required: false }
-              - { label: Analysis, name: body, widget: text }
+              - { label: Pick Analysis / Reasoning, name: body, widget: text }
           - label: Articles
             name: articles
             widget: list
@@ -351,12 +346,12 @@ collections:
             name: articles
             widget: list
             summary: "{{fields.title}}"
-            hint: "Add the newest article at the top. The list order controls how articles appear on the page."
+            hint: "Add the newest article first. Select Game of the Week under Betting Page Feature to also feature that Becker Report piece in the Betting page matchup analysis."
             fields:
               - { label: Story ID, name: id, widget: string, hint: "Use a unique lowercase URL slug, such as jks-2026-11-12-season-preview." }
               - { label: Title, name: title, widget: string }
               - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, Soccer, FPHL, All] }
-              - { label: Betting Desk Section, name: deskSection, widget: select, options: [{ label: Not a betting feature, value: "" }, { label: Game of the Week, value: "game-of-week" }], required: false }
+              - { label: Betting Page Feature, name: deskSection, widget: select, options: [{ label: Not a betting feature, value: "" }, { label: Game of the Week, value: "game-of-week" }], required: false, hint: "Choose Game of the Week to place this article in the Betting page match analysis." }
               - { label: Category, name: category, widget: string }
               - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
               - { label: Art Label, name: artLabel, widget: string, required: false }

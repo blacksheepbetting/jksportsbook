@@ -97,33 +97,6 @@ window.JK_CONTENT = {
       <p>The next time you watch, follow one player for three possessions without waiting for that player to get the ball. You might see a different game.</p>`
     },
     {
-      id: 'college-football-the-matchup', title: 'Forget the logo. Watch the matchup.', sport: 'College',
-      category: 'Saturday Perspective', type: 'story', art: 'playbook', artLabel: 'SATURDAY / ALL DAY',
-      deck: 'Reputation gets the headline. The details decide what happens between the lines.',
-      author: 'JKSPORTSBOOK Desk', readTime: '3 min read', label: 'Evergreen analysis',
-      body: `<p>College football has a powerful visual language: the helmet, the stadium, the colors, the tradition. It makes the sport memorable. It can also make it easy to carry an old impression into a new matchup.</p>
-      <h2>Make the question specific</h2>
-      <p>Instead of asking whether a program is “good,” ask how its offensive line handles a particular defensive front. Ask how its secondary responds to motion, or what happens when its offense falls behind the chains.</p>
-      <p>Those are narrower questions, and that is what makes them useful. A reputation covers years. A matchup lasts an afternoon.</p>
-      <h2>Leave room to change your mind</h2>
-      <p>A clear opinion is more useful when you know what could change it. Injuries, personnel, and on-field adjustments can all matter. Start with a view, then keep watching for the evidence that challenges it.</p>
-      <p>The logo tells you which team is on the field. The matchup tells you what to look for.</p>`
-    },
-    {
-      id: 'baseball-the-long-game', title: 'Baseball is a long conversation.', sport: 'MLB',
-      category: 'The Long Game', type: 'story', art: 'baseball', artLabel: '162 / PERSPECTIVE',
-      deck: 'Why one night is a chapter, and why context matters over a long season.',
-      author: 'JKSPORTSBOOK Desk', readTime: '3 min read', label: 'Evergreen analysis',
-      body: `<p>One swing can decide a night. It rarely explains an entire season.</p>
-      <p>That tension is part of baseball’s appeal. The moment matters deeply, while the larger picture is always asking you to be patient.</p>
-      <h2>Separate the night from the pattern</h2>
-      <p>A hitter can make good contact and finish without a hit. A pitcher can execute a plan and still give up a run. Results matter, but the process behind them is worth watching too.</p>
-      <p>Before turning a single game into a sweeping conclusion, ask what actually changed. Was it a new approach? A different pitch mix? A difficult defensive play? Or simply a night that did not fall one team’s way?</p>
-      <h2>Keep the larger picture in view</h2>
-      <p>Baseball rewards attention over time. Follow the small adjustments, remember the context, and let a pattern become a pattern before calling it one.</p>
-      <p>Enjoy the ninth inning. Just leave some room for tomorrow.</p>`
-    },
-    {
       id: 'the-value-of-a-pass', title: 'The most underrated play? A pass.', sport: 'All',
       category: 'The Discipline Column', type: 'column', art: 'playbook',
       deck: 'Having an opinion on a game doesn’t mean you need a position on it.',

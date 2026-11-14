@@ -384,3 +384,12 @@
 .story-art.art-photo{background:#111;overflow:hidden}
 .story-art.art-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s}
 .story-card:hover .story-art.art-photo img{transform:scale(1.04)}
+
+
+/* Clean, consistent icon marks */
+.inline-arrow,.inline-arrow-up,.inline-play{display:inline-block;max-width:none;flex:0 0 auto;vertical-align:-.12em}
+.inline-arrow,.inline-arrow-up{width:.88em;height:.88em;fill:none;stroke:currentColor;stroke-width:1.8}
+.inline-arrow path,.inline-arrow-up path{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.inline-play{width:.92em;height:.92em;fill:currentColor;stroke:none}
+.inline-play path{fill:currentColor;stroke:none}
+.brand-dot{display:inline-block;flex:0 0 7px;width:7px;height:7px;border-radius:50%;background:var(--yellow);vertical-align:middle}

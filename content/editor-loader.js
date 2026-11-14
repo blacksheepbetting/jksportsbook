@@ -29,7 +29,7 @@ window.JK_EDITOR_READY = fetch('content/editor.json?v=site-cleanup-20261113', { 
 
     const columnDocs = await Promise.all(JK_COLUMN_FEEDS.map(async feed => {
       try {
-        const response = await fetch(feed.path + '?v=columns-touchline-20261113', { cache: 'no-store' });
+        const response = await fetch(feed.path + '?v=professional-icons-20261113', { cache: 'no-store' });
         if (!response.ok) return [];
         const document = await response.json();
         if (!Array.isArray(document.articles)) return [];

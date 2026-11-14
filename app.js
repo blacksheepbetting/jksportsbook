@@ -30,7 +30,31 @@
   const reader = $('#reader-dialog');
   const search = $('#search-dialog');
 
+  const editorialCovers = {
+    football: 'assets/uploads/jksb-cover-football.jpg',
+    basketball: 'assets/uploads/jksb-cover-basketball.jpg',
+    soccer: 'assets/uploads/jksb-cover-soccer.jpg',
+    hockey: 'assets/uploads/jksb-cover-hockey.jpg',
+    'consumer-advocacy': 'assets/uploads/jksb-cover-consumer-advocacy.jpg'
+  };
+
+  function storyCover(story) {
+    const choice = String(story.coverImage || '').toLowerCase();
+    if (choice === 'none') return '';
+    if (editorialCovers[choice]) return editorialCovers[choice];
+
+    const topic = `${story.sport || ''} ${story.category || ''} ${story.title || ''} ${story.deck || ''}`.toLowerCase();
+    if (/\b(soccer|touchline)\b/.test(topic)) return editorialCovers.soccer;
+    if (/\b(fphl|hockey)\b/.test(topic)) return editorialCovers.hockey;
+    if (/\b(nba|cbb|basketball)\b/.test(topic)) return editorialCovers.basketball;
+    if (/\b(nfl|football|supercontest|raiders|seahawks)\b/.test(topic)) return editorialCovers.football;
+    if (/\b(consumer|dealership|automotive|car buying|auto sales|sportsbook)\b/.test(topic)) return editorialCovers['consumer-advocacy'];
+    return '';
+  }
+
   function art(story) {
+    const cover = storyCover(story);
+    if (cover) return `<div class="story-art art-photo" aria-hidden="true"><img src="${cover}" loading="lazy" alt="" width="1200" height="800"></div>`;
     const label = (story.artLabel || '').split('<br>').map(esc).join('<br>');
     if (story.art === 'stadium') return `<div class="story-art art-stadium" aria-hidden="true"><img src="assets/stadium.jpg" loading="lazy" alt="" width="1672" height="941"><span class="art-label">${label}</span></div>`;
     if (story.art === 'court') return `<div class="story-art art-court" aria-hidden="true"><div class="court-lines"></div><div class="basketball"></div><span class="art-label">${label}</span></div>`;

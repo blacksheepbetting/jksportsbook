@@ -265,6 +265,7 @@ collections:
               - { label: Label, name: label, widget: string }
               - { label: Content Type, name: type, widget: select, options: [story, column], default: story }
               - { label: Column Series, name: series, widget: select, options: [{ label: Not a column, value: "" }, { label: JK Sportsline, value: "jk-sportsline" }, { label: The Becker Report, value: "becker-report" }, { label: "Bossart's Board", value: "bossarts-board" }, { label: The Touchline, value: "the-touchline" }], required: false }
+              - { label: Cover Photo, name: coverImage, widget: select, options: [{ label: Automatic by sport / topic, value: auto }, { label: Football - Black & White, value: football }, { label: Basketball - Black & White, value: basketball }, { label: Soccer - Black & White, value: soccer }, { label: Hockey - Black & White, value: hockey }, { label: Consumer Advocacy - Black & White, value: consumer-advocacy }, { label: Original Graphic Art, value: none }], default: auto, required: false }
               - { label: Body HTML, name: body, widget: markdown }
           - label: Articles & Match Analysis
             name: newStories
@@ -279,6 +280,7 @@ collections:
               - { label: Betting Page Feature, name: deskSection, widget: select, options: [{ label: Not a betting feature, value: "" }, { label: Game of the Week, value: "game-of-week" }], required: false, hint: "Choose Game of the Week to place this article in the Betting page match analysis." }
               - { label: Type, name: type, widget: select, options: [story], default: story }
               - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
+              - { label: Cover Photo, name: coverImage, widget: select, options: [{ label: Automatic by sport / topic, value: auto }, { label: Football - Black & White, value: football }, { label: Basketball - Black & White, value: basketball }, { label: Soccer - Black & White, value: soccer }, { label: Hockey - Black & White, value: hockey }, { label: Consumer Advocacy - Black & White, value: consumer-advocacy }, { label: Original Graphic Art, value: none }], default: auto, required: false }
               - { label: Art Label, name: artLabel, widget: string, required: false }
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
@@ -324,6 +326,7 @@ collections:
               - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, Soccer, FPHL, All] }
               - { label: Category, name: category, widget: string }
               - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
+              - { label: Cover Photo, name: coverImage, widget: select, options: [{ label: Automatic by sport / topic, value: auto }, { label: Football - Black & White, value: football }, { label: Basketball - Black & White, value: basketball }, { label: Soccer - Black & White, value: soccer }, { label: Hockey - Black & White, value: hockey }, { label: Consumer Advocacy - Black & White, value: consumer-advocacy }, { label: Original Graphic Art, value: none }], default: auto, required: false }
               - { label: Art Label, name: artLabel, widget: string, required: false }
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
@@ -346,6 +349,7 @@ collections:
               - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, Soccer, FPHL, All] }
               - { label: Category, name: category, widget: string }
               - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
+              - { label: Cover Photo, name: coverImage, widget: select, options: [{ label: Automatic by sport / topic, value: auto }, { label: Football - Black & White, value: football }, { label: Basketball - Black & White, value: basketball }, { label: Soccer - Black & White, value: soccer }, { label: Hockey - Black & White, value: hockey }, { label: Consumer Advocacy - Black & White, value: consumer-advocacy }, { label: Original Graphic Art, value: none }], default: auto, required: false }
               - { label: Art Label, name: artLabel, widget: string, required: false }
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
@@ -369,6 +373,7 @@ collections:
               - { label: Betting Page Feature, name: deskSection, widget: select, options: [{ label: Not a betting feature, value: "" }, { label: Game of the Week, value: "game-of-week" }], required: false, hint: "Choose Game of the Week to place this article in the Betting page match analysis." }
               - { label: Category, name: category, widget: string }
               - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
+              - { label: Cover Photo, name: coverImage, widget: select, options: [{ label: Automatic by sport / topic, value: auto }, { label: Football - Black & White, value: football }, { label: Basketball - Black & White, value: basketball }, { label: Soccer - Black & White, value: soccer }, { label: Hockey - Black & White, value: hockey }, { label: Consumer Advocacy - Black & White, value: consumer-advocacy }, { label: Original Graphic Art, value: none }], default: auto, required: false }
               - { label: Art Label, name: artLabel, widget: string, required: false }
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
@@ -391,6 +396,7 @@ collections:
               - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, Soccer, FPHL, All] }
               - { label: Category, name: category, widget: string }
               - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
+              - { label: Cover Photo, name: coverImage, widget: select, options: [{ label: Automatic by sport / topic, value: auto }, { label: Football - Black & White, value: football }, { label: Basketball - Black & White, value: basketball }, { label: Soccer - Black & White, value: soccer }, { label: Hockey - Black & White, value: hockey }, { label: Consumer Advocacy - Black & White, value: consumer-advocacy }, { label: Original Graphic Art, value: none }], default: auto, required: false }
               - { label: Art Label, name: artLabel, widget: string, required: false }
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
@@ -413,6 +419,7 @@ collections:
               - { label: Sport, name: sport, widget: select, options: [Soccer] }
               - { label: Category, name: category, widget: string }
               - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
+              - { label: Cover Photo, name: coverImage, widget: select, options: [{ label: Automatic by sport / topic, value: auto }, { label: Football - Black & White, value: football }, { label: Basketball - Black & White, value: basketball }, { label: Soccer - Black & White, value: soccer }, { label: Hockey - Black & White, value: hockey }, { label: Consumer Advocacy - Black & White, value: consumer-advocacy }, { label: Original Graphic Art, value: none }], default: auto, required: false }
               - { label: Art Label, name: artLabel, widget: string, required: false }
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }

@@ -378,3 +378,9 @@
   .scoreboard-marquee{animation:none;transform:none}
   .scoreboard-sequence[aria-hidden="true"]{display:none}
 }
+
+
+/* Monochrome editorial cover photos */
+.story-art.art-photo{background:#111;overflow:hidden}
+.story-art.art-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.story-card:hover .story-art.art-photo img{transform:scale(1.04)}

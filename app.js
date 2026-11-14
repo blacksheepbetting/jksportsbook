@@ -75,7 +75,6 @@
     if (track.dataset.povCarouselReady !== 'true') {
       track.dataset.povCarouselReady = 'true';
       controls.forEach(button => button.addEventListener('click', () => {
-        if (!window.matchMedia('(max-width: 760px)').matches) return;
         const direction = button.dataset.povScroll === 'next' ? 1 : -1;
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         track.scrollBy({ left: direction * step(), behavior: reducedMotion ? 'auto' : 'smooth' });

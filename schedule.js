@@ -36,12 +36,38 @@
   function renderScoreboard(games) {
     const target = byId('scoreboard-games');
     if (!target) return;
-    const upcoming = futureGames(games).slice(0, 3);
+    const allUpcoming = futureGames(games);
+    const nextWeek = allUpcoming[0]?.week;
+    const upcoming = nextWeek == null
+      ? allUpcoming.slice(0, 3)
+      : allUpcoming.filter((game) => String(game.week) === String(nextWeek));
     if (!upcoming.length) {
       target.innerHTML = '<span class="scoreboard-empty">Schedule feed is waiting for its first refresh.</span>';
       return;
     }
-    target.innerHTML = upcoming.map((game) => `<a class="scoreboard-game" href="schedule.html#week-${esc(game.week)}"><span class="scoreboard-game-date">${esc(dateLabel(game))}</span><strong>${esc(team(game.awayTeam))}</strong><span class="scoreboard-at">at</span><strong>${esc(team(game.homeTeam))}</strong><span class="scoreboard-time">${esc(kickoffLabel(game))}</span></a>`).join('');
+
+    const card = (game, linked) => {
+      const tag = linked ? 'a' : 'span';
+      const href = linked ? ` href="schedule.html#week-${esc(game.week)}"` : '';
+      return `<${tag} class="scoreboard-game"${href}><span class="scoreboard-game-date">${esc(dateLabel(game))}</span><strong>${esc(team(game.awayTeam))}</strong><span class="scoreboard-at">at</span><strong>${esc(team(game.homeTeam))}</strong><span class="scoreboard-time">${esc(kickoffLabel(game))}</span></${tag}>`;
+    };
+    const cards = upcoming.map((game) => card(game, true)).join('');
+    const repeatedCards = upcoming.map((game) => card(game, false)).join('');
+    target.innerHTML = `<div class="scoreboard-marquee"><div class="scoreboard-sequence">${cards}</div></div>`;
+
+    const track = target.querySelector('.scoreboard-marquee');
+    const sequence = target.querySelector('.scoreboard-sequence');
+    const sequenceWidth = sequence.getBoundingClientRect().width;
+    const copies = Math.max(1, Math.ceil(target.clientWidth / Math.max(sequenceWidth, 1)) + 1);
+    for (let i = 0; i < copies; i += 1) {
+      const clone = document.createElement('div');
+      clone.className = 'scoreboard-sequence';
+      clone.setAttribute('aria-hidden', 'true');
+      clone.innerHTML = repeatedCards;
+      track.appendChild(clone);
+    }
+    target.style.setProperty('--scoreboard-shift', `-${sequenceWidth}px`);
+    target.style.setProperty('--scoreboard-duration', `${Math.max(24, Math.round(sequenceWidth / 45))}s`);
   }
 
   function statusLabel(game) {

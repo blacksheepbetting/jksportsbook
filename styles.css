@@ -338,3 +338,43 @@
 @media(prefers-reduced-motion:reduce){
   #stories-grid{scroll-behavior:auto}
 }
+
+
+/* Compact, scrolling scoreboard shared by desktop and mobile */
+.scoreboard-inner{gap:18px}
+.scoreboard-label{font-size:9px;letter-spacing:1.1px}
+.scoreboard-games{display:block;flex:1;min-width:0;overflow:hidden}
+.scoreboard-marquee{display:flex;width:max-content;animation:scoreboard-glide var(--scoreboard-duration,48s) linear infinite;will-change:transform}
+.scoreboard-sequence{display:flex;flex:none}
+.scoreboard-game{flex:none;min-height:58px;min-width:180px}
+.scoreboard-link,.bets-ticker-label,.bets-ticker-link{font-size:9px;letter-spacing:.75px}
+.scoreboard-link{gap:0}
+.bets-ticker-label{white-space:nowrap}
+.bets-ticker-link{gap:0}
+.bets-ticker-link span{font:inherit;color:inherit}
+.scoreboard-games:hover .scoreboard-marquee,
+.scoreboard-games:focus-within .scoreboard-marquee{animation-play-state:paused}
+@keyframes scoreboard-glide{from{transform:translateX(0)}to{transform:translateX(var(--scoreboard-shift,-50%))}}
+@media(max-width:900px){
+  .scoreboard-inner{gap:12px}
+  .scoreboard-game{min-width:165px;padding-inline:13px}
+  .scoreboard-link{font-size:9px}
+}
+@media(max-width:640px){
+  .scoreboard-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"label link" "games games";gap:8px 12px;min-height:0;padding:10px 18px}
+  .scoreboard-label{grid-area:label;align-self:center;font-size:8px;letter-spacing:.9px}
+  .scoreboard-link{grid-area:link;justify-self:end;font-size:8px;letter-spacing:.55px}
+  .scoreboard-games{grid-area:games;width:100%;min-height:34px;margin:0}
+  .scoreboard-game{min-width:158px;min-height:34px;padding:2px 12px}
+  .scoreboard-game-date{font-size:7px}
+  .scoreboard-game strong{font-size:10px}
+  .scoreboard-time{font-size:7px}
+  .bets-ticker-inner{gap:10px}
+  .bets-ticker-label,.bets-ticker-link{font-size:8px;letter-spacing:.5px}
+  .bets-ticker-link{flex-shrink:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .scoreboard-games{overflow-x:auto}
+  .scoreboard-marquee{animation:none;transform:none}
+  .scoreboard-sequence[aria-hidden="true"]{display:none}
+}

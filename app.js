@@ -95,7 +95,8 @@
 
   function renderStories(filter = 'All') {
     const filtered = stories.filter(story => story.type === 'story' && (filter === 'All' || story.sport === filter));
-    const visible = filtered;
+    // The featured Horse interview already leads the homepage and On the Radar.
+    const visible = filtered.filter(story => story.id !== 'westgate-supercontest-history');
     const track = $('#stories-grid');
     track.innerHTML = visible.map(story => `<a class="story-card" href="#story/${esc(story.id)}">${art(story)}<span class="category">${esc(story.sport)} / ${esc(story.category)}</span><h3>${esc(story.title)}</h3><p>${esc(story.deck)}</p><span class="meta">${esc(story.author)} &nbsp; / &nbsp; ${esc(story.readTime)}</span></a>`).join('');
     track.scrollLeft = 0;
@@ -166,8 +167,9 @@
       const posts = stories.filter(story => story.type === 'column' && story.series === seriesId);
       const list = card.querySelector('.column-series-posts');
       const status = card.querySelector('.column-series-status');
-      list.innerHTML = posts.slice(0, 2).map(story => '<a class="column-series-post" href="#story/' + esc(story.id) + '"><span class="category">' + esc(story.category) + '</span><strong>' + esc(story.title) + '</strong><span class="meta">' + esc(story.author) + ' / ' + esc(story.readTime) + '</span></a>').join('');
-      if (posts.length) status.textContent = posts.length + ' COLUMN' + (posts.length === 1 ? '' : 'S') + ' PUBLISHED';
+      const visiblePosts = posts.slice(0, 3);
+      list.innerHTML = visiblePosts.map(story => '<a class="column-series-post" href="#story/' + esc(story.id) + '"><span class="category">' + esc(story.category) + '</span><strong>' + esc(story.title) + '</strong><span class="meta">' + esc(story.author) + ' / ' + esc(story.readTime) + '</span></a>').join('');
+      if (posts.length) status.textContent = posts.length + ' ARTICLE' + (posts.length === 1 ? '' : 'S') + ' PUBLISHED' + (posts.length > visiblePosts.length ? ' · LATEST ' + visiblePosts.length + ' SHOWN' : '');
     }
   }
   function setupColumnSeriesCarousel() {
@@ -202,7 +204,7 @@
     const target = $('#bets-ticker-track');
     const bets = Array.isArray(content.bestBets) ? content.bestBets : [];
     if (!target) return;
-    const items = bets.map(bet => `<span class="bet-ticker-item"><strong>${esc(bet.poster)}:</strong> ${esc(bet.selection)} <b>${esc(oddsText(bet.odds))}</b></span>`).join('');
+    const items = bets.map(bet => `<span class="bet-ticker-item"><strong>${esc(bet.poster)}:</strong>&nbsp;${esc(bet.selection)} <b>(${esc(oddsText(bet.odds))})</b></span>`).join('');
     target.innerHTML = bets.length
       ? `<div class="bets-ticker-marquee">${items}<span aria-hidden="true">${items}</span></div>`
       : '<span class="bets-ticker-loading">No current board posted.</span>';
@@ -215,7 +217,7 @@
     const videoId = youtubeVideoId(feature.youtubeUrl || '');
     if (!videoId) return;
     const title = String(feature.title || 'Behold a Pale Horse');
-    const badge = String(feature.eyebrow || 'A 65 MINUTES EXCLUSIVE');
+    const badge = String(feature.eyebrow || 'A 65-MINUTE EXCLUSIVE');
     const description = String(feature.description || 'Josh King’s exclusive interview with the most controversial account on X.');
     const watchUrl = 'https://www.youtube.com/watch?v=' + encodeURIComponent(videoId);
     const thumbnailUrl = 'https://i.ytimg.com/vi/' + encodeURIComponent(videoId) + '/hqdefault.jpg';

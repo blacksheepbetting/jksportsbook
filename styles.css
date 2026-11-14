@@ -393,3 +393,28 @@
 .inline-play{width:.92em;height:.92em;fill:currentColor;stroke:none}
 .inline-play path{fill:currentColor;stroke:none}
 .brand-dot{display:inline-block;flex:0 0 7px;width:7px;height:7px;border-radius:50%;background:var(--yellow);vertical-align:middle}
+
+
+/* Small-screen and episode layout refinements */
+@media(max-width:640px){
+  .topline{height:24px}
+  .masthead{height:68px}
+  .main-nav{top:92px}
+  .sport-nav>.wrap,.sport-nav a{height:38px}
+  .opening-line>.wrap{min-height:36px;padding-block:5px}
+  .edition-row{padding-top:14px;padding-bottom:8px}
+  .scoreboard-inner{gap:6px 12px;padding-block:7px}
+  .scoreboard-game{min-height:30px}
+  .bets-ticker-inner{min-height:38px}
+  .featured-video-card .stadium-image{inset:0 0 auto;height:55%;object-position:center 42%}
+  .featured-video-card .lead-copy{padding-top:185px}
+  .carousel-swipe-hint{display:block}
+}
+@media(min-width:901px){
+  .podcast-section{grid-template-columns:minmax(220px,.68fr) minmax(0,1.32fr);gap:clamp(32px,4vw,56px)}
+  #featured-episode,.youtube-feature{width:100%;max-width:none}
+  .show-episode{grid-template-columns:minmax(0,1.45fr) minmax(300px,1fr)}
+  .show-episode-copy{display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+  .show-episode-copy>p{max-width:46ch}
+}
+.carousel-swipe-hint{display:none;margin:-6px 0 4px;text-align:right;color:#777;font-size:8px;font-weight:800;letter-spacing:1px}

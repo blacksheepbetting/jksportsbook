@@ -62,6 +62,41 @@
       "description": "A weekly look at the matches, moments, and storylines shaping the global game."
     }
   },
+  "demoPicks": [
+    {
+      "id": "demo-nfl-spread",
+      "sport": "NFL",
+      "type": "Spread",
+      "matchup": "Away Team at Home Team",
+      "selection": "Home Team −3.5",
+      "odds": -110,
+      "units": 1,
+      "note": "A sample spread breakdown",
+      "body": "This is an illustrative card, not an official pick. Use this space to explain the matchup, identify the price you recorded, and state what would change your view. No live odds or fixture data is connected."
+    },
+    {
+      "id": "demo-nba-total",
+      "sport": "NBA",
+      "type": "Total",
+      "matchup": "Away Team at Home Team",
+      "selection": "Under 224.5 points",
+      "odds": -105,
+      "units": 1,
+      "note": "A sample total breakdown",
+      "body": "This is an illustrative card, not an official pick. A published total analysis can discuss pace, rotation assumptions, and the number available when the pick was posted. Record the original price instead of replacing it after the result."
+    },
+    {
+      "id": "demo-nfl-moneyline",
+      "sport": "NFL",
+      "type": "Moneyline",
+      "matchup": "Away Team at Home Team",
+      "selection": "Away Team moneyline",
+      "odds": 125,
+      "units": 0.5,
+      "note": "A sample moneyline breakdown",
+      "body": "This is an illustrative card, not an official pick. The stake and price belong next to the reasoning. Use the results ledger to close out a published pick consistently, whether it wins, loses, or pushes."
+    }
+  ],
   "picks": [],
   "storyOverrides": [
     {

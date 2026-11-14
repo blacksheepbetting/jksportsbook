@@ -12,6 +12,7 @@ window.JK_EDITOR_READY = fetch('content/editor.json?v=site-cleanup-20261113', { 
   .then(async editor => {
     const content = window.JK_CONTENT;
     if (Array.isArray(editor.bestBets)) content.bestBets = editor.bestBets;
+    if (Array.isArray(editor.demoPicks)) content.demoPicks = editor.demoPicks;
     if (Array.isArray(editor.radarStoryIds)) content.radarStoryIds = editor.radarStoryIds;
     if (editor.siteCopy && typeof editor.siteCopy === 'object') content.siteCopy = { ...(content.siteCopy || {}), ...editor.siteCopy };
     if (editor.columnSeries && typeof editor.columnSeries === 'object') content.columnSeries = { ...(content.columnSeries || {}), ...editor.columnSeries };

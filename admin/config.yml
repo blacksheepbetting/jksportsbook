@@ -163,9 +163,9 @@ collections:
                   - { label: Best Bets Kicker, name: bestBetsKicker, widget: string }
                   - { label: Best Bets Title, name: bestBetsTitle, widget: string }
                   - { label: Best Bets Aside, name: bestBetsAside, widget: string }
-                  - { label: Picks Kicker, name: picksKicker, widget: string }
-                  - { label: Picks Title, name: picksTitle, widget: string }
-                  - { label: Picks Link, name: picksLink, widget: string }
+                  - { label: Pick Breakdowns - Section Label, name: picksKicker, widget: string }
+                  - { label: Pick Breakdowns - Heading, name: picksTitle, widget: string }
+                  - { label: Pick Breakdowns - Calculator Link, name: picksLink, widget: string }
                   - { label: Game of the Week Section Label, name: gameKicker, widget: string }
                   - { label: Game of the Week Heading, name: gameTitle, widget: string }
                   - { label: Game of the Week Introduction, name: gameDescription, widget: text }
@@ -178,7 +178,7 @@ collections:
                   - { label: No Episodes, name: noEpisodes, widget: string }
                   - { label: No Bets, name: noBets, widget: string }
                   - { label: No Picks, name: noPicks, widget: string }
-                  - { label: Betting Disclaimer, name: bettingDisclaimer, widget: text }
+                  - { label: Betting Page - Disclaimer, name: bettingDisclaimer, widget: text }
               - label: Odds Calculator
                 name: calculator
                 widget: object
@@ -285,6 +285,21 @@ collections:
               - { label: Read Time, name: readTime, widget: string }
               - { label: Label, name: label, widget: string }
               - { label: Story / Matchup Analysis, name: body, widget: markdown }
+          - label: Sample Pick Breakdown Cards
+            name: demoPicks
+            widget: list
+            summary: "{{fields.sport}} / {{fields.type}} — {{fields.matchup}}"
+            hint: "These illustrative cards appear while the official picks board is empty. Edit the matchup, selection, odds, and analysis here; official picks are managed separately below."
+            fields:
+              - { label: Stable ID, name: id, widget: string, hint: "Leave the existing demo IDs in place." }
+              - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, Soccer, FPHL, All] }
+              - { label: Bet Type, name: type, widget: string }
+              - { label: Matchup Heading, name: matchup, widget: string }
+              - { label: Selection, name: selection, widget: string }
+              - { label: American Odds, name: odds, widget: number, value_type: int }
+              - { label: Units, name: units, widget: number, value_type: float }
+              - { label: Short Note, name: note, widget: string, required: false, hint: "Shown only when the analysis field is blank." }
+              - { label: Pick Analysis / Card Description, name: body, widget: text }
           - label: Official Best Bets & Analysis
             name: picks
             widget: list

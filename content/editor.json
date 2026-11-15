@@ -69,7 +69,18 @@
       "description": "A weekly look at the matches, moments, and storylines shaping the global game."
     }
   },
-  "demoPicks": [
+  "demoPicks": [],
+  "picks": [
+    {
+      "id": "mnf-bengals-browns",
+      "sport": "NFL",
+      "type": "Spread",
+      "matchup": "Steelers @ Bengals",
+      "selection": "Steelers +3.5",
+      "odds": -110,
+      "units": 1.1,
+      "body": "The Steelers have extended a nine-game winning streak following their bye week, alongside a six-game streak ATS  in those contests. They also show a 5–2 straight-up and 6–1 ATS surge across the past seven matchups with Cincinnati. Win here and the division is yours. Pittsburgh is live to win this game but I’ll happily take the points."
+    },
     {
       "id": "bills-spread-10",
       "sport": "NFL",
@@ -89,18 +100,6 @@
       "odds": 280,
       "units": 0.5,
       "body": "The 8th overall pick made his debut last week and hauled in 4 catches on 5 targets while nearly scoring. A rivalry game is the perfect spot to stamp your name by finding the pay dirt. Time to show em’ what you’re made of, kid. "
-    }
-  ],
-  "picks": [
-    {
-      "id": "mnf-bengals-browns",
-      "sport": "NFL",
-      "type": "Spread",
-      "matchup": "Steelers @ Bengals",
-      "selection": "Steelers +3.5",
-      "odds": -110,
-      "units": 1.1,
-      "body": "The Steelers have extended a nine-game winning streak following their bye week, alongside a six-game streak ATS  in those contests. They also show a 5–2 straight-up and 6–1 ATS surge across the past seven matchups with Cincinnati. Win here and the division is yours. Pittsburgh is live to win this game but I’ll happily take the points."
     }
   ],
   "storyOverrides": [

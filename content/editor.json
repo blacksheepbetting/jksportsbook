@@ -71,39 +71,6 @@
   },
   "demoPicks": [
     {
-      "matchup": "Away Team at Home Team",
-      "body": "This is an illustrative card, not an official pick. Use this space to explain the matchup, identify the price you recorded, and state what would change your view. No live odds or fixture data is connected.",
-      "odds": -110,
-      "selection": "Home Team −3.5",
-      "units": 1,
-      "note": "A sample spread breakdown",
-      "sport": "NFL",
-      "type": "Spread",
-      "id": "demo-nfl-spread"
-    },
-    {
-      "matchup": "Away Team at Home Team",
-      "body": "This is an illustrative card, not an official pick. A published total analysis can discuss pace, rotation assumptions, and the number available when the pick was posted. Record the original price instead of replacing it after the result.",
-      "odds": -105,
-      "selection": "Under 224.5 points",
-      "units": 1,
-      "note": "A sample total breakdown",
-      "sport": "NBA",
-      "type": "Total",
-      "id": "demo-nba-total"
-    },
-    {
-      "matchup": "Away Team at Home Team",
-      "body": "This is an illustrative card, not an official pick. The stake and price belong next to the reasoning. Use the results ledger to close out a published pick consistently, whether it wins, loses, or pushes.",
-      "odds": 125,
-      "selection": "Away Team moneyline",
-      "units": 0.5,
-      "note": "A sample moneyline breakdown",
-      "sport": "NFL",
-      "type": "Moneyline",
-      "id": "demo-nfl-moneyline"
-    },
-    {
       "id": "bills-spread-10",
       "sport": "NFL",
       "type": "Spread",
@@ -112,6 +79,16 @@
       "odds": -110,
       "units": 1.1,
       "body": "Laying a touchdown with the hook in a divisional game is spooky but I can’t see the Jets keeping it within the number through the whistle. Aaron Glenn still hasn’t won a divisional game since taking over as head coach and that’s unlikely to change come Sunday. One stalled possession and the Bills undoubtedly pour it on. "
+    },
+    {
+      "id": "jordyn-tyson-td",
+      "sport": "NFL",
+      "type": "Prop",
+      "matchup": "Jordyn Tyson",
+      "selection": "Anytime Touchdown",
+      "odds": 280,
+      "units": 0.5,
+      "body": "The 8th overall pick made his debut last week and hauled in 4 catches on 5 targets while nearly scoring. A rivalry game is the perfect spot to stamp your name: Time to show em’ what you’re made of, kid. "
     }
   ],
   "picks": [],

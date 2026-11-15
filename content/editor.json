@@ -44,6 +44,13 @@
     "fphl-inside-the-fed",
     "why-im-helping-build-jksportsbook"
   ],
+  "featuredVideo": {
+    "youtubeUrl": "https://www.youtube.com/watch?v=EIHViakKLdM",
+    "title": "Behold a Pale Horse",
+    "eyebrow": "A 65-MINUTE EXCLUSIVE",
+    "description": "Josh King’s exclusive interview with the most controversial account on X.",
+    "startSeconds": 0
+  },
   "columnSeries": {
     "jkSportsline": {
       "title": "JK Sportsline",
@@ -64,37 +71,47 @@
   },
   "demoPicks": [
     {
-      "id": "demo-nfl-spread",
-      "sport": "NFL",
-      "type": "Spread",
       "matchup": "Away Team at Home Team",
-      "selection": "Home Team −3.5",
+      "body": "This is an illustrative card, not an official pick. Use this space to explain the matchup, identify the price you recorded, and state what would change your view. No live odds or fixture data is connected.",
       "odds": -110,
+      "selection": "Home Team −3.5",
       "units": 1,
       "note": "A sample spread breakdown",
-      "body": "This is an illustrative card, not an official pick. Use this space to explain the matchup, identify the price you recorded, and state what would change your view. No live odds or fixture data is connected."
+      "sport": "NFL",
+      "type": "Spread",
+      "id": "demo-nfl-spread"
     },
     {
-      "id": "demo-nba-total",
-      "sport": "NBA",
-      "type": "Total",
       "matchup": "Away Team at Home Team",
-      "selection": "Under 224.5 points",
+      "body": "This is an illustrative card, not an official pick. A published total analysis can discuss pace, rotation assumptions, and the number available when the pick was posted. Record the original price instead of replacing it after the result.",
       "odds": -105,
+      "selection": "Under 224.5 points",
       "units": 1,
       "note": "A sample total breakdown",
-      "body": "This is an illustrative card, not an official pick. A published total analysis can discuss pace, rotation assumptions, and the number available when the pick was posted. Record the original price instead of replacing it after the result."
+      "sport": "NBA",
+      "type": "Total",
+      "id": "demo-nba-total"
     },
     {
-      "id": "demo-nfl-moneyline",
-      "sport": "NFL",
-      "type": "Moneyline",
       "matchup": "Away Team at Home Team",
-      "selection": "Away Team moneyline",
+      "body": "This is an illustrative card, not an official pick. The stake and price belong next to the reasoning. Use the results ledger to close out a published pick consistently, whether it wins, loses, or pushes.",
       "odds": 125,
+      "selection": "Away Team moneyline",
       "units": 0.5,
       "note": "A sample moneyline breakdown",
-      "body": "This is an illustrative card, not an official pick. The stake and price belong next to the reasoning. Use the results ledger to close out a published pick consistently, whether it wins, loses, or pushes."
+      "sport": "NFL",
+      "type": "Moneyline",
+      "id": "demo-nfl-moneyline"
+    },
+    {
+      "id": "bills-spread-10",
+      "sport": "NFL",
+      "type": "Spread",
+      "matchup": "Bills @ Jets ",
+      "selection": "Bills -7.5 ",
+      "odds": -110,
+      "units": 1.1,
+      "body": "Laying a touchdown with the hook in a divisional game is spooky but I can’t see the Jets keeping it within the number through the whistle. Aaron Glenn still hasn’t won a divisional game since taking over as head coach and that’s unlikely to change come Sunday. One stalled possession and the Bills undoubtedly pour it on. "
     }
   ],
   "picks": [],
@@ -121,40 +138,40 @@
       "id": "fphl-inside-the-fed"
     },
     {
-      "id": "welcome-to-jksportsbook",
-      "title": "More than the score. This is JKSPORTSBOOK.",
+      "body": "<p>Every game ends with a score. The conversation rarely ends there.</p>\n      <p>There is the decision everyone is still debating. The adjustment that changed the second half. The player whose work does not fit neatly into a highlight clip. The game you watched with friends, and the argument that somehow carried into the next morning.</p>\n      <p>That is the space JKSPORTSBOOK is being built for: sports, with a point of view.</p>\n      <h2>A home for the whole conversation</h2>\n      <p>Start with the newsroom for original stories and analysis. Spend a little longer with the columns, where one idea gets room to breathe. Pull up the podcast when a conversation deserves more than a headline.</p>\n      <p>Then there is the picks desk. Every official pick should have a clear selection, a recorded price, a stated stake, and a reason. The record should include the losses and the passes, alongside the wins.</p>\n      <h2>The opening edition</h2>\n      <p>This first edition introduces the publication and its sections. The reading features are original launch pieces; the picks and results marked “sample” demonstrate how the desk will work. Official picks and podcast recordings will appear when published.</p>\n      <p>Good stories. Honest takes. All sports. Welcome to JKSPORTSBOOK.</p>",
+      "readTime": "3 min read",
+      "coverImage": "auto",
       "deck": "The stories behind the game. The takes worth debating. And a seat at the table for every fan.",
       "author": "JKSPORTSBOOK Desk",
-      "readTime": "3 min read",
       "label": "The Becker Report",
-      "type": "story",
       "series": "becker-report",
-      "coverImage": "auto",
-      "body": "<p>Every game ends with a score. The conversation rarely ends there.</p>\n      <p>There is the decision everyone is still debating. The adjustment that changed the second half. The player whose work does not fit neatly into a highlight clip. The game you watched with friends, and the argument that somehow carried into the next morning.</p>\n      <p>That is the space JKSPORTSBOOK is being built for: sports, with a point of view.</p>\n      <h2>A home for the whole conversation</h2>\n      <p>Start with the newsroom for original stories and analysis. Spend a little longer with the columns, where one idea gets room to breathe. Pull up the podcast when a conversation deserves more than a headline.</p>\n      <p>Then there is the picks desk. Every official pick should have a clear selection, a recorded price, a stated stake, and a reason. The record should include the losses and the passes, alongside the wins.</p>\n      <h2>The opening edition</h2>\n      <p>This first edition introduces the publication and its sections. The reading features are original launch pieces; the picks and results marked “sample” demonstrate how the desk will work. Official picks and podcast recordings will appear when published.</p>\n      <p>Good stories. Honest takes. All sports. Welcome to JKSPORTSBOOK.</p>"
+      "title": "More than the score. This is JKSPORTSBOOK.",
+      "type": "story",
+      "id": "welcome-to-jksportsbook"
     },
     {
-      "id": "sunday-starts-before-kickoff",
-      "title": "Sunday starts long before kickoff.",
+      "body": "<p>The first play is never really the beginning. Before the ball is snapped, there is a week of decisions hiding behind it: personnel, protection, formation, and what a coaching staff thinks its opponent will expect.</p>\n      <p>Watching with that in mind makes a familiar Sunday feel a little different. The question becomes less “who made the play?” and more “why was that play available?”</p>\n      <h2>Start with the matchup</h2>\n      <p>A team’s identity is useful context, but a matchup is specific. Watch how an offense tries to protect its weaknesses, which defenders are asked to make difficult choices, and what changes when the down and distance changes.</p>\n      <p>A completion can be a fine outcome for the defense if it forces a difficult third down. A short run can be valuable to an offense if it reveals how a front intends to respond. One result does not tell you the whole design.</p>\n      <h2>Watch what changes</h2>\n      <p>When a team finds something that works, the next question is how its opponent responds. Does a safety move closer to the line? Does the offense change its personnel? Does a successful pressure force a quicker passing game?</p>\n      <p>Those adjustments are the conversation within the game. Follow them, and the final score begins to feel like the end of a story you actually watched unfold.</p>",
+      "readTime": "4 min read",
+      "coverImage": "auto",
       "deck": "A game plan for watching football with a little more context and a lot better questions.",
       "author": "JKSPORTSBOOK Desk",
-      "readTime": "4 min read",
       "label": "The Becker Report",
-      "type": "story",
       "series": "becker-report",
-      "coverImage": "auto",
-      "body": "<p>The first play is never really the beginning. Before the ball is snapped, there is a week of decisions hiding behind it: personnel, protection, formation, and what a coaching staff thinks its opponent will expect.</p>\n      <p>Watching with that in mind makes a familiar Sunday feel a little different. The question becomes less “who made the play?” and more “why was that play available?”</p>\n      <h2>Start with the matchup</h2>\n      <p>A team’s identity is useful context, but a matchup is specific. Watch how an offense tries to protect its weaknesses, which defenders are asked to make difficult choices, and what changes when the down and distance changes.</p>\n      <p>A completion can be a fine outcome for the defense if it forces a difficult third down. A short run can be valuable to an offense if it reveals how a front intends to respond. One result does not tell you the whole design.</p>\n      <h2>Watch what changes</h2>\n      <p>When a team finds something that works, the next question is how its opponent responds. Does a safety move closer to the line? Does the offense change its personnel? Does a successful pressure force a quicker passing game?</p>\n      <p>Those adjustments are the conversation within the game. Follow them, and the final score begins to feel like the end of a story you actually watched unfold.</p>"
+      "title": "Sunday starts long before kickoff.",
+      "type": "story",
+      "id": "sunday-starts-before-kickoff"
     },
     {
-      "id": "basketball-beyond-box-score",
-      "title": "The box score doesn’t tell the whole story.",
+      "body": "<p>A box score can tell you who scored. It can tell you who rebounded, who assisted, and who struggled to make shots. It cannot show you every decision that made those numbers possible.</p>\n      <p>Sometimes the most useful player in a possession is standing one pass away, keeping a defender just far enough from the action.</p>\n      <h2>Look away from the ball</h2>\n      <p>Watch a possession from the weak side. Notice the cut that moves a help defender, the screen that creates a favorable matchup, and the shooter whose positioning makes a drive possible.</p>\n      <p>None of that means points and shooting efficiency do not matter. It means the numbers become more interesting when you can connect them to the choices on the floor.</p>\n      <h2>A different kind of impact</h2>\n      <p>A defender can influence a game without collecting a block. An offensive player can create a shot without receiving an assist. Basketball is full of useful work that does not fit into a simple individual total.</p>\n      <p>The next time you watch, follow one player for three possessions without waiting for that player to get the ball. You might see a different game.</p>",
+      "readTime": "4 min read",
+      "coverImage": "auto",
       "deck": "Spacing, matchups, and the work that happens when a player never touches the ball.",
       "author": "JKSPORTSBOOK Desk",
-      "readTime": "4 min read",
       "label": "The Becker Report",
-      "type": "story",
       "series": "becker-report",
-      "coverImage": "auto",
-      "body": "<p>A box score can tell you who scored. It can tell you who rebounded, who assisted, and who struggled to make shots. It cannot show you every decision that made those numbers possible.</p>\n      <p>Sometimes the most useful player in a possession is standing one pass away, keeping a defender just far enough from the action.</p>\n      <h2>Look away from the ball</h2>\n      <p>Watch a possession from the weak side. Notice the cut that moves a help defender, the screen that creates a favorable matchup, and the shooter whose positioning makes a drive possible.</p>\n      <p>None of that means points and shooting efficiency do not matter. It means the numbers become more interesting when you can connect them to the choices on the floor.</p>\n      <h2>A different kind of impact</h2>\n      <p>A defender can influence a game without collecting a block. An offensive player can create a shot without receiving an assist. Basketball is full of useful work that does not fit into a simple individual total.</p>\n      <p>The next time you watch, follow one player for three possessions without waiting for that player to get the ball. You might see a different game.</p>"
+      "title": "The box score doesn’t tell the whole story.",
+      "type": "story",
+      "id": "basketball-beyond-box-score"
     }
   ],
   "newStories": [],
@@ -209,6 +226,7 @@
       "scheduleOpeningLabel": "THE OPENING LINE",
       "scheduleUpcoming": "Upcoming",
       "scheduleLinesDescription": "Live market lines will show the sportsbook, market, price, and a last-updated timestamp once an odds provider is connected. Published picks keep their original recorded odds and stay separate from this changing market view.",
+      "theTouchlineKicker": "SOCCER / WEEKLY COLUMN",
       "watchListen": "WATCH / LISTEN",
       "scheduleAllGames": "All games",
       "scheduleBestBetsLink": "VIEW BEST BETS",
@@ -226,16 +244,17 @@
       "scheduleOpeningEdition": "NFL DESK / LIVE FEED",
       "scheduleResults": "Results",
       "beckerReportKicker": "JK ORIGINAL / COLUMN SERIES",
-      "columnsDescription": "Distinct voices, recurring series, and room for a point of view.",
-      "theTouchlineKicker": "SOCCER / WEEKLY COLUMN"
+      "columnsDescription": "Distinct voices, recurring series, and room for a point of view."
     },
     "navigation": {
       "allSports": "ALL SPORTS",
+      "theTouchline": "The Touchline",
       "calculator": "ODDS CALCULATOR",
       "mlb": "MLB",
       "tickerLink": "VIEW PICKS",
       "bestBets": "Best Bets",
       "latest": "The Latest",
+      "soccer": "SOCCER",
       "bossartsBoard": "Bossart's Board",
       "tickerLabel": "BEST BETS",
       "beckerReport": "The Becker Report",
@@ -251,9 +270,7 @@
       "gameOfWeek": "Game of the Week",
       "tuneIn": "TUNE IN",
       "columns": "Columns",
-      "betting": "Betting",
-      "theTouchline": "The Touchline",
-      "soccer": "SOCCER"
+      "betting": "Betting"
     },
     "masthead": {
       "strapline": "INDEPENDENT COVERAGE. UNFILTERED OPINIONS.",
@@ -312,12 +329,5 @@
       "bestBetsKicker": "01 / BEST BETS",
       "description": "A home for posted picks and matchup breakdowns, with the context behind each call."
     }
-  },
-  "featuredVideo": {
-    "youtubeUrl": "https://www.youtube.com/watch?v=EIHViakKLdM",
-    "title": "Behold a Pale Horse",
-    "eyebrow": "A 65-MINUTE EXCLUSIVE",
-    "description": "Josh King’s exclusive interview with the most controversial account on X.",
-    "startSeconds": 0
   }
 }

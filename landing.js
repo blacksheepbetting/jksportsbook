@@ -71,7 +71,7 @@
     if(best)best.innerHTML=bets.length?bets.map(b=>'<div class="landing-bet"><strong>'+esc(b.poster)+'</strong><span>'+esc(b.selection)+'</span><b>'+(Number(b.odds)>0?'+':'')+esc(b.odds)+'</b></div>').join('') : '<p class="landing-empty">'+esc(pageCopy.noBets || 'No best bets are posted right now.')+'</p>';
     const picks=document.querySelector('[data-pick-list]');
     const board=content.showDemoPicks?(content.demoPicks||[]):(content.picks||[]);
-    if(picks)picks.innerHTML=board.length?board.map(p=>'<article class="landing-article"><span class="category">'+esc(p.sport)+' / '+esc(p.type)+(content.showDemoPicks?' / SAMPLE':'')+'</span><h3>'+esc(p.matchup)+'</h3><p><strong>'+esc(p.selection)+' '+(Number(p.odds)>0?'+':'')+esc(p.odds)+'</strong></p><p>'+esc(p.body||p.note||'')+'</p><span class="meta">'+esc(p.postedAt||'')+'</span></article>').join('') : '<p class="landing-empty">'+esc(pageCopy.noPicks || 'No official picks have been posted yet.')+'</p>';
+    if(picks)picks.innerHTML=board.length?board.map(p=>'<article class="landing-article"><span class="category">'+esc(p.sport)+' / '+esc(p.type)+(content.showDemoPicks?' / SAMPLE':'')+'</span><h3>'+esc(p.matchup)+'</h3>'+(p.gameTime?'<p class="meta pick-start-time">KICKOFF · '+esc(p.gameTime)+'</p>':'')+'<p><strong>'+esc(p.selection)+' '+(Number(p.odds)>0?'+':'')+esc(p.odds)+'</strong></p><p>'+esc(p.body||p.note||'')+'</p><span class="meta">'+esc(p.postedAt||'')+'</span></article>').join('') : '<p class="landing-empty">'+esc(pageCopy.noPicks || 'No official picks have been posted yet.')+'</p>';
     for(const [section,id] of [['game-of-week','game-of-week']]){
       const target=document.querySelector('[data-betting-section="'+section+'"]');
       if(!target)continue;

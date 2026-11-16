@@ -2,7 +2,7 @@
   "source": "nflverse",
   "sourceUrl": "https://github.com/nflverse/nflverse-data/releases/tag/schedules",
   "season": 2026,
-  "updatedAt": "2026-11-15T18:51:01Z",
+  "updatedAt": "2026-11-16T06:29:02Z",
   "games": [
     {
       "id": "2026_01_NE_SEA",
@@ -1946,9 +1946,9 @@
       "time": "13:00",
       "awayTeam": "KC",
       "homeTeam": "ATL",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 35,
+      "homeScore": 13,
+      "completed": true
     },
     {
       "id": "2026_10_HOU_CLE",
@@ -1960,9 +1960,9 @@
       "time": "13:00",
       "awayTeam": "HOU",
       "homeTeam": "CLE",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 24,
+      "homeScore": 27,
+      "completed": true
     },
     {
       "id": "2026_10_MIN_GB",
@@ -1974,9 +1974,9 @@
       "time": "13:00",
       "awayTeam": "MIN",
       "homeTeam": "GB",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 30,
+      "homeScore": 10,
+      "completed": true
     },
     {
       "id": "2026_10_MIA_IND",
@@ -1988,9 +1988,9 @@
       "time": "13:00",
       "awayTeam": "MIA",
       "homeTeam": "IND",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 22,
+      "homeScore": 24,
+      "completed": true
     },
     {
       "id": "2026_10_CAR_NO",
@@ -2002,9 +2002,9 @@
       "time": "13:00",
       "awayTeam": "CAR",
       "homeTeam": "NO",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 20,
+      "homeScore": 17,
+      "completed": true
     },
     {
       "id": "2026_10_BUF_NYJ",
@@ -2016,9 +2016,9 @@
       "time": "13:00",
       "awayTeam": "BUF",
       "homeTeam": "NYJ",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 31,
+      "homeScore": 12,
+      "completed": true
     },
     {
       "id": "2026_10_JAX_TEN",
@@ -2030,9 +2030,9 @@
       "time": "13:00",
       "awayTeam": "JAX",
       "homeTeam": "TEN",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 40,
+      "homeScore": 23,
+      "completed": true
     },
     {
       "id": "2026_10_LA_ARI",
@@ -2044,9 +2044,9 @@
       "time": "16:05",
       "awayTeam": "LA",
       "homeTeam": "ARI",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 34,
+      "homeScore": 6,
+      "completed": true
     },
     {
       "id": "2026_10_SEA_LV",
@@ -2058,9 +2058,9 @@
       "time": "16:05",
       "awayTeam": "SEA",
       "homeTeam": "LV",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 21,
+      "homeScore": 13,
+      "completed": true
     },
     {
       "id": "2026_10_SF_DAL",
@@ -2072,9 +2072,9 @@
       "time": "16:25",
       "awayTeam": "SF",
       "homeTeam": "DAL",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 46,
+      "homeScore": 40,
+      "completed": true
     },
     {
       "id": "2026_10_PIT_CIN",
@@ -2086,9 +2086,9 @@
       "time": "20:20",
       "awayTeam": "PIT",
       "homeTeam": "CIN",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 18,
+      "homeScore": 38,
+      "completed": true
     },
     {
       "id": "2026_10_LAC_BAL",

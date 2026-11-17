@@ -58,7 +58,8 @@
     },
     "beckerReport": {
       "title": "The Becker Report",
-      "description": "A dedicated home for The Becker Report and its point of view."
+      "description": "A dedicated home for The Becker Report and its point of view.",
+      "headshot": "/jksportsbook/assets/uploads/corey-becker.jpg"
     },
     "bossartsBoard": {
       "title": "Bossart's Board",

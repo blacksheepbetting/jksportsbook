@@ -219,6 +219,7 @@ collections:
                 fields:
                   - { label: Display Title, name: title, widget: string }
                   - { label: Description, name: description, widget: text }
+                  - { label: Column Headshot, name: headshot, widget: image, choose_url: false }
               - label: "Bossart's Board"
                 name: bossartsBoard
                 widget: object

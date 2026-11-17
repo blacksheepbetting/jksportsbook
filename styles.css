@@ -420,3 +420,9 @@
 .carousel-swipe-hint{display:none;margin:-6px 0 4px;text-align:right;color:#777;font-size:8px;font-weight:800;letter-spacing:1px}
 
 @media(max-width:640px){.carousel-swipe-hint{display:block}}
+
+
+/* Responsive closing wordmark banner */
+.manifesto{margin-top:66px;margin-bottom:55px;background:#050505;border:1px solid #292929;border-top:3px solid var(--yellow);padding:clamp(16px,2.5vw,32px);display:flex;align-items:center;justify-content:center;gap:0;overflow:hidden}.manifesto-banner{display:block;width:min(100%,1280px);height:auto;max-height:260px;object-fit:contain;margin:0 auto}
+@media(max-width:900px){.manifesto{padding:clamp(16px,3vw,25px);margin-top:43px;margin-bottom:35px}.manifesto-banner{width:100%;max-height:none}}
+@media(max-width:640px){.manifesto{padding:14px;margin-top:43px;margin-bottom:35px}.manifesto-banner{width:100%}}

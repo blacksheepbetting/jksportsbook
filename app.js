@@ -148,7 +148,15 @@
     const root = content.siteCopy || {};
     document.querySelectorAll('[data-site-copy]').forEach(node => {
       const value = node.dataset.siteCopy.split('.').reduce((entry, key) => entry && entry[key], root);
-      if (typeof value === 'string') node.textContent = value;
+      if (typeof value === 'string') {
+        if (node instanceof HTMLImageElement) {
+          let imagePath = value;
+          if (location.hostname.endsWith('jksportsbook.com') && imagePath.startsWith('/jksportsbook/')) imagePath = imagePath.replace(/^\/jksportsbook\//, '/');
+          node.src = imagePath;
+        } else {
+          node.textContent = value;
+        }
+      }
     });
   }
   function renderColumnSeries() {

@@ -192,11 +192,11 @@ collections:
                 name: manifesto
                 widget: object
                 fields:
-                  - { label: Kicker, name: kicker, widget: string }
-                  - { label: Headline Line 1, name: lineOne, widget: string }
-                  - { label: Headline Line 2, name: lineTwo, widget: string }
-                  - { label: Headline Line 3, name: lineThree, widget: string }
-                  - { label: Button Text, name: button, widget: string }
+                  - label: Banner Image
+                    name: bannerImage
+                    widget: image
+                    choose_url: false
+                    hint: "Upload or choose the wide JKSPORTSBOOK banner."
               - label: Footer
                 name: footer
                 widget: object

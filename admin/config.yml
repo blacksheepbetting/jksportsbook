@@ -253,34 +253,18 @@ collections:
                   - { label: YouTube Embed URL, name: videoUrl, widget: string, required: false }
                   - { label: Thumbnail URL, name: thumbnailUrl, widget: string, required: false }
                   - { label: Listen URL, name: listenUrl, widget: string }
-          - label: Edit Existing Stories
-            name: storyOverrides
-            widget: list
-            summary: "{{fields.id}} — {{fields.title}}"
-            hint: "Edit a story already in the newsroom by adding its existing Story ID here."
-            fields:
-              - { label: Story ID, name: id, widget: string }
-              - { label: Title, name: title, widget: string }
-              - { label: Deck, name: deck, widget: text }
-              - { label: Author, name: author, widget: string }
-              - { label: Read Time, name: readTime, widget: string }
-              - { label: Label, name: label, widget: string }
-              - { label: Content Type, name: type, widget: select, options: [story, column], default: story }
-              - { label: Column Series, name: series, widget: select, options: [{ label: Not a column, value: "" }, { label: JK Sportsline, value: "jk-sportsline" }, { label: The Becker Report, value: "becker-report" }, { label: "Bossart's Board", value: "bossarts-board" }, { label: The Touchline, value: "the-touchline" }], required: false }
-              - { label: Cover Photo, name: coverImage, widget: select, options: [{ label: Automatic by sport / topic, value: auto }, { label: Football - Black & White, value: football }, { label: Basketball - Black & White, value: basketball }, { label: Soccer - Black & White, value: soccer }, { label: Hockey - Black & White, value: hockey }, { label: Consumer Advocacy - Black & White, value: consumer-advocacy }, { label: Original Graphic Art, value: none }], default: auto, required: false }
-              - { label: Body HTML, name: body, widget: markdown }
           - label: Articles & Match Analysis
             name: newStories
             widget: list
             summary: "{{fields.sport}} — {{fields.title}}"
-            hint: "For Game of the Week analysis, add a story here and choose Game of the Week under Betting Page Feature. For recurring column articles, use the matching Weekly Columns collection."
+            hint: "Add one-off stories and features here. Type Story appears in Fresh Off the Press. For On the Radar, choose Feature and add the Story ID above. Recurring column articles belong in the matching Weekly Columns collection."
             fields:
               - { label: ID, name: id, widget: string }
               - { label: Title, name: title, widget: string }
               - { label: Sport, name: sport, widget: select, options: [NFL, NBA, College, MLB, Soccer, FPHL, All] }
               - { label: Category, name: category, widget: string }
               - { label: Betting Page Feature, name: deskSection, widget: select, options: [{ label: Not a betting feature, value: "" }, { label: Game of the Week, value: "game-of-week" }], required: false, hint: "Choose Game of the Week to place this article in the Betting page match analysis." }
-              - { label: Type, name: type, widget: select, options: [story], default: story }
+              - { label: Type, name: type, widget: select, options: [story, feature], default: story }
               - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
               - { label: Cover Photo, name: coverImage, widget: select, options: [{ label: Automatic by sport / topic, value: auto }, { label: Football - Black & White, value: football }, { label: Basketball - Black & White, value: basketball }, { label: Soccer - Black & White, value: soccer }, { label: Hockey - Black & White, value: hockey }, { label: Consumer Advocacy - Black & White, value: consumer-advocacy }, { label: Original Graphic Art, value: none }], default: auto, required: false }
               - { label: Art Label, name: artLabel, widget: string, required: false }

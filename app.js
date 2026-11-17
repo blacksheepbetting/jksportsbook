@@ -31,7 +31,7 @@
     return profiles.find(writer => writer.id === normalized || String(writer.name || '').toLowerCase() === author)?.id || '';
   };
   const profileForStory = story => (Array.isArray(content.writers) ? content.writers : []).find(writer => writer.id === writerIdFor(story)) || null;
-  const writerPagePath = writer => 'writers.html?writer=' + encodeURIComponent(typeof writer === 'string' ? writer : writer?.id || '');
+  const writerPagePath = writer => 'personalities.html?person=' + encodeURIComponent(typeof writer === 'string' ? writer : writer?.id || '');
   const mediaPath = value => { const raw = String(value || '').trim(); if (!raw) return ''; if (validUrl(raw)) return raw; return raw.replace(/^\/?jksportsbook\//, '').replace(/^\/+/, ''); };
   const formatPublishedDate = value => { const raw = String(value || '').trim(); if (!raw) return ''; const match = raw.match(/^(\d{4})-(\d{2})-(\d{2})$/); const date = match ? new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3])) : new Date(raw); if (Number.isNaN(date.getTime())) return raw; return new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(date); };
   const isPublishedStory = story => Boolean(story?.id && story?.title && story?.body && !/^\s*<p>\s*coming soon:/i.test(String(story.body)));

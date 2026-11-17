@@ -120,7 +120,7 @@ function storyPage(story, stories, profiles) {
   const hero = coverFor(story);
   const related = relatedFor(story, stories);
   const relatedHtml = related.length ? '<section class="story-page-related" aria-labelledby="related-heading"><span class="section-kicker">KEEP READING</span><h2 id="related-heading">Related stories.</h2><div class="article-related-grid">' + related.map(item => '<a class="article-related-card" href="../' + esc(slug(item.id)) + '/"><span class="category">' + esc(item.sport || 'SPORTS') + ' / ' + esc(item.category || 'STORY') + '</span><strong>' + esc(item.title) + '</strong><span class="meta">' + esc(item.author || 'JKSPORTSBOOK Desk') + '</span></a>').join('') + '</div></section>' : '';
-  const writerCard = writer ? '<aside class="article-author-card" aria-label="About the author">' + (writer.photo ? '<img src="../../' + esc(String(writer.photo).replace(/^\/?jksportsbook\//, '').replace(/^\/+/, '')) + '" alt="Portrait of ' + esc(writer.name) + '" loading="lazy" decoding="async">' : '') + '<div><span class="section-kicker">ABOUT THE AUTHOR</span><h2>' + esc(writer.name) + '</h2><p>' + esc(writer.role || '') + '</p><a href="../../writers.html?writer=' + encodeURIComponent(writer.id) + '">VIEW WRITER PROFILE <span aria-hidden="true">↗</span></a></div></aside>' : '';
+  const writerCard = writer ? '<aside class="article-author-card" aria-label="About the author">' + (writer.photo ? '<img src="../../' + esc(String(writer.photo).replace(/^\/?jksportsbook\//, '').replace(/^\/+/, '')) + '" alt="Portrait of ' + esc(writer.name) + '" loading="lazy" decoding="async">' : '') + '<div><span class="section-kicker">ABOUT THE AUTHOR</span><h2>' + esc(writer.name) + '</h2><p>' + esc(writer.role || '') + '</p><a href="../../personalities.html?person=' + encodeURIComponent(writer.id) + '">VIEW WRITER PROFILE <span aria-hidden="true">↗</span></a></div></aside>' : '';
   const dateMeta = date ? ' <span aria-hidden="true">/</span> <time datetime="' + esc(story.publishedAt) + '">' + esc(date) + '</time>' : '';
   const readMeta = story.readTime ? ' <span aria-hidden="true">/</span> ' + esc(story.readTime) : '';
   const jsonLd = {
@@ -140,12 +140,12 @@ function storyPage(story, stories, profiles) {
     '<meta property="og:description" content="' + esc(description) + '"><meta property="og:url" content="' + esc(canonical) + '"><meta property="og:image" content="' + esc(image) + '">' +
     '<meta property="og:image:alt" content="' + esc(story.title) + '"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="' + esc(title) + '">' +
     '<meta name="twitter:description" content="' + esc(description) + '"><meta name="twitter:image" content="' + esc(image) + '">' +
-    '<title>' + esc(title) + ' — JKSPORTSBOOK</title><link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../styles.css?v=story-pages-20261117">' +
+    '<title>' + esc(title) + ' — JKSPORTSBOOK</title><link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../styles.css?v=personalities-20261117">' +
     '<script type="application/ld+json">' + JSON.stringify(jsonLd).replace(/</g, '\\u003c') + '</script></head><body><a class="skip-link" href="#story-main">Skip to story</a>' +
-    '<main id="story-main" class="story-page"><header class="story-page-top"><a class="story-page-brand" href="../../">JKSPORTSBOOK</a><nav aria-label="Article navigation"><a href="../../archive.html">STORIES</a><a href="../../columns.html">COLUMNS</a><a href="../../writers.html">WRITERS</a></nav></header>' +
+    '<main id="story-main" class="story-page"><header class="story-page-top"><a class="story-page-brand" href="../../">JKSPORTSBOOK</a><nav aria-label="Article navigation"><a href="../../archive.html">STORIES</a><a href="../../columns.html">COLUMNS</a><a href="../../personalities.html">WRITERS</a></nav></header>' +
     '<article class="story-page-article"><span class="section-kicker">' + esc(story.sport || 'SPORTS') + ' / ' + esc(story.category || 'STORY') + (story.series ? ' / ' + esc(story.series) : '') + '</span><h1>' + esc(story.title) + '</h1>' +
     (story.deck ? '<p class="story-page-deck">' + esc(story.deck) + '</p>' : '') +
-    '<div class="story-page-meta"><span>' + (writer ? '<a href="../../writers.html?writer=' + encodeURIComponent(writer.id) + '">' + esc(writerName) + '</a>' : esc(writerName)) + readMeta + dateMeta + '</span>' +
+    '<div class="story-page-meta"><span>' + (writer ? '<a href="../../personalities.html?person=' + encodeURIComponent(writer.id) + '">' + esc(writerName) + '</a>' : esc(writerName)) + readMeta + dateMeta + '</span>' +
     '<button class="article-share" type="button" id="share-story">SHARE STORY <span aria-hidden="true">↗</span></button></div>' +
     (hero ? '<img class="story-page-hero" src="../../' + esc(hero) + '" alt="' + esc(story.title) + '" loading="eager" decoding="async">' : '') +
     '<div class="story-page-body"><div class="article-body">' + String(story.body || '') + '</div></div>' + writerCard + '</article>' + relatedHtml +
@@ -175,7 +175,7 @@ await mkdir(STORY_DIR, { recursive:true });
 await writeFile(path.join(STORY_DIR, '.generated-ids.json'), JSON.stringify(ids.sort(), null, 2) + '\n', 'utf8');
 
 const urls = [
-  SITE + '/', SITE + '/archive.html', SITE + '/writers.html', SITE + '/columns.html',
+  SITE + '/', SITE + '/archive.html', SITE + '/personalities.html', SITE + '/columns.html',
   SITE + '/jk-sportsline.html', SITE + '/becker-report.html', SITE + '/bossarts-board.html',
   SITE + '/the-touchline.html', SITE + '/shows.html', SITE + '/betting.html',
   ...stories.map(story => SITE + '/stories/' + slug(story.id) + '/')

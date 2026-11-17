@@ -41,6 +41,7 @@ collections:
             summary: "{{fields.poster}} — {{fields.selection}} ({{fields.odds}})"
             fields:
               - { label: Poster, name: poster, widget: string }
+              - { label: Personality ID, name: personalityId, widget: string, required: false, hint: "Optional profile ID, such as josh-king, ryan-bossart, or the-horse. Leave blank for unlisted voices." }
               - { label: Selection, name: selection, widget: string }
               - { label: American Odds, name: odds, widget: number, value_type: int }
           - label: Site Copy
@@ -253,11 +254,20 @@ collections:
                   - { label: YouTube Embed URL, name: videoUrl, widget: string, required: false }
                   - { label: Thumbnail URL, name: thumbnailUrl, widget: string, required: false }
                   - { label: Listen URL, name: listenUrl, widget: string }
-          - label: Writer Profiles
+                  - label: Personalities in this episode
+                    name: personalityIds
+                    widget: list
+                    required: false
+                    hint: "Add profile IDs for the host and featured guests so this episode appears on their pages."
+                    field:
+                      label: Personality ID
+                      name: personalityId
+                      widget: string
+          - label: Personalities
             name: writers
             widget: list
             summary: "{{fields.name}} — {{fields.role}}"
-            hint: "These profiles power article bylines, author cards, and the Writers page."
+            hint: "These profiles power public Personality pages, article bylines, show appearances, and pick credits."
             fields:
               - { label: Profile ID, name: id, widget: string, hint: "Use a lowercase slug such as josh-king." }
               - { label: Name, name: name, widget: string }
@@ -265,6 +275,23 @@ collections:
               - { label: Short Bio, name: bio, widget: text }
               - { label: Photo Path, name: photo, widget: string, required: false, hint: "Use a site-relative image path such as assets/uploads/author.jpg." }
               - { label: Column Page URL, name: columnUrl, widget: string, required: false }
+              - { label: X / Twitter URL, name: xUrl, widget: string, required: false }
+              - { label: Instagram URL, name: instagramUrl, widget: string, required: false }
+              - { label: YouTube URL, name: youtubeUrl, widget: string, required: false }
+              - { label: TikTok URL, name: tiktokUrl, widget: string, required: false }
+              - { label: Website URL, name: websiteUrl, widget: string, required: false }
+              - { label: Featured Video URL, name: featuredVideoUrl, widget: string, required: false }
+              - { label: Featured Video Title, name: featuredVideoTitle, widget: string, required: false }
+              - { label: Featured Video Description, name: featuredVideoDescription, widget: text, required: false }
+              - label: Featured Story IDs
+                name: featuredStoryIds
+                widget: list
+                required: false
+                hint: "Optional coverage to highlight on this profile; use the article ID."
+                field:
+                  label: Story ID
+                  name: storyId
+                  widget: string
           - label: Articles & Match Analysis
             name: newStories
             widget: list
@@ -283,7 +310,7 @@ collections:
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
-              - { label: Author Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Writer Profiles, such as josh-king or corey-becker." }
+              - { label: Personality Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Personalities, such as josh-king, ryan-bossart, corey-becker, or the-horse." }
               - { label: Published Date, name: publishedAt, widget: string, required: false, hint: "Optional. Enter YYYY-MM-DD; it will appear with the byline." }
               - label: Related Story IDs
                 name: relatedStoryIds
@@ -327,6 +354,7 @@ collections:
               - { label: American Odds, name: odds, widget: number, value_type: int }
               - { label: Units, name: units, widget: number, value_type: float }
               - { label: Posted At, name: postedAt, widget: string, required: false }
+              - { label: Personality ID, name: personalityId, widget: string, required: false, hint: "Optional profile ID to credit this pick on a Personality page." }
               - { label: Pick Analysis / Reasoning, name: body, widget: text }
           - label: Articles
             name: articles
@@ -344,7 +372,7 @@ collections:
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
-              - { label: Author Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Writer Profiles, such as josh-king or corey-becker." }
+              - { label: Personality Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Personalities, such as josh-king, ryan-bossart, corey-becker, or the-horse." }
               - { label: Published Date, name: publishedAt, widget: string, required: false, hint: "Optional. Enter YYYY-MM-DD; it will appear with the byline." }
               - label: Related Story IDs
                 name: relatedStoryIds
@@ -381,7 +409,7 @@ collections:
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
-              - { label: Author Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Writer Profiles, such as josh-king or corey-becker." }
+              - { label: Personality Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Personalities, such as josh-king, ryan-bossart, corey-becker, or the-horse." }
               - { label: Published Date, name: publishedAt, widget: string, required: false, hint: "Optional. Enter YYYY-MM-DD; it will appear with the byline." }
               - label: Related Story IDs
                 name: relatedStoryIds
@@ -420,7 +448,7 @@ collections:
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
-              - { label: Author Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Writer Profiles, such as josh-king or corey-becker." }
+              - { label: Personality Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Personalities, such as josh-king, ryan-bossart, corey-becker, or the-horse." }
               - { label: Published Date, name: publishedAt, widget: string, required: false, hint: "Optional. Enter YYYY-MM-DD; it will appear with the byline." }
               - label: Related Story IDs
                 name: relatedStoryIds
@@ -458,7 +486,7 @@ collections:
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
-              - { label: Author Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Writer Profiles, such as josh-king or corey-becker." }
+              - { label: Personality Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Personalities, such as josh-king, ryan-bossart, corey-becker, or the-horse." }
               - { label: Published Date, name: publishedAt, widget: string, required: false, hint: "Optional. Enter YYYY-MM-DD; it will appear with the byline." }
               - label: Related Story IDs
                 name: relatedStoryIds
@@ -496,7 +524,7 @@ collections:
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
-              - { label: Author Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Writer Profiles, such as josh-king or corey-becker." }
+              - { label: Personality Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Personalities, such as josh-king, ryan-bossart, corey-becker, or the-horse." }
               - { label: Published Date, name: publishedAt, widget: string, required: false, hint: "Optional. Enter YYYY-MM-DD; it will appear with the byline." }
               - label: Related Story IDs
                 name: relatedStoryIds

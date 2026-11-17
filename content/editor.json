@@ -13,18 +13,26 @@
         "description": "Shaun Weiss joins the show for our NFL Week 10 episode.",
         "videoUrl": "https://www.youtube.com/embed/DpiVE8BMugk",
         "thumbnailUrl": "https://i.ytimg.com/vi/DpiVE8BMugk/hqdefault.jpg",
-        "listenUrl": "https://www.youtube.com/watch?v=DpiVE8BMugk"
+        "listenUrl": "https://www.youtube.com/watch?v=DpiVE8BMugk",
+        "personalityIds": [
+          "ryan-bossart"
+        ]
       }
     ]
   },
   "writers": [
     {
-      "id": "josh-king",
-      "name": "Josh King",
-      "role": "Founder · JK Sportsline",
-      "bio": "Founder of JKSPORTSBOOK and writer of JK Sportsline, covering hockey, sports media, and the stories behind the game.",
-      "photo": "assets/josh-king.jpg",
-      "columnUrl": "jk-sportsline.html"
+      "id": "ryan-bossart",
+      "name": "Ryan Bossart",
+      "role": "Host · Bossart's Board",
+      "bio": "Host of the JKSPORTSBOOK podcast and writer of Bossart's Board, covering college basketball.",
+      "photo": "assets/uploads/ryan-bossart.jpg",
+      "columnUrl": "bossarts-board.html",
+      "xUrl": "",
+      "instagramUrl": "",
+      "youtubeUrl": "",
+      "tiktokUrl": "",
+      "websiteUrl": ""
     },
     {
       "id": "corey-becker",
@@ -32,22 +40,52 @@
       "role": "VP · The Becker Report",
       "bio": "VP of JKSPORTSBOOK and author of The Becker Report, writing about sports, markets, and consumer advocacy.",
       "photo": "assets/uploads/corey-becker.jpg",
-      "columnUrl": "becker-report.html"
+      "columnUrl": "becker-report.html",
+      "xUrl": "",
+      "instagramUrl": "",
+      "youtubeUrl": "",
+      "tiktokUrl": "",
+      "websiteUrl": ""
     },
     {
-      "id": "ryan-bossart",
-      "name": "Ryan Bossart",
-      "role": "Host · Bossart's Board",
-      "bio": "Host of the JKSPORTSBOOK podcast and writer of Bossart's Board, covering college basketball.",
-      "photo": "assets/uploads/ryan-bossart.jpg",
-      "columnUrl": "bossarts-board.html"
+      "id": "josh-king",
+      "name": "Josh King",
+      "role": "Founder · JK Sportsline",
+      "bio": "Founder of JKSPORTSBOOK and writer of JK Sportsline, covering hockey, sports media, and the stories behind the game.",
+      "photo": "assets/josh-king.jpg",
+      "columnUrl": "jk-sportsline.html",
+      "instagramUrl": "https://www.instagram.com/joshking65/",
+      "xUrl": "",
+      "youtubeUrl": "",
+      "tiktokUrl": "",
+      "websiteUrl": ""
+    },
+    {
+      "id": "the-horse",
+      "name": "The Horse",
+      "role": "Featured Interview",
+      "bio": "Featured in Josh King's exclusive interview, Behold a Pale Horse.",
+      "photo": "",
+      "columnUrl": "",
+      "xUrl": "",
+      "instagramUrl": "",
+      "youtubeUrl": "",
+      "tiktokUrl": "",
+      "websiteUrl": "",
+      "featuredVideoUrl": "https://www.youtube.com/watch?v=EIHViakKLdM",
+      "featuredVideoTitle": "Behold a Pale Horse",
+      "featuredVideoDescription": "Josh King’s exclusive interview with the most controversial account on X.",
+      "featuredStoryIds": [
+        "westgate-supercontest-history"
+      ]
     }
   ],
   "bestBets": [
     {
       "poster": "Josh",
       "selection": "Colts -2",
-      "odds": -110
+      "odds": -110,
+      "personalityId": "josh-king"
     },
     {
       "poster": "Q",
@@ -57,12 +95,14 @@
     {
       "poster": "Bossart",
       "selection": "Chiefs -3",
-      "odds": -110
+      "odds": -110,
+      "personalityId": "ryan-bossart"
     },
     {
       "poster": "Horse",
       "selection": "Raiders +6.5",
-      "odds": -110
+      "odds": -110,
+      "personalityId": "the-horse"
     }
   ],
   "radarStoryIds": [

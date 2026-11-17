@@ -1,0 +1,55 @@
+name: Publish article pages
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/editor.json'
+      - 'content/site.js'
+      - 'content/columns/**'
+      - 'assets/**'
+      - 'scripts/build-story-pages.mjs'
+      - '.github/workflows/publish-story-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-story-pages-main
+  cancel-in-progress: false
+
+jobs:
+  build-story-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Generate article pages
+        run: node scripts/build-story-pages.mjs
+      - name: Commit generated pages
+        env:
+          GH_TOKEN: \${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stories sitemap.xml
+          if git diff --cached --quiet; then
+            echo "Article pages are already current."
+            exit 0
+          fi
+          git commit -m "chore: publish article pages"
+          git fetch origin main
+          git rebase origin/main
+          node scripts/build-story-pages.mjs
+          git add stories sitemap.xml
+          if ! git diff --cached --quiet; then
+            git commit --amend --no-edit
+          fi
+          git push origin HEAD:main

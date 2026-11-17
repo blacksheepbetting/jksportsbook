@@ -14,6 +14,7 @@ window.JK_EDITOR_READY = fetch('content/editor.json?v=site-cleanup-20261113', { 
     if (Array.isArray(editor.bestBets)) content.bestBets = editor.bestBets;
     if (Array.isArray(editor.demoPicks)) content.demoPicks = editor.demoPicks;
     if (Array.isArray(editor.radarStoryIds)) content.radarStoryIds = editor.radarStoryIds;
+    if (Array.isArray(editor.writers)) content.writers = editor.writers;
     if (editor.siteCopy && typeof editor.siteCopy === 'object') content.siteCopy = { ...(content.siteCopy || {}), ...editor.siteCopy };
     if (editor.columnSeries && typeof editor.columnSeries === 'object') content.columnSeries = { ...(content.columnSeries || {}), ...editor.columnSeries };
     if (editor.featuredVideo && typeof editor.featuredVideo === 'object') content.featuredVideo = { ...(content.featuredVideo || {}), ...editor.featuredVideo };

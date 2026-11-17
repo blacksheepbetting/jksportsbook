@@ -253,6 +253,18 @@ collections:
                   - { label: YouTube Embed URL, name: videoUrl, widget: string, required: false }
                   - { label: Thumbnail URL, name: thumbnailUrl, widget: string, required: false }
                   - { label: Listen URL, name: listenUrl, widget: string }
+          - label: Writer Profiles
+            name: writers
+            widget: list
+            summary: "{{fields.name}} — {{fields.role}}"
+            hint: "These profiles power article bylines, author cards, and the Writers page."
+            fields:
+              - { label: Profile ID, name: id, widget: string, hint: "Use a lowercase slug such as josh-king." }
+              - { label: Name, name: name, widget: string }
+              - { label: Role or Column, name: role, widget: string }
+              - { label: Short Bio, name: bio, widget: text }
+              - { label: Photo Path, name: photo, widget: string, required: false, hint: "Use a site-relative image path such as assets/uploads/author.jpg." }
+              - { label: Column Page URL, name: columnUrl, widget: string, required: false }
           - label: Articles & Match Analysis
             name: newStories
             widget: list
@@ -271,6 +283,20 @@ collections:
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
+              - { label: Author Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Writer Profiles, such as josh-king or corey-becker." }
+              - { label: Published Date, name: publishedAt, widget: string, required: false, hint: "Optional. Enter YYYY-MM-DD; it will appear with the byline." }
+              - label: Related Story IDs
+                name: relatedStoryIds
+                widget: list
+                required: false
+                hint: "Optional. Add up to three article IDs to feature at the end of this story. Leave blank for automatic related suggestions."
+                field:
+                  label: Article ID
+                  name: articleId
+                  widget: string
+              - { label: Social Share Title, name: shareTitle, widget: string, required: false }
+              - { label: Social Share Description, name: shareDescription, widget: text, required: false }
+              - { label: Social Share Image Path or URL, name: shareImage, widget: string, required: false, hint: "Optional. Use a site-relative image path such as assets/uploads/photo.jpg or an HTTPS image URL." }
               - { label: Label, name: label, widget: string }
               - { label: Story / Matchup Analysis, name: body, widget: markdown }
           - label: Sample Pick Breakdown Cards
@@ -318,6 +344,20 @@ collections:
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
+              - { label: Author Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Writer Profiles, such as josh-king or corey-becker." }
+              - { label: Published Date, name: publishedAt, widget: string, required: false, hint: "Optional. Enter YYYY-MM-DD; it will appear with the byline." }
+              - label: Related Story IDs
+                name: relatedStoryIds
+                widget: list
+                required: false
+                hint: "Optional. Add up to three article IDs to feature at the end of this story. Leave blank for automatic related suggestions."
+                field:
+                  label: Article ID
+                  name: articleId
+                  widget: string
+              - { label: Social Share Title, name: shareTitle, widget: string, required: false }
+              - { label: Social Share Description, name: shareDescription, widget: text, required: false }
+              - { label: Social Share Image Path or URL, name: shareImage, widget: string, required: false, hint: "Optional. Use a site-relative image path such as assets/uploads/photo.jpg or an HTTPS image URL." }
               - { label: Label, name: label, widget: string }
               - { label: Article Body, name: body, widget: markdown }
       - file: content/columns/jk-sportsline.json
@@ -341,6 +381,20 @@ collections:
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
+              - { label: Author Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Writer Profiles, such as josh-king or corey-becker." }
+              - { label: Published Date, name: publishedAt, widget: string, required: false, hint: "Optional. Enter YYYY-MM-DD; it will appear with the byline." }
+              - label: Related Story IDs
+                name: relatedStoryIds
+                widget: list
+                required: false
+                hint: "Optional. Add up to three article IDs to feature at the end of this story. Leave blank for automatic related suggestions."
+                field:
+                  label: Article ID
+                  name: articleId
+                  widget: string
+              - { label: Social Share Title, name: shareTitle, widget: string, required: false }
+              - { label: Social Share Description, name: shareDescription, widget: text, required: false }
+              - { label: Social Share Image Path or URL, name: shareImage, widget: string, required: false, hint: "Optional. Use a site-relative image path such as assets/uploads/photo.jpg or an HTTPS image URL." }
               - { label: Label, name: label, widget: string }
               - { label: Feature in Fresh Off the Press, name: featureInNewsroom, widget: boolean, default: false, required: false, hint: "Also show this article in the homepage newsroom. It remains in its column." }
               - { label: Article Body, name: body, widget: markdown }
@@ -366,6 +420,20 @@ collections:
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
+              - { label: Author Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Writer Profiles, such as josh-king or corey-becker." }
+              - { label: Published Date, name: publishedAt, widget: string, required: false, hint: "Optional. Enter YYYY-MM-DD; it will appear with the byline." }
+              - label: Related Story IDs
+                name: relatedStoryIds
+                widget: list
+                required: false
+                hint: "Optional. Add up to three article IDs to feature at the end of this story. Leave blank for automatic related suggestions."
+                field:
+                  label: Article ID
+                  name: articleId
+                  widget: string
+              - { label: Social Share Title, name: shareTitle, widget: string, required: false }
+              - { label: Social Share Description, name: shareDescription, widget: text, required: false }
+              - { label: Social Share Image Path or URL, name: shareImage, widget: string, required: false, hint: "Optional. Use a site-relative image path such as assets/uploads/photo.jpg or an HTTPS image URL." }
               - { label: Label, name: label, widget: string }
               - { label: Feature in Fresh Off the Press, name: featureInNewsroom, widget: boolean, default: false, required: false, hint: "Also show this article in the homepage newsroom. It remains in its column." }
               - { label: Article Body, name: body, widget: markdown }
@@ -390,6 +458,20 @@ collections:
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
+              - { label: Author Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Writer Profiles, such as josh-king or corey-becker." }
+              - { label: Published Date, name: publishedAt, widget: string, required: false, hint: "Optional. Enter YYYY-MM-DD; it will appear with the byline." }
+              - label: Related Story IDs
+                name: relatedStoryIds
+                widget: list
+                required: false
+                hint: "Optional. Add up to three article IDs to feature at the end of this story. Leave blank for automatic related suggestions."
+                field:
+                  label: Article ID
+                  name: articleId
+                  widget: string
+              - { label: Social Share Title, name: shareTitle, widget: string, required: false }
+              - { label: Social Share Description, name: shareDescription, widget: text, required: false }
+              - { label: Social Share Image Path or URL, name: shareImage, widget: string, required: false, hint: "Optional. Use a site-relative image path such as assets/uploads/photo.jpg or an HTTPS image URL." }
               - { label: Label, name: label, widget: string }
               - { label: Feature in Fresh Off the Press, name: featureInNewsroom, widget: boolean, default: false, required: false, hint: "Also show this article in the homepage newsroom. It remains in its column." }
               - { label: Article Body, name: body, widget: markdown }
@@ -414,6 +496,20 @@ collections:
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
+              - { label: Author Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Writer Profiles, such as josh-king or corey-becker." }
+              - { label: Published Date, name: publishedAt, widget: string, required: false, hint: "Optional. Enter YYYY-MM-DD; it will appear with the byline." }
+              - label: Related Story IDs
+                name: relatedStoryIds
+                widget: list
+                required: false
+                hint: "Optional. Add up to three article IDs to feature at the end of this story. Leave blank for automatic related suggestions."
+                field:
+                  label: Article ID
+                  name: articleId
+                  widget: string
+              - { label: Social Share Title, name: shareTitle, widget: string, required: false }
+              - { label: Social Share Description, name: shareDescription, widget: text, required: false }
+              - { label: Social Share Image Path or URL, name: shareImage, widget: string, required: false, hint: "Optional. Use a site-relative image path such as assets/uploads/photo.jpg or an HTTPS image URL." }
               - { label: Label, name: label, widget: string }
               - { label: Feature in Fresh Off the Press, name: featureInNewsroom, widget: boolean, default: false, required: false, hint: "Also show this article in the homepage newsroom. It remains in its column." }
               - { label: Article Body, name: body, widget: markdown }

@@ -21,6 +21,29 @@
     } catch { return ''; }
   };
   const stories = content.stories;
+  const storySlug = value => String(value || '').toLowerCase().trim().replace(/[^a-z0-9-]+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+  const storyPagePath = story => 'stories/' + storySlug(typeof story === 'string' ? story : story?.id) + '/';
+  const writerIdFor = story => {
+    if (story?.authorId) return String(story.authorId);
+    const author = String(story?.author || '').replace(/\s*\|.*$/, '').trim().toLowerCase();
+    const normalized = author.replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    const profiles = Array.isArray(content.writers) ? content.writers : [];
+    return profiles.find(writer => writer.id === normalized || String(writer.name || '').toLowerCase() === author)?.id || '';
+  };
+  const profileForStory = story => (Array.isArray(content.writers) ? content.writers : []).find(writer => writer.id === writerIdFor(story)) || null;
+  const writerPagePath = writer => 'writers.html?writer=' + encodeURIComponent(typeof writer === 'string' ? writer : writer?.id || '');
+  const mediaPath = value => { const raw = String(value || '').trim(); if (!raw) return ''; if (validUrl(raw)) return raw; return raw.replace(/^\/?jksportsbook\//, '').replace(/^\/+/, ''); };
+  const formatPublishedDate = value => { const raw = String(value || '').trim(); if (!raw) return ''; const match = raw.match(/^(\d{4})-(\d{2})-(\d{2})$/); const date = match ? new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3])) : new Date(raw); if (Number.isNaN(date.getTime())) return raw; return new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(date); };
+  const isPublishedStory = story => Boolean(story?.id && story?.title && story?.body && !/^\s*<p>\s*coming soon:/i.test(String(story.body)));
+  function relatedForStory(story) {
+    const explicit = Array.isArray(story?.relatedStoryIds) ? story.relatedStoryIds.map(id => stories.find(item => item.id === id)).filter(item => item && item.id !== story.id && isPublishedStory(item)) : [];
+    if (explicit.length) return explicit.slice(0, 3);
+    return stories.filter(item => item.id !== story?.id && isPublishedStory(item) && ((story?.series && item.series === story.series) || (story?.sport && story.sport !== 'All' && item.sport === story.sport) || (story?.sport === 'All' && writerIdFor(story) && writerIdFor(item) === writerIdFor(story)))).slice(0, 3);
+  }
+  function relatedMarkup(story) {
+    const related = relatedForStory(story); if (!related.length) return '';
+    return '<section class="article-related" aria-labelledby="article-related-title"><span class="section-kicker">KEEP READING</span><h2 id="article-related-title">Related stories</h2><div class="article-related-grid">' + related.map(item => '<a class="article-related-card" href="' + esc(storyPagePath(item)) + '"><span class="category">' + esc(item.sport) + ' / ' + esc(item.category) + '</span><strong>' + esc(item.title) + '</strong><span class="meta">' + esc(formatPublishedDate(item.publishedAt) || item.author || '') + '</span></a>').join('') + '</div></section>';
+  }
   const picks = content.showDemoPicks ? content.demoPicks : content.picks;
   let saved;
   try { const stored = JSON.parse(localStorage.getItem('jk-saved-picks') || '[]'); saved = new Set(Array.isArray(stored) ? stored.filter(id => typeof id === 'string') : []); } catch { saved = new Set(); }
@@ -98,7 +121,7 @@
     // The featured Horse interview already leads the homepage and On the Radar.
     const visible = filtered.filter(story => story.id !== 'westgate-supercontest-history');
     const track = $('#stories-grid');
-    track.innerHTML = visible.map(story => `<a class="story-card" href="#story/${esc(story.id)}">${art(story)}<span class="category">${esc(story.sport)} / ${esc(story.category)}</span><h3>${esc(story.title)}</h3><p>${esc(story.deck)}</p><span class="meta">${esc(story.author)} &nbsp; / &nbsp; ${esc(story.readTime)}</span></a>`).join('');
+    track.innerHTML = visible.map(story => `<a class="story-card" href="${storyPagePath(story)}">${art(story)}<span class="category">${esc(story.sport)} / ${esc(story.category)}</span><h3>${esc(story.title)}</h3><p>${esc(story.deck)}</p><span class="meta">${esc(story.author)} &nbsp; / &nbsp; ${esc(story.readTime)}${story.publishedAt ? " &nbsp; / &nbsp; " + esc(formatPublishedDate(story.publishedAt)) : ""}</span></a>`).join('');
     track.scrollLeft = 0;
     setupStoriesCarousel();
     $('#stories-empty').hidden = visible.length > 0;
@@ -109,8 +132,8 @@
   const radarStories = content.radarStoryIds
     ? content.radarStoryIds.map(id => stories.find(story => story.id === id)).filter(Boolean)
     : stories.filter(story => story.type === 'story');
-  $('#radar-stories').innerHTML = radarStories.slice(0,3).map((story,index) => `<a class="radar-story" href="#story/${esc(story.id)}"><span class="radar-number">0${index+1}</span><div><span class="category">${esc(story.sport)} / ${esc(story.category)}</span><h3>${esc(story.title)}</h3><span class="meta">${esc(story.label)} &nbsp; · &nbsp; ${esc(story.readTime)}</span></div></a>`).join('');
-  $('#columns-grid').innerHTML = stories.filter(story => story.type === 'column' || Boolean(story.series)).map(story => `<a class="column-card" href="#story/${esc(story.id)}"><span class="column-icon" aria-hidden="true">“</span><span class="category">${esc(story.category)}</span><h3>${esc(story.title)}</h3><p>${esc(story.deck)}</p><div class="column-byline"><span class="avatar" aria-hidden="true">JK</span><span class="byline-name">${esc(story.author)}<small>${esc(story.readTime)} / ${esc(story.label)}</small></span></div></a>`).join('');
+  $('#radar-stories').innerHTML = radarStories.slice(0,3).map((story,index) => `<a class="radar-story" href="${storyPagePath(story)}"><span class="radar-number">0${index+1}</span><div><span class="category">${esc(story.sport)} / ${esc(story.category)}</span><h3>${esc(story.title)}</h3><span class="meta">${esc(story.label)} &nbsp; · &nbsp; ${esc(story.readTime)}</span></div></a>`).join('');
+  $('#columns-grid').innerHTML = stories.filter(story => story.type === 'column' || Boolean(story.series)).map(story => `<a class="column-card" href="${storyPagePath(story)}"><span class="column-icon" aria-hidden="true">“</span><span class="category">${esc(story.category)}</span><h3>${esc(story.title)}</h3><p>${esc(story.deck)}</p><div class="column-byline"><span class="avatar" aria-hidden="true">JK</span><span class="byline-name">${esc(story.author)}<small>${esc(story.readTime)} / ${esc(story.label)}${story.publishedAt ? " / " + esc(formatPublishedDate(story.publishedAt)) : ""}</small></span></div></a>`).join('');
   setupPointOfViewCarousel();
 
   function setupPointOfViewCarousel() {
@@ -176,7 +199,7 @@
       const list = card.querySelector('.column-series-posts');
       const status = card.querySelector('.column-series-status');
       const visiblePosts = posts.slice(0, 3);
-      list.innerHTML = visiblePosts.map(story => '<a class="column-series-post" href="#story/' + esc(story.id) + '"><span class="category">' + esc(story.category) + '</span><strong>' + esc(story.title) + '</strong><span class="meta">' + esc(story.author) + ' / ' + esc(story.readTime) + '</span></a>').join('');
+      list.innerHTML = visiblePosts.map(story => '<a class="column-series-post" href="' + storyPagePath(story) + '"><span class="category">' + esc(story.category) + '</span><strong>' + esc(story.title) + '</strong><span class="meta">' + esc(story.author) + ' / ' + esc(story.readTime) + '</span></a>').join('');
       if (posts.length) status.textContent = posts.length + ' ARTICLE' + (posts.length === 1 ? '' : 'S') + ' PUBLISHED' + (posts.length > visiblePosts.length ? ' · LATEST ' + visiblePosts.length + ' SHOWN' : '');
     }
   }
@@ -288,14 +311,19 @@
 
   function showToast(text) { $('#toast').textContent = text; $('#toast').classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(()=>$('#toast').classList.remove('show'),2600); }
 
-  function showReader({title,category,deck,author='JKSPORTSBOOK Desk',readTime='',body}) {
+  function showReader({id='',title,category,deck,author='JKSPORTSBOOK Desk',authorId='',readTime='',publishedAt='',relatedStoryIds=[],body}) {
     if (search.open) search.close();
-    const authorName = String(author ?? '').trim().toLowerCase();
-    const authorCard = authorName === 'josh king' ? '<aside class="article-author-card" aria-label="About the author"><img src="assets/josh-king.jpg?v=josh-profile-20261112" alt="Portrait of Josh King" loading="lazy" decoding="async"><div><span class="section-kicker">ABOUT THE AUTHOR</span><h2>Josh King</h2><p>JK Sportsline</p><a href="jk-sportsline.html">MORE FROM JOSH <span aria-hidden="true"><svg class="inline-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M6 4h10v10"/></svg></span></a></div></aside>' : authorName.includes('corey becker') ? '<aside class="article-author-card" aria-label="About the author"><img src="assets/uploads/corey-becker.jpg?v=becker-profile-20261117" alt="Portrait of Corey Becker" loading="lazy" decoding="async"><div><span class="section-kicker">ABOUT THE AUTHOR</span><h2>Corey Becker</h2><p>The Becker Report</p><a href="becker-report.html">MORE FROM COREY <span aria-hidden="true"><svg class="inline-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M6 4h10v10"/></svg></span></a></div></aside>' : authorName.includes('bossart') ? '<aside class="article-author-card" aria-label="About the author"><img src="assets/uploads/ryan-bossart.jpg?v=bossart-profile-20261116" alt="Portrait of Ryan Bossart" loading="lazy" decoding="async"><div><span class="section-kicker">ABOUT THE AUTHOR</span><h2>Ryan Bossart</h2><p>Bossart&#39;s Board</p><a href="bossarts-board.html">MORE FROM BOSSART <span aria-hidden="true"><svg class="inline-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 16 4M6 4h10v10"/></svg></span></a></div></aside>' : '';
-    $('#reader-content').innerHTML = `<span class="category">${esc(category)}</span><h1 id="reader-title">${esc(title)}</h1>${deck ? `<p class="reader-deck">${esc(deck)}</p>` : ''}<div class="reader-meta">${esc(author)}${readTime ? ` &nbsp; / &nbsp; ${esc(readTime)}` : ''}</div><div class="article-body">${body}</div>${authorCard}<div class="reader-end">JKSPORTSBOOK / MORE THAN THE SCORE.</div>`;
+    const story = stories.find(item => item.id === id) || { id, title, category, deck, author, authorId, readTime, publishedAt, relatedStoryIds, body };
+    const profile = profileForStory(story);
+    const authorName = profile?.name || String(author || 'JKSPORTSBOOK Desk');
+    const dateLabel = formatPublishedDate(publishedAt);
+    const shareButton = id ? '<button class="article-share" type="button" data-share-story="' + esc(id) + '">SHARE STORY <span aria-hidden="true">↗</span></button>' : '';
+    const authorCard = profile ? '<aside class="article-author-card" aria-label="About the author">' + (profile.photo ? '<img src="' + esc(mediaPath(profile.photo)) + '" alt="Portrait of ' + esc(profile.name) + '" loading="lazy" decoding="async">' : '') + '<div><span class="section-kicker">ABOUT THE AUTHOR</span><h2>' + esc(profile.name) + '</h2><p>' + esc(profile.role || '') + '</p><a href="' + esc(writerPagePath(profile)) + '">VIEW WRITER PROFILE <span aria-hidden="true">↗</span></a></div></aside>' : '';
+    const meta = '<div class="reader-meta"><span>' + (profile ? '<a href="' + esc(writerPagePath(profile)) + '">' + esc(authorName) + '</a>' : esc(authorName)) + (readTime ? ' &nbsp; / &nbsp; ' + esc(readTime) : '') + (dateLabel ? ' &nbsp; / &nbsp; <time datetime="' + esc(publishedAt) + '">' + esc(dateLabel) + '</time>' : '') + '</span>' + shareButton + '</div>';
+    $('#reader-content').innerHTML = '<span class="category">' + esc(category) + '</span><h1 id="reader-title">' + esc(title) + '</h1>' + (deck ? '<p class="reader-deck">' + esc(deck) + '</p>' : '') + meta + '<div class="article-body">' + body + '</div>' + authorCard + relatedMarkup(story) + '<div class="reader-end">JKSPORTSBOOK / MORE THAN THE SCORE.</div>';
     if (!reader.open) { previousFocus = document.activeElement; reader.showModal(); }
     reader.scrollTop = 0;
-    document.title = `${title} — JKSPORTSBOOK`;
+    document.title = title + ' — JKSPORTSBOOK';
   }
 
   function route() {
@@ -327,12 +355,24 @@
   reader.addEventListener('click',event=>{if(event.target===reader){const rect=reader.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)closeReader();}});
   window.addEventListener('hashchange',route);
 
-  document.addEventListener('click',event=>{
+  document.addEventListener('click',async event=>{
     const filter=event.target.closest('[data-filter]'); if(filter) renderStories(filter.dataset.filter);
     const sport=event.target.closest('[data-sport]'); if(sport) renderStories(sport.dataset.sport);
     const pickFilter=event.target.closest('[data-pick-filter]'); if(pickFilter){ activePickFilter=pickFilter.dataset.pickFilter; document.querySelectorAll('[data-pick-filter]').forEach(button=>{const active=button===pickFilter;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));});renderPicks(); }
     const save=event.target.closest('[data-save]'); if(save){ const id=save.dataset.save; if(saved.has(id))saved.delete(id);else saved.add(id);try{localStorage.setItem('jk-saved-picks',JSON.stringify([...saved]));}catch{showToast('Saved for this visit. Browser storage is unavailable.');}renderPicks();const replacement=document.querySelector(`[data-save="${CSS.escape(id)}"]`);if(replacement)replacement.focus({preventScroll:true}); }
     if(event.target.closest('.main-nav a')){$('#main-nav').classList.remove('open');$('#menu-button').setAttribute('aria-expanded','false');}
+    const share=event.target.closest('[data-share-story]');
+    if(share){
+      const story=stories.find(item=>item.id===share.dataset.shareStory);
+      if(story){
+        const url=new URL(storyPagePath(story),location.href).href;
+        try{
+          if(navigator.share) await navigator.share({title:story.shareTitle||story.title,text:story.shareDescription||story.deck||'',url});
+          else if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(url);showToast('Article link copied.');}
+          else {window.prompt('Copy this article link',url);}
+        }catch(error){if(error?.name!=='AbortError')showToast('Could not share this link.');}
+      }
+    }
     if(event.target.closest('.search-result'))search.close();
   });
 
@@ -341,8 +381,8 @@
 
   function searchStories() {
     const term=$('#search-input').value.trim().toLowerCase();
-    const found=stories.filter(story=>`${story.title} ${story.deck} ${story.sport} ${story.category}`.toLowerCase().includes(term));
-    $('#search-results').innerHTML=`<p class="search-count">${term ? `${found.length} ${found.length===1?'story':'stories'} found` : 'EXPLORE THE NEWSROOM'}</p>`+found.map(story=>`<a class="search-result" href="#story/${esc(story.id)}"><span class="category">${esc(story.category)} / ${esc(story.sport==='All'?'JK ORIGINALS':story.sport)}</span><h3>${esc(story.title)}</h3></a>`).join('')+(found.length?'':'<p class="empty-message">No stories found. Try a sport or a different topic.</p>');
+    const found=stories.filter(story=>`${story.title} ${story.deck} ${story.sport} ${story.category} ${story.author} ${story.label} ${String(story.body || '').replace(/<[^>]*>/g, ' ')}`.toLowerCase().includes(term));
+    $('#search-results').innerHTML=`<p class="search-count">${term ? `${found.length} ${found.length===1?'story':'stories'} found` : 'EXPLORE THE NEWSROOM'}</p>`+found.map(story=>`<a class="search-result" href="${storyPagePath(story)}"><span class="category">${esc(story.category)} / ${esc(story.sport==='All'?'JK ORIGINALS':story.sport)}</span><h3>${esc(story.title)}</h3></a>`).join('')+(found.length?'':'<p class="empty-message">No stories found. Try a sport or a different topic.</p>');
   }
   $('#search-open').addEventListener('click',()=>{searchStories();search.showModal();$('#search-input').focus();});
   $('#search-close').addEventListener('click',()=>search.close());

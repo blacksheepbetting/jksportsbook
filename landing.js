@@ -9,7 +9,7 @@
   document.querySelectorAll('[data-site-copy]').forEach(el=>{const v=get(el.dataset.siteCopy);if(typeof v==='string')el.textContent=v;});
   const stories = Array.isArray(content.stories) ? content.stories : [];
   const pageCopy = copy.pages || {};
-  const articles = list => list.length ? list.map(s=>'<article class="landing-article"><span class="category">'+esc(s.sport)+' / '+esc(s.category)+'</span><h3><a href="index.html#story/'+esc(s.id)+'">'+esc(s.title)+'</a></h3><p>'+esc(s.deck)+'</p><span class="meta">'+esc(s.author)+' / '+esc(s.readTime)+'</span></article>').join('') : '<p class="landing-empty">'+esc(pageCopy.noStories || 'No stories have been published in this section yet.')+'</p>';
+  const articles = list => list.length ? list.map(s=>'<article class="landing-article"><span class="category">'+esc(s.sport)+' / '+esc(s.category)+'</span><h3><a href="stories/'+esc(s.id)+'/">'+esc(s.title)+'</a></h3><p>'+esc(s.deck)+'</p><span class="meta">'+esc(s.author)+' / '+esc(s.readTime)+(s.publishedAt?' / '+esc(s.publishedAt):'')+'</span></article>').join('') : '<p class="landing-empty">'+esc(pageCopy.noStories || 'No stories have been published in this section yet.')+'</p>';
   const landingSections = (copyKey,storiesFor) => {
     const data=get(copyKey)||{};
     const target=document.querySelector('[data-section-list="'+copyKey+'"]');

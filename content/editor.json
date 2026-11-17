@@ -17,6 +17,32 @@
       }
     ]
   },
+  "writers": [
+    {
+      "id": "josh-king",
+      "name": "Josh King",
+      "role": "Founder · JK Sportsline",
+      "bio": "Founder of JKSPORTSBOOK and writer of JK Sportsline, covering hockey, sports media, and the stories behind the game.",
+      "photo": "assets/josh-king.jpg",
+      "columnUrl": "jk-sportsline.html"
+    },
+    {
+      "id": "corey-becker",
+      "name": "Corey Becker",
+      "role": "VP · The Becker Report",
+      "bio": "VP of JKSPORTSBOOK and author of The Becker Report, writing about sports, markets, and consumer advocacy.",
+      "photo": "assets/uploads/corey-becker.jpg",
+      "columnUrl": "becker-report.html"
+    },
+    {
+      "id": "ryan-bossart",
+      "name": "Ryan Bossart",
+      "role": "Host · Bossart's Board",
+      "bio": "Host of the JKSPORTSBOOK podcast and writer of Bossart's Board, covering college basketball.",
+      "photo": "assets/uploads/ryan-bossart.jpg",
+      "columnUrl": "bossarts-board.html"
+    }
+  ],
   "bestBets": [
     {
       "poster": "Josh",

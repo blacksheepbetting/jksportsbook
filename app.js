@@ -94,7 +94,7 @@
   }
 
   function renderStories(filter = 'All') {
-    const filtered = stories.filter(story => story.type === 'story' && (filter === 'All' || story.sport === filter));
+    const filtered = stories.filter(story => (story.type === 'story' || (story.type === 'column' && story.featureInNewsroom === true)) && (filter === 'All' || story.sport === filter));
     // The featured Horse interview already leads the homepage and On the Radar.
     const visible = filtered.filter(story => story.id !== 'westgate-supercontest-history');
     const track = $('#stories-grid');

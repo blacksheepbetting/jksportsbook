@@ -358,6 +358,7 @@ collections:
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
               - { label: Label, name: label, widget: string }
+              - { label: Feature in Fresh Off the Press, name: featureInNewsroom, widget: boolean, default: false, required: false, hint: "Also show this article in the homepage newsroom. It remains in its column." }
               - { label: Article Body, name: body, widget: markdown }
       - file: content/columns/becker-report.json
         name: becker_report
@@ -382,6 +383,7 @@ collections:
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
               - { label: Label, name: label, widget: string }
+              - { label: Feature in Fresh Off the Press, name: featureInNewsroom, widget: boolean, default: false, required: false, hint: "Also show this article in the homepage newsroom. It remains in its column." }
               - { label: Article Body, name: body, widget: markdown }
       - file: content/columns/bossarts-board.json
         name: bossarts_board
@@ -405,6 +407,7 @@ collections:
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
               - { label: Label, name: label, widget: string }
+              - { label: Feature in Fresh Off the Press, name: featureInNewsroom, widget: boolean, default: false, required: false, hint: "Also show this article in the homepage newsroom. It remains in its column." }
               - { label: Article Body, name: body, widget: markdown }
       - file: content/columns/the-touchline.json
         name: the_touchline
@@ -428,4 +431,5 @@ collections:
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
               - { label: Label, name: label, widget: string }
+              - { label: Feature in Fresh Off the Press, name: featureInNewsroom, widget: boolean, default: false, required: false, hint: "Also show this article in the homepage newsroom. It remains in its column." }
               - { label: Article Body, name: body, widget: markdown }

@@ -62,7 +62,8 @@
     },
     "bossartsBoard": {
       "title": "Bossart's Board",
-      "description": "CBB coverage, analysis, and perspective from Bossart."
+      "description": "CBB coverage, analysis, and perspective from Bossart.",
+      "headshot": "/jksportsbook/assets/uploads/ryan-bossart.jpg"
     },
     "theTouchline": {
       "title": "The Touchline",

@@ -46,6 +46,12 @@
     if(kicker&&typeof kickerText==='string')kicker.textContent=kickerText;
     if(title&&series.title)title.textContent=series.title;
     if(description&&series.description)description.textContent=series.description;
+    const portrait=document.querySelector('[data-series-portrait]');
+    if(portrait&&series.headshot){
+      let imagePath=series.headshot;
+      if(location.hostname.endsWith('jksportsbook.com')&&imagePath.startsWith('/jksportsbook/'))imagePath=imagePath.replace(/^\/jksportsbook\//,'/');
+      portrait.src=imagePath;
+    }
     const seriesArticles=stories.filter(story=>story.series===seriesId);
     if(list)list.innerHTML=articles(seriesArticles);
   }

@@ -3,6 +3,18 @@
   const content = await (window.JK_EDITOR_READY || Promise.resolve(window.JK_CONTENT));
   const $ = (selector) => document.querySelector(selector);
   const esc = (value) => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+  const bkPortraitPath = (content.writers || []).find(profile => profile.id === 'brandon-bk-klein')?.photo || '';
+  const portraitForStory = story => story?.authorId === 'brandon-bk-klein' && bkPortraitPath
+    ? String(bkPortraitPath).replace(/^\/?jksportsbook\//, '').replace(/^\/+/, '')
+    : '';
+  const portraitMarkup = (story, className) => {
+    const src = portraitForStory(story);
+    return src ? `<img class="${className}" src="${esc(src)}" alt="" loading="lazy" decoding="async">` : '';
+  };
+  const bylineAvatar = story => {
+    const img = portraitMarkup(story, 'byline-avatar-image');
+    return img ? `<span class="avatar avatar-photo" aria-hidden="true">${img}</span>` : '<span class="avatar" aria-hidden="true">JK</span>';
+  };
   const oddsText = value => Number(value) > 0 ? `+${value}` : String(value).replace('-', '−');
   const money = value => value.toLocaleString('en-US', {style:'currency',currency:'USD'});
   const validUrl = value => { try { const url = new URL(value); return url.protocol === 'https:' ? url.href : ''; } catch { return ''; } };
@@ -122,7 +134,7 @@
     // The featured Horse interview already leads the homepage and On the Radar.
     const visible = filtered.filter(story => story.id !== 'westgate-supercontest-history');
     const track = $('#stories-grid');
-    track.innerHTML = visible.map(story => `<a class="story-card" href="${storyPagePath(story)}">${art(story)}<span class="category">${esc(story.sport)} / ${esc(story.category)}</span><h3>${esc(story.title)}</h3><p>${esc(story.deck)}</p><span class="meta">${esc(story.author)} &nbsp; / &nbsp; ${esc(story.readTime)}${story.publishedAt ? " &nbsp; / &nbsp; " + esc(formatPublishedDate(story.publishedAt)) : ""}</span></a>`).join('');
+    track.innerHTML = visible.map(story => `<a class="story-card" href="${storyPagePath(story)}">${art(story)}<span class="category">${esc(story.sport)} / ${esc(story.category)}</span><h3>${esc(story.title)}</h3><p>${esc(story.deck)}</p><span class="meta story-card-meta">${portraitMarkup(story, "story-author-thumb")}<span class="story-card-meta-text">${esc(story.author)} &nbsp; / &nbsp; ${esc(story.readTime)}${story.publishedAt ? " &nbsp; / &nbsp; " + esc(formatPublishedDate(story.publishedAt)) : ""}</span></span></a>`).join('');
     track.scrollLeft = 0;
     setupStoriesCarousel();
     $('#stories-empty').hidden = visible.length > 0;
@@ -134,7 +146,7 @@
     ? content.radarStoryIds.map(id => stories.find(story => story.id === id)).filter(Boolean)
     : stories.filter(story => story.type === 'story');
   $('#radar-stories').innerHTML = radarStories.slice(0,3).map((story,index) => `<a class="radar-story" href="${storyPagePath(story)}"><span class="radar-number">0${index+1}</span><div><span class="category">${esc(story.sport)} / ${esc(story.category)}</span><h3>${esc(story.title)}</h3><span class="meta">${esc(story.label)} &nbsp; · &nbsp; ${esc(story.readTime)}</span></div></a>`).join('');
-  $('#columns-grid').innerHTML = stories.filter(story => story.type === 'column' || Boolean(story.series)).map(story => `<a class="column-card" href="${storyPagePath(story)}"><span class="column-icon" aria-hidden="true">“</span><span class="category">${esc(story.category)}</span><h3>${esc(story.title)}</h3><p>${esc(story.deck)}</p><div class="column-byline"><span class="avatar" aria-hidden="true">JK</span><span class="byline-name">${esc(story.author)}<small>${esc(story.readTime)} / ${esc(story.label)}${story.publishedAt ? " / " + esc(formatPublishedDate(story.publishedAt)) : ""}</small></span></div></a>`).join('');
+  $('#columns-grid').innerHTML = stories.filter(story => story.type === 'column' || Boolean(story.series)).map(story => `<a class="column-card" href="${storyPagePath(story)}"><span class="column-icon" aria-hidden="true">“</span><span class="category">${esc(story.category)}</span><h3>${esc(story.title)}</h3><p>${esc(story.deck)}</p><div class="column-byline">${bylineAvatar(story)}<span class="byline-name">${esc(story.author)}<small>${esc(story.readTime)} / ${esc(story.label)}${story.publishedAt ? " / " + esc(formatPublishedDate(story.publishedAt)) : ""}</small></span></div></a>`).join('');
   setupPointOfViewCarousel();
 
   function setupPointOfViewCarousel() {

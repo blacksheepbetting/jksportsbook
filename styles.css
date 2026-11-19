@@ -559,3 +559,15 @@
 
 .personality-section .archive-card h3{font-size:20px;line-height:1.15;letter-spacing:-.4px;margin:0 0 8px}
 @media(max-width:640px){.personality-section .archive-card h3{font-size:17px}}
+
+/* Brandon “BK” Klein portraits across his article listings and column cards. */
+.story-card .story-card-meta{display:flex;align-items:center;gap:9px}
+.story-card .story-author-thumb{flex:0 0 30px;width:30px;height:30px;border-radius:50%;object-fit:cover;object-position:50% 22%;border:1px solid var(--line)}
+.column-byline .avatar.avatar-photo{overflow:hidden;padding:0;background:#111}
+.column-byline .avatar-photo .byline-avatar-image{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.landing-article-byline{display:flex;align-items:center;gap:9px;margin-top:12px}
+.landing-article-byline .meta{margin:0;padding:0;border:0}
+.landing-author-avatar{display:block;flex:0 0 32px;width:32px;height:32px;object-fit:cover;object-position:50% 22%;border-radius:50%}
+.story-page-top nav .nav-dropdown>summary{padding:0;font-size:9px}
+.story-page-top nav .nav-dropdown-menu{left:auto;right:0}
+@media(max-width:640px){.story-page-top nav .nav-dropdown-menu{min-width:195px}}

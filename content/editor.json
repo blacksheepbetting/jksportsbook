@@ -84,7 +84,7 @@
       "name": "Brandon “BK” Klein",
       "role": "NBA Columnist · BK's Last Leg",
       "bio": "Former Bleacher Report ambassador and lifelong NBA fanatic, Brandon “BK” Klein has the league covered. He also specializes in parlays that come down to one leg—and somehow miss it.",
-      "photo": "",
+      "photo": "assets/uploads/brandon-bk-klein.jpg",
       "columnUrl": "bk-last-leg.html",
       "xUrl": "",
       "instagramUrl": "",
@@ -152,7 +152,7 @@
     "bkLastLeg": {
       "title": "BK's Last Leg",
       "description": "NBA coverage, matchups, and perspective from former Bleacher Report ambassador and lifelong NBA fanatic Brandon “BK” Klein. Also: an uncanny knack for falling one leg short.",
-      "headshot": ""
+      "headshot": "assets/uploads/brandon-bk-klein.jpg"
     }
   },
   "demoPicks": [],

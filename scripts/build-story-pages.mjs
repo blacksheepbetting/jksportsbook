@@ -70,7 +70,8 @@ async function loadContent() {
     ['content/columns/jk-sportsline.json', 'jk-sportsline'],
     ['content/columns/becker-report.json', 'becker-report'],
     ['content/columns/bossarts-board.json', 'bossarts-board'],
-    ['content/columns/the-touchline.json', 'the-touchline']
+    ['content/columns/the-touchline.json', 'the-touchline'],
+    ['content/columns/bk-last-leg.json', 'bk-last-leg']
   ];
   const managed = new Map();
   for (const [file, series] of feeds) {
@@ -141,9 +142,9 @@ function storyPage(story, stories, profiles) {
     '<meta property="og:description" content="' + esc(description) + '"><meta property="og:url" content="' + esc(canonical) + '"><meta property="og:image" content="' + esc(image) + '">' +
     '<meta property="og:image:alt" content="' + esc(story.title) + '"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="' + esc(title) + '">' +
     '<meta name="twitter:description" content="' + esc(description) + '"><meta name="twitter:image" content="' + esc(image) + '">' +
-    '<title>' + esc(title) + ' — JKSPORTSBOOK</title><link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../styles.css?v=personalities-20261117">' +
+    '<title>' + esc(title) + ' — JKSPORTSBOOK</title><link rel="icon" href="../../assets/favicon.svg"><link rel="stylesheet" href="../../styles.css?v=bk-portrait-dropdown-20261119">' +
     '<script type="application/ld+json">' + JSON.stringify(jsonLd).replace(/</g, '\\u003c') + '</script></head><body><a class="skip-link" href="#story-main">Skip to story</a>' +
-    '<main id="story-main" class="story-page"><header class="story-page-top"><a class="story-page-brand" href="../../">JKSPORTSBOOK</a><nav aria-label="Article navigation"><a href="../../archive.html">STORIES</a><a href="../../columns.html">COLUMNS</a><a href="../../personalities.html">WRITERS</a></nav></header>' +
+    '<main id="story-main" class="story-page"><header class="story-page-top"><a class="story-page-brand" href="../../">JKSPORTSBOOK</a><nav aria-label="Article navigation"><a href="../../archive.html">STORIES</a><a href="../../columns.html">COLUMNS</a><details class="nav-dropdown"><summary>PERSONALITIES <span aria-hidden="true">⌄</span></summary><div class="nav-dropdown-menu"><a href="../../personalities.html">ALL PERSONALITIES</a>' + profiles.filter(profile => profile && profile.id && profile.name).map(profile => '<a href="../../personalities.html?person=' + encodeURIComponent(profile.id) + '">' + esc(profile.name) + '</a>').join('') + '</div></details></nav></header>' +
     '<article class="story-page-article"><span class="section-kicker">' + esc(story.sport || 'SPORTS') + ' / ' + esc(story.category || 'STORY') + (story.series ? ' / ' + esc(story.series) : '') + '</span><h1>' + esc(story.title) + '</h1>' +
     (story.deck ? '<p class="story-page-deck">' + esc(story.deck) + '</p>' : '') +
     '<div class="story-page-meta"><span>' + (writer ? '<a href="../../personalities.html?person=' + encodeURIComponent(writer.id) + '">' + esc(writerName) + '</a>' : esc(writerName)) + readMeta + dateMeta + '</span>' +

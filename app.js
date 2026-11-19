@@ -58,6 +58,7 @@
     basketball: 'assets/uploads/jksb-cover-basketball.jpg',
     soccer: 'assets/uploads/jksb-cover-soccer.jpg',
     hockey: 'assets/uploads/jksb-cover-hockey.jpg',
+    'inside-the-fed': 'assets/uploads/inside-the-fed-beginning.png',
     'consumer-advocacy': 'assets/uploads/jksb-cover-consumer-advocacy.jpg'
   };
 

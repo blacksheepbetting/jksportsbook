@@ -26,7 +26,7 @@
     const columns=stories.filter(s=>s.type==='column'||Boolean(s.series));
     const all=document.querySelector('[data-all-columns]');
     if(all)all.innerHTML=articles(columns);
-    const defs=[['jk-sportsline','jkSportsline'],['becker-report','beckerReport'],['bossarts-board','bossartsBoard'],['the-touchline','theTouchline']];
+    const defs=[['jk-sportsline','jkSportsline'],['becker-report','beckerReport'],['bossarts-board','bossartsBoard'],['the-touchline','theTouchline'],['bk-last-leg','bkLastLeg']];
     defs.forEach(([id,key])=>{
       const card=document.getElementById(id);
       const cfg=content.columnSeries?.[key]||{};
@@ -43,7 +43,7 @@
   if(kind==='series'){
     const seriesId=root?.dataset.series||'';
     const series=content.columnSeries?.[seriesId]||{};
-    const kickerKey=seriesId==='jk-sportsline'?'pages.jkSportslineKicker':seriesId==='bossarts-board'?'pages.bossartsBoardKicker':seriesId==='the-touchline'?'pages.theTouchlineKicker':'pages.beckerReportKicker';
+    const kickerKey=seriesId==='jk-sportsline'?'pages.jkSportslineKicker':seriesId==='bossarts-board'?'pages.bossartsBoardKicker':seriesId==='the-touchline'?'pages.theTouchlineKicker':seriesId==='bk-last-leg'?'pages.bkLastLegKicker':'pages.beckerReportKicker';
     const kicker=document.querySelector('[data-series-kicker]');
     const title=document.querySelector('[data-series-title]');
     const description=document.querySelector('[data-series-description]');
@@ -57,6 +57,9 @@
       let imagePath=series.headshot;
       if(location.hostname.endsWith('jksportsbook.com')&&imagePath.startsWith('/jksportsbook/'))imagePath=imagePath.replace(/^\/jksportsbook\//,'/');
       portrait.src=imagePath;
+      portrait.hidden=false;
+      const mark=document.querySelector('[data-series-mark]');
+      if(mark)mark.hidden=true;
     }
     const seriesArticles=stories.filter(story=>story.series===seriesId);
     if(list)list.innerHTML=articles(seriesArticles);

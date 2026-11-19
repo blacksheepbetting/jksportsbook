@@ -4,7 +4,8 @@ const JK_COLUMN_FEEDS = [
   { path: 'content/columns/jk-sportsline.json', series: 'jk-sportsline' },
   { path: 'content/columns/becker-report.json', series: 'becker-report' },
   { path: 'content/columns/bossarts-board.json', series: 'bossarts-board' },
-  { path: 'content/columns/the-touchline.json', series: 'the-touchline' }
+  { path: 'content/columns/the-touchline.json', series: 'the-touchline' },
+  { path: 'content/columns/bk-last-leg.json', series: 'bk-last-leg' }
 ];
 
 window.JK_EDITOR_READY = fetch('content/editor.json?v=site-cleanup-20261113', { cache: 'no-store' })

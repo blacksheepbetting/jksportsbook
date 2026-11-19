@@ -75,6 +75,7 @@ collections:
                   - { label: Becker Report Link, name: beckerReport, widget: string }
                   - { label: "Bossart's Board Link", name: bossartsBoard, widget: string }
                   - { label: The Touchline Link, name: theTouchline, widget: string }
+                  - { label: "BK's Last Leg Link", name: bkLastLeg, widget: string }
                   - { label: Shows Tab, name: shows, widget: string }
                   - { label: Betting Tab, name: betting, widget: string }
                   - { label: Betting Desk Link, name: bettingDesk, widget: string }
@@ -136,6 +137,7 @@ collections:
                   - { label: Becker Report Kicker, name: beckerReportKicker, widget: string }
                   - { label: "Bossart's Board Kicker", name: bossartsBoardKicker, widget: string }
                   - { label: The Touchline Kicker, name: theTouchlineKicker, widget: string }
+                  - { label: "BK's Last Leg Kicker", name: bkLastLegKicker, widget: string }
                   - { label: Weekly Articles Kicker, name: seriesArticlesKicker, widget: string }
                   - { label: Weekly Articles Heading, name: seriesArticlesTitle, widget: string }
                   - { label: Shows Kicker, name: showsKicker, widget: string }
@@ -234,6 +236,13 @@ collections:
                 fields:
                   - { label: Display Title, name: title, widget: string }
                   - { label: Description, name: description, widget: text }
+              - label: "BK's Last Leg"
+                name: bkLastLeg
+                widget: object
+                fields:
+                  - { label: Display Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: text }
+                  - { label: Column Headshot, name: headshot, widget: image, choose_url: false, required: false }
           - label: Podcast
             name: podcast
             widget: object
@@ -310,7 +319,7 @@ collections:
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
-              - { label: Personality Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Personalities, such as josh-king, ryan-bossart, corey-becker, or the-horse." }
+              - { label: Personality Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Personalities, such as josh-king, ryan-bossart, corey-becker, brandon-bk-klein, or the-horse." }
               - { label: Published Date, name: publishedAt, widget: string, required: false, hint: "Optional. Enter YYYY-MM-DD; it will appear with the byline." }
               - label: Related Story IDs
                 name: relatedStoryIds
@@ -372,7 +381,7 @@ collections:
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
-              - { label: Personality Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Personalities, such as josh-king, ryan-bossart, corey-becker, or the-horse." }
+              - { label: Personality Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Personalities, such as josh-king, ryan-bossart, corey-becker, brandon-bk-klein, or the-horse." }
               - { label: Published Date, name: publishedAt, widget: string, required: false, hint: "Optional. Enter YYYY-MM-DD; it will appear with the byline." }
               - label: Related Story IDs
                 name: relatedStoryIds
@@ -409,7 +418,7 @@ collections:
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
-              - { label: Personality Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Personalities, such as josh-king, ryan-bossart, corey-becker, or the-horse." }
+              - { label: Personality Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Personalities, such as josh-king, ryan-bossart, corey-becker, brandon-bk-klein, or the-horse." }
               - { label: Published Date, name: publishedAt, widget: string, required: false, hint: "Optional. Enter YYYY-MM-DD; it will appear with the byline." }
               - label: Related Story IDs
                 name: relatedStoryIds
@@ -448,7 +457,7 @@ collections:
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
-              - { label: Personality Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Personalities, such as josh-king, ryan-bossart, corey-becker, or the-horse." }
+              - { label: Personality Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Personalities, such as josh-king, ryan-bossart, corey-becker, brandon-bk-klein, or the-horse." }
               - { label: Published Date, name: publishedAt, widget: string, required: false, hint: "Optional. Enter YYYY-MM-DD; it will appear with the byline." }
               - label: Related Story IDs
                 name: relatedStoryIds
@@ -486,7 +495,7 @@ collections:
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
-              - { label: Personality Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Personalities, such as josh-king, ryan-bossart, corey-becker, or the-horse." }
+              - { label: Personality Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Personalities, such as josh-king, ryan-bossart, corey-becker, brandon-bk-klein, or the-horse." }
               - { label: Published Date, name: publishedAt, widget: string, required: false, hint: "Optional. Enter YYYY-MM-DD; it will appear with the byline." }
               - label: Related Story IDs
                 name: relatedStoryIds
@@ -524,7 +533,46 @@ collections:
               - { label: Deck, name: deck, widget: text }
               - { label: Author, name: author, widget: string }
               - { label: Read Time, name: readTime, widget: string }
-              - { label: Personality Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Personalities, such as josh-king, ryan-bossart, corey-becker, or the-horse." }
+              - { label: Personality Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Personalities, such as josh-king, ryan-bossart, corey-becker, brandon-bk-klein, or the-horse." }
+              - { label: Published Date, name: publishedAt, widget: string, required: false, hint: "Optional. Enter YYYY-MM-DD; it will appear with the byline." }
+              - label: Related Story IDs
+                name: relatedStoryIds
+                widget: list
+                required: false
+                hint: "Optional. Add up to three article IDs to feature at the end of this story. Leave blank for automatic related suggestions."
+                field:
+                  label: Article ID
+                  name: articleId
+                  widget: string
+              - { label: Social Share Title, name: shareTitle, widget: string, required: false }
+              - { label: Social Share Description, name: shareDescription, widget: text, required: false }
+              - { label: Social Share Image Path or URL, name: shareImage, widget: string, required: false, hint: "Optional. Use a site-relative image path such as assets/uploads/photo.jpg or an HTTPS image URL." }
+              - { label: Label, name: label, widget: string }
+              - { label: Feature in Fresh Off the Press, name: featureInNewsroom, widget: boolean, default: false, required: false, hint: "Also show this article in the homepage newsroom. It remains in its column." }
+              - { label: Article Body, name: body, widget: markdown }
+
+      - file: content/columns/bk-last-leg.json
+        name: bk_last_leg
+        label: "BK's Last Leg"
+        format: json
+        fields:
+          - label: Articles
+            name: articles
+            widget: list
+            summary: "{{fields.title}}"
+            hint: "Add the newest article at the top. The list order controls how articles appear on the page."
+            fields:
+              - { label: Story ID, name: id, widget: string, hint: "Use a unique lowercase URL slug, such as bk-2026-11-19-nba-column." }
+              - { label: Title, name: title, widget: string }
+              - { label: Sport, name: sport, widget: select, options: [NBA] }
+              - { label: Category, name: category, widget: string }
+              - { label: Art Style, name: art, widget: select, options: [stadium, court, baseball, playbook], default: playbook }
+              - { label: Cover Photo, name: coverImage, widget: select, options: [{ label: Automatic by sport / topic, value: auto }, { label: Football - Black & White, value: football }, { label: Basketball - Black & White, value: basketball }, { label: Soccer - Black & White, value: soccer }, { label: Hockey - Black & White, value: hockey }, { label: Consumer Advocacy - Black & White, value: consumer-advocacy }, { label: Original Graphic Art, value: none }], default: auto, required: false }
+              - { label: Art Label, name: artLabel, widget: string, required: false }
+              - { label: Deck, name: deck, widget: text }
+              - { label: Author, name: author, widget: string }
+              - { label: Read Time, name: readTime, widget: string }
+              - { label: Personality Profile ID, name: authorId, widget: string, required: false, hint: "Use a matching ID from Personalities, such as josh-king, ryan-bossart, corey-becker, brandon-bk-klein, or the-horse." }
               - { label: Published Date, name: publishedAt, widget: string, required: false, hint: "Optional. Enter YYYY-MM-DD; it will appear with the byline." }
               - label: Related Story IDs
                 name: relatedStoryIds

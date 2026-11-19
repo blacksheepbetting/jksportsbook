@@ -78,6 +78,19 @@
       "featuredStoryIds": [
         "westgate-supercontest-history"
       ]
+    },
+    {
+      "id": "brandon-bk-klein",
+      "name": "Brandon “BK” Klein",
+      "role": "NBA Columnist · BK's Last Leg",
+      "bio": "Former Bleacher Report ambassador and lifelong NBA fanatic, Brandon “BK” Klein has the league covered. He also specializes in parlays that come down to one leg—and somehow miss it.",
+      "photo": "",
+      "columnUrl": "bk-last-leg.html",
+      "xUrl": "",
+      "instagramUrl": "",
+      "youtubeUrl": "",
+      "tiktokUrl": "",
+      "websiteUrl": ""
     }
   ],
   "bestBets": [
@@ -135,6 +148,11 @@
     "theTouchline": {
       "title": "The Touchline",
       "description": "A weekly look at the matches, moments, and storylines shaping the global game."
+    },
+    "bkLastLeg": {
+      "title": "BK's Last Leg",
+      "description": "NBA coverage, matchups, and perspective from former Bleacher Report ambassador and lifelong NBA fanatic Brandon “BK” Klein. Also: an uncanny knack for falling one leg short.",
+      "headshot": ""
     }
   },
   "demoPicks": [],
@@ -255,7 +273,8 @@
       "scheduleOpeningEdition": "NFL DESK / LIVE FEED",
       "scheduleResults": "Results",
       "beckerReportKicker": "JK ORIGINAL / COLUMN SERIES",
-      "columnsDescription": "Distinct voices, recurring series, and room for a point of view."
+      "columnsDescription": "Distinct voices, recurring series, and room for a point of view.",
+      "bkLastLegKicker": "NBA / COLUMN SERIES"
     },
     "navigation": {
       "allSports": "ALL SPORTS",
@@ -281,7 +300,8 @@
       "gameOfWeek": "Game of the Week",
       "tuneIn": "TUNE IN",
       "columns": "Columns",
-      "betting": "Betting"
+      "betting": "Betting",
+      "bkLastLeg": "BK's Last Leg"
     },
     "masthead": {
       "strapline": "INDEPENDENT COVERAGE. UNFILTERED OPINIONS.",

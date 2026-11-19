@@ -16,7 +16,11 @@
   const articleUrl=s=>'stories/'+slug(s.id)+'/';
   const storiesFor=p=>stories.filter(s=>{const found=profileForStory(s);return found&&found.id===p.id;});
   const socialItems=p=>[['X',p.xUrl],['Instagram',p.instagramUrl],['YouTube',p.youtubeUrl],['TikTok',p.tiktokUrl],['Website',p.websiteUrl]].filter(x=>/^https:\/\//i.test(String(x[1]||'')));
-  const photoMarkup=(p,large)=>p.photo?'<img class="'+(large?'personality-portrait':'personality-avatar')+'" src="'+esc(String(p.photo).replace(/^\/?jksportsbook\//,'').replace(/^\/+/,''))+'" alt="'+(p.id==='corey-becker'?'Faceless profile image for '+esc(p.name):'Portrait of '+esc(p.name))+'" loading="lazy" decoding="async">':'<div class="'+(large?'personality-portrait personality-mark':'personality-avatar personality-mark')+'" aria-label="'+esc(p.name)+'">'+(p.id==='the-horse'?'THE<br>HORSE':esc((p.name||'JK').split(/\s+/).map(w=>w[0]).slice(0,2).join('').toUpperCase()))+'</div>';
+  const photoMarkup=(p,large)=>{
+    const seriesKey=p.id==='brandon-bk-klein'?'bkLastLeg':'';
+    const photo=p.photo||(seriesKey?content.columnSeries?.[seriesKey]?.headshot:'');
+    return photo?'<img class="'+(large?'personality-portrait':'personality-avatar')+'" src="'+esc(String(photo).replace(/^\/?jksportsbook\//,'').replace(/^\/+/,''))+'" alt="'+(p.id==='corey-becker'?'Faceless profile image for '+esc(p.name):'Portrait of '+esc(p.name))+'" loading="lazy" decoding="async">':'<div class="'+(large?'personality-portrait personality-mark':'personality-avatar personality-mark')+'" aria-label="'+esc(p.name)+'">'+(p.id==='the-horse'?'THE<br>HORSE':esc((p.name||'JK').split(/\s+/).map(w=>w[0]).slice(0,2).join('').toUpperCase()))+'</div>';
+  };
   const root=document.getElementById('personality-content');
   const selected=(new URLSearchParams(location.search).get('person')||new URLSearchParams(location.search).get('writer')||'');
   const link=s=>'<a href="'+esc(articleUrl(s))+'">'+esc(s.title)+'</a>';

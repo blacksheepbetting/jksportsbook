@@ -573,3 +573,8 @@
 @media(max-width:640px){.story-page-top nav .nav-dropdown-menu{min-width:195px}}
 
 
+
+
+.personality-socials a.personality-follow-x{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 16px;background:#ffcc00;color:#111;border:2px solid #111;font-size:12px;font-weight:900;letter-spacing:.8px;text-decoration:none;transition:background-color .15s ease,color .15s ease}
+.personality-socials a.personality-follow-x:hover{background:#111;color:#ffcc00}
+.personality-socials a.personality-follow-x:focus-visible{outline:3px solid #111;outline-offset:3px}

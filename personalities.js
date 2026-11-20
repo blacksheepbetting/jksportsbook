@@ -75,6 +75,7 @@
       const widgets=document.createElement('script');
       widgets.async=true;
       widgets.src='https://platform.x.com/widgets.js';
+      widgets.onload=()=>window.twttr?.widgets?.load(root);
       document.head.appendChild(widgets);
     }
   }

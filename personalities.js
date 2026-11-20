@@ -57,9 +57,17 @@
     if(vid)video='<section class="personality-feature"><div><span class="section-kicker">FEATURED APPEARANCE</span><h2>'+esc(p.featuredVideoTitle||'Watch the conversation')+'</h2><p>'+esc(p.featuredVideoDescription||'')+'</p><a href="'+esc(p.featuredVideoUrl)+'" target="_blank" rel="noopener noreferrer">OPEN ON YOUTUBE ↗</a></div><div class="personality-video"><iframe src="https://www.youtube.com/embed/'+esc(vid)+'" title="'+esc(p.featuredVideoTitle||p.name)+'" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></section>';
     const related=featuredStories.length?section({kicker:'FEATURED COVERAGE',heading:'In the story.'},'<div class="archive-grid">'+featuredStories.map(storyCard).join('')+'</div>'):'';
     const writing=authored.length?section({kicker:'BY '+p.name.toUpperCase(),heading:'Articles.'},'<div class="archive-grid">'+authored.map(storyCard).join('')+'</div>'):'';
+    const soundbites=(Array.isArray(content.soundbites)?content.soundbites:[])
+      .filter(c=>c&&c.personalityId===p.id&&c.title&&c.audioUrl)
+      .sort((a,b)=>(Date.parse(b.publishedAt||'')||0)-(Date.parse(a.publishedAt||'')||0));
+    const soundbiteSection=soundbites.length?section({kicker:'HORSE AUDIO',heading:'Soundbites.'},'<div class="personality-soundbites">'+soundbites.map(c=>{
+      const raw=String(c.audioUrl||'').trim();
+      const src=/^https:\/\//i.test(raw)?raw:raw.replace(/^\/?jksportsbook\//i,'').replace(/^\/+/, '');
+      return '<article class="personality-soundbite"><div class="personality-soundbite-copy"><span class="section-kicker">'+esc(dateText(c.publishedAt)||'AUDIO')+'</span><h3>'+esc(c.title)+'</h3>'+(c.description?'<p>'+esc(c.description)+'</p>':'')+'</div><audio controls preload="none" src="'+esc(src)+'" aria-label="Listen to '+esc(c.title)+'">Your browser does not support audio playback.</audio></article>';
+    }).join('')+'</div>'):'';
     const appearances=episodes.filter(e=>(e.personalityIds||[]).includes(p.id));
     const shows=appearances.length?section({kicker:'ON THE SHOW',heading:'Podcast appearances.'},'<div class="personality-episodes">'+appearances.map(episodeCard).join('')+'</div>'):'';
-    root.innerHTML=profileMarkup+video+writing+related+shows;
+    root.innerHTML=profileMarkup+video+soundbiteSection+writing+related+shows;
   }
   const profile=profiles.find(p=>p.id===selected);
   if(profile)renderProfile(profile);else renderDirectory();

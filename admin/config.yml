@@ -272,6 +272,19 @@ collections:
                       label: Personality ID
                       name: personalityId
                       widget: string
+          - label: Horse Soundbites
+            name: soundbites
+            widget: list
+            required: false
+            summary: "{{fields.publishedAt}} — {{fields.title}}"
+            hint: "Upload Horse audio clips. They appear newest first on the Horse profile."
+            fields:
+              - { label: Clip ID, name: id, widget: string }
+              - { label: Personality ID, name: personalityId, widget: string, default: "the-horse", required: false }
+              - { label: Title, name: title, widget: string }
+              - { label: Publish Date, name: publishedAt, widget: string, hint: "Use YYYY-MM-DD for newest-first ordering." }
+              - { label: MP3 Audio File, name: audioUrl, widget: file, hint: "Upload an MP3 audio recording." }
+              - { label: Description, name: description, widget: text, required: false }
           - label: Personalities
             name: writers
             widget: list

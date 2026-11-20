@@ -360,5 +360,15 @@
       "bestBetsKicker": "01 / BEST BETS",
       "description": "A home for posted picks and matchup breakdowns, with the context behind each call."
     }
-  }
+  },
+  "soundbites": [
+    {
+      "id": "horse-raiders-seattle",
+      "personalityId": "the-horse",
+      "title": "Horse Loses It Over Raiders Loss to Seattle",
+      "publishedAt": "2026-11-20",
+      "audioUrl": "assets/uploads/horse-soundbites/horse-loses-it-over-raiders-loss-to-seattle.mp3",
+      "description": ""
+    }
+  ]
 }

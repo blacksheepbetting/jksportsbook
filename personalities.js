@@ -50,7 +50,10 @@
     const authored=storiesFor(p);
     const featuredIds=Array.isArray(p.featuredStoryIds)?p.featuredStoryIds.map(x=>typeof x==='string'?x:x?.storyId||x?.id).filter(Boolean):[];
     const featuredStories=featuredIds.map(id=>stories.find(s=>s.id===id)).filter(s=>s&&!authored.some(a=>a.id===s.id));
-    const social=socialItems(p).map(x=>'<a href="'+esc(x[1])+'" target="_blank" rel="noopener noreferrer">'+esc(x[0])+' <span aria-hidden="true">↗</span></a>').join('');
+    const social=socialItems(p).map(x=>{
+      const horseFollow=p.id==='the-horse'&&x[0]==='X';
+      return '<a'+(horseFollow?' class="personality-follow-x"':'')+' href="'+esc(x[1])+'" target="_blank" rel="noopener noreferrer">'+esc(horseFollow?'FOLLOW HORSE ON X':x[0])+' <span aria-hidden="true">↗</span></a>';
+    }).join('');
     const profileMarkup='<section class="personality-profile">'+photoMarkup(p,true)+'<div class="personality-profile-copy"><span class="section-kicker">'+esc(p.role||'JKSPORTSBOOK')+'</span><h1>'+esc(p.name)+'</h1><p>'+esc(p.bio||'')+'</p><div class="personality-actions">'+(p.columnUrl?'<a href="'+esc(p.columnUrl)+'">VISIT COLUMN <span aria-hidden="true">↗</span></a>':'')+(social?'<div class="personality-socials" aria-label="Social links">'+social+'</div>':'')+'</div></div></section>';
     let video='';
     const vid=videoId(p.featuredVideoUrl||'');

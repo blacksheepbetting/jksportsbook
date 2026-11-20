@@ -4,14 +4,11 @@
   const profiles=Array.isArray(content.writers)?content.writers:[];
   const stories=Array.isArray(content.stories)?content.stories.filter(s=>s&&s.id&&s.title&&s.body&&!/^\s*<p>\s*coming soon:/i.test(String(s.body))):[];
   const episodes=Array.isArray(content.podcast?.episodes)?content.podcast.episodes:[];
-  const board=Array.isArray(content.bestBets)?content.bestBets:[];
-  const picks=Array.isArray(content.picks)?content.picks:[];
   const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const slug=v=>String(v||'').toLowerCase().trim().replace(/[^a-z0-9-]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');
   const cleanAuthor=s=>String(s.author||'').replace(/\s*\|.*$/,'').trim().toLowerCase();
   const profileForStory=s=>profiles.find(p=>p.id===s.authorId)||profiles.find(p=>String(p.name||'').trim().toLowerCase()===cleanAuthor(s)||p.id===slug(cleanAuthor(s)));
   const dateText=v=>{if(!v)return'';const d=new Date(String(v).length===10?String(v)+'T00:00:00':v);return Number.isNaN(d.getTime())?String(v):new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',year:'numeric'}).format(d);};
-  const formatOdds=v=>Number(v)>0?'+'+v:String(v).replace('-','−');
   const profileUrl=p=>'personalities.html?person='+encodeURIComponent(typeof p==='string'?p:p.id||'');
   const articleUrl=s=>'stories/'+slug(s.id)+'/';
   const storiesFor=p=>stories.filter(s=>{const found=profileForStory(s);return found&&found.id===p.id;});
@@ -26,7 +23,6 @@
   const selected=(new URLSearchParams(location.search).get('person')||new URLSearchParams(location.search).get('writer')||'');
   const link=s=>'<a href="'+esc(articleUrl(s))+'">'+esc(s.title)+'</a>';
   const storyCard=s=>'<article class="archive-card"><span class="category">'+esc(s.sport||'SPORTS')+' / '+esc(s.category||'STORY')+'</span><h3><a href="'+esc(articleUrl(s))+'">'+esc(s.title)+'</a></h3><p>'+esc(s.deck||'')+'</p><span class="meta">'+esc(s.readTime||'')+(s.publishedAt?' / '+esc(dateText(s.publishedAt)):'')+'</span></article>';
-  const pickCard=p=>'<article class="personality-pick"><span class="category">'+esc(p.sport||'SPORTS')+' / '+esc(p.type||'PICK')+(p.gameTime?' / '+esc(p.gameTime):'')+'</span><h3>'+esc(p.matchup||p.selection)+'</h3><p><strong>'+esc(p.selection)+'</strong><span class="personality-price">'+esc(formatOdds(p.odds))+'</span>'+(p.units?' <span class="meta">'+esc(p.units)+' units</span>':'')+'</p>'+(p.body?'<p class="personality-pick-note">'+esc(p.body)+'</p>':'')+'</article>';
   function episodeCard(e){
     const url=e.listenUrl||e.videoUrl||'';
     const thumb=e.thumbnailUrl||'';
@@ -44,8 +40,7 @@
     root.innerHTML='<div class="personality-directory">'+profiles.map(p=>{
       const authored=storiesFor(p).length;
       const showCount=episodes.filter(e=>(e.personalityIds||[]).includes(p.id)).length+(p.featuredVideoUrl?1:0);
-      const betCount=board.filter(b=>b.personalityId===p.id).length+picks.filter(b=>b.personalityId===p.id).length;
-      const details=[authored?authored+' '+(authored===1?'STORY':'STORIES'):'',showCount?showCount+' '+(showCount===1?'APPEARANCE':'APPEARANCES'):'',betCount?betCount+' '+(betCount===1?'PICK':'PICKS'):''].filter(Boolean).join(' · ');
+      const details=[authored?authored+' '+(authored===1?'STORY':'STORIES'):'',showCount?showCount+' '+(showCount===1?'APPEARANCE':'APPEARANCES'):''].filter(Boolean).join(' · ');
       return '<a class="personality-card" href="'+esc(profileUrl(p))+'">'+photoMarkup(p,false)+'<div class="personality-card-copy"><span class="section-kicker">'+esc(p.role||'JKSPORTSBOOK')+'</span><h2>'+esc(p.name)+'</h2><p>'+esc(p.bio||'')+'</p><span class="personality-card-counts">'+esc(details||'PROFILE')+'</span><span class="personality-card-link">VIEW PROFILE <span aria-hidden="true">↗</span></span></div></a>';
     }).join('')+'</div>';
   }
@@ -64,10 +59,7 @@
     const writing=authored.length?section({kicker:'BY '+p.name.toUpperCase(),heading:'Articles.'},'<div class="archive-grid">'+authored.map(storyCard).join('')+'</div>'):'';
     const appearances=episodes.filter(e=>(e.personalityIds||[]).includes(p.id));
     const shows=appearances.length?section({kicker:'ON THE SHOW',heading:'Podcast appearances.'},'<div class="personality-episodes">'+appearances.map(episodeCard).join('')+'</div>'):'';
-    const currentBets=board.filter(b=>b.personalityId===p.id);
-    const official=picks.filter(b=>b.personalityId===p.id);
-    const betting=(currentBets.length||official.length)?section({kicker:'ON THE BOARD',heading:'Published picks.'},'<div class="personality-picks">'+currentBets.map(pickCard).join('')+official.map(pickCard).join('')+'</div>'):'';
-    root.innerHTML=profileMarkup+video+writing+related+shows+betting;
+    root.innerHTML=profileMarkup+video+writing+related+shows;
   }
   const profile=profiles.find(p=>p.id===selected);
   if(profile)renderProfile(profile);else renderDirectory();

@@ -42,7 +42,8 @@
   }
   if(kind==='series'){
     const seriesId=root?.dataset.series||'';
-    const series=content.columnSeries?.[seriesId]||{};
+    const seriesKeys={'jk-sportsline':'jkSportsline','becker-report':'beckerReport','bossarts-board':'bossartsBoard','the-touchline':'theTouchline','bk-last-leg':'bkLastLeg'};
+    const series=content.columnSeries?.[seriesKeys[seriesId]||seriesId]||{};
     const kickerKey=seriesId==='jk-sportsline'?'pages.jkSportslineKicker':seriesId==='bossarts-board'?'pages.bossartsBoardKicker':seriesId==='the-touchline'?'pages.theTouchlineKicker':seriesId==='bk-last-leg'?'pages.bkLastLegKicker':'pages.beckerReportKicker';
     const kicker=document.querySelector('[data-series-kicker]');
     const title=document.querySelector('[data-series-title]');

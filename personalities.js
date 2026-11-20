@@ -19,7 +19,8 @@
   const photoMarkup=(p,large)=>{
     const seriesKey=p.id==='brandon-bk-klein'?'bkLastLeg':'';
     const photo=p.photo||(seriesKey?content.columnSeries?.[seriesKey]?.headshot:'');
-    return photo?'<img class="'+(large?'personality-portrait':'personality-avatar')+'" src="'+esc(String(photo).replace(/^\/?jksportsbook\//,'').replace(/^\/+/,''))+'" alt="'+(p.id==='corey-becker'?'Faceless profile image for '+esc(p.name):'Portrait of '+esc(p.name))+'" loading="lazy" decoding="async">':'<div class="'+(large?'personality-portrait personality-mark':'personality-avatar personality-mark')+'" aria-label="'+esc(p.name)+'">'+(p.id==='the-horse'?'THE<br>HORSE':esc((p.name||'JK').split(/\s+/).map(w=>w[0]).slice(0,2).join('').toUpperCase()))+'</div>';
+    const alt=p.id==='the-horse'?'Behold a Pale Horse logo':p.id==='corey-becker'?'Faceless profile image for '+p.name:'Portrait of '+p.name;
+    return photo?'<img class="'+(large?'personality-portrait':'personality-avatar')+'" src="'+esc(String(photo).replace(/^\/?jksportsbook\//,'').replace(/^\/+/,''))+'" alt="'+esc(alt)+'" loading="lazy" decoding="async">':'<div class="'+(large?'personality-portrait personality-mark':'personality-avatar personality-mark')+'" aria-label="'+esc(p.name)+'">'+(p.id==='the-horse'?'THE<br>HORSE':esc((p.name||'JK').split(/\s+/).map(w=>w[0]).slice(0,2).join('').toUpperCase()))+'</div>';
   };
   const root=document.getElementById('personality-content');
   const selected=(new URLSearchParams(location.search).get('person')||new URLSearchParams(location.search).get('writer')||'');

@@ -2,7 +2,7 @@
   "source": "nflverse",
   "sourceUrl": "https://github.com/nflverse/nflverse-data/releases/tag/schedules",
   "season": 2026,
-  "updatedAt": "2026-11-19T20:36:57Z",
+  "updatedAt": "2026-11-20T07:14:31Z",
   "games": [
     {
       "id": "2026_01_NE_SEA",
@@ -2114,9 +2114,9 @@
       "time": "20:15",
       "awayTeam": "IND",
       "homeTeam": "HOU",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 3,
+      "homeScore": 26,
+      "completed": true
     },
     {
       "id": "2026_11_MIA_BUF",

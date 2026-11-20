@@ -55,6 +55,8 @@
     let video='';
     const vid=videoId(p.featuredVideoUrl||'');
     if(vid)video='<section class="personality-feature"><div><span class="section-kicker">FEATURED APPEARANCE</span><h2>'+esc(p.featuredVideoTitle||'Watch the conversation')+'</h2><p>'+esc(p.featuredVideoDescription||'')+'</p><a href="'+esc(p.featuredVideoUrl)+'" target="_blank" rel="noopener noreferrer">OPEN ON YOUTUBE ↗</a></div><div class="personality-video"><iframe src="https://www.youtube.com/embed/'+esc(vid)+'" title="'+esc(p.featuredVideoTitle||p.name)+'" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></section>';
+    const xTimelineUrl=p.id==='the-horse'&&/^https:\/\/x\.com\/BeholdPaleH0rse\/?$/i.test(String(p.xUrl||''))?'https://x.com/BeholdPaleH0rse':'';
+    const xTimeline=xTimelineUrl?section({kicker:'ON X',heading:'Latest posts.'},'<div class="personality-x-feed"><a class="twitter-timeline" data-theme="light" data-height="560" data-chrome="nofooter" href="'+esc(xTimelineUrl)+'">Posts by @BeholdPaleH0rse</a><p class="personality-x-feed-note"><a href="'+esc(xTimelineUrl)+'" target="_blank" rel="noopener noreferrer">Open Horse on X</a></p></div>'):'';
     const related=featuredStories.length?section({kicker:'FEATURED COVERAGE',heading:'In the story.'},'<div class="archive-grid">'+featuredStories.map(storyCard).join('')+'</div>'):'';
     const writing=authored.length?section({kicker:'BY '+p.name.toUpperCase(),heading:'Articles.'},'<div class="archive-grid">'+authored.map(storyCard).join('')+'</div>'):'';
     const soundbites=(Array.isArray(content.soundbites)?content.soundbites:[])
@@ -67,7 +69,13 @@
     }).join('')+'</div>'):'';
     const appearances=episodes.filter(e=>(e.personalityIds||[]).includes(p.id));
     const shows=appearances.length?section({kicker:'ON THE SHOW',heading:'Podcast appearances.'},'<div class="personality-episodes">'+appearances.map(episodeCard).join('')+'</div>'):'';
-    root.innerHTML=profileMarkup+video+soundbiteSection+writing+related+shows;
+    root.innerHTML=profileMarkup+video+xTimeline+soundbiteSection+writing+related+shows;
+    if(xTimeline){
+      const widgets=document.createElement('script');
+      widgets.async=true;
+      widgets.src='https://platform.x.com/widgets.js';
+      document.head.appendChild(widgets);
+    }
   }
   const profile=profiles.find(p=>p.id===selected);
   if(profile)renderProfile(profile);else renderDirectory();

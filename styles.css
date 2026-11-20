@@ -573,9 +573,3 @@
 @media(max-width:640px){.story-page-top nav .nav-dropdown-menu{min-width:195px}}
 
 
-/* Horse profile: keep X's live timeline centered and contained across screen sizes. */
-.personality-x-feed{width:100%;max-width:640px;min-width:0;margin:0 auto;padding:10px;background:#ebe9e0;border-top:3px solid #111;overflow:hidden}
-.personality-x-feed .twitter-timeline{display:block;width:100%!important;max-width:100%!important;margin:0 auto}
-.personality-x-feed-note{font-size:12px;line-height:1.5;text-align:center;color:#686861;margin:8px 0 0}
-.personality-x-feed-note a{font-weight:800;color:#111;text-decoration:underline;text-underline-offset:3px}
-@media(max-width:800px){.personality-x-feed{padding:6px}.personality-x-feed .twitter-timeline{width:100%!important}}

@@ -249,9 +249,25 @@
     const target = $('#bets-ticker-track');
     const bets = Array.isArray(content.bestBets) ? content.bestBets : [];
     if (!target) return;
-    const items = bets.map(bet => `<span class="bet-ticker-item"><strong>${esc(bet.poster)}:</strong>&nbsp;${esc(bet.selection)} <b>(${esc(oddsText(bet.odds))})</b></span>`).join('');
-    target.innerHTML = bets.length
-      ? `<div class="bets-ticker-marquee">${items}<span aria-hidden="true">${items}</span></div>`
+    const groups = [];
+    bets.forEach(bet => {
+      if (!bet || !bet.poster || !bet.selection) return;
+      const key = String(bet.poster).trim().toLowerCase();
+      let group = groups.find(item => item.key === key);
+      if (!group) {
+        group = { key, poster: bet.poster, bets: [] };
+        groups.push(group);
+      }
+      group.bets.push(bet);
+    });
+    const items = groups.map(group => `<div class="bet-ticker-group"><strong class="bet-ticker-person">${esc(group.poster)}</strong><div class="bet-ticker-picks">${group.bets.map(bet => {
+      const odds = bet.odds === undefined || bet.odds === null || bet.odds === ''
+        ? ''
+        : `<b class="bet-ticker-price">(${esc(oddsText(bet.odds))})</b>`;
+      return `<span class="bet-ticker-pick">${esc(bet.selection)}${odds}</span>`;
+    }).join('')}</div></div>`).join('');
+    target.innerHTML = groups.length
+      ? `<div class="bets-ticker-marquee"><div class="bets-ticker-sequence">${items}</div><div class="bets-ticker-sequence" aria-hidden="true">${items}</div></div>`
       : '<span class="bets-ticker-loading">No current board posted.</span>';
   }
 

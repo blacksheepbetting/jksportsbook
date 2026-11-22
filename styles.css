@@ -605,3 +605,18 @@
   .bets-ticker-link{padding:6px 7px;font-size:7px}
 }
 @media(prefers-reduced-motion:reduce){.bets-ticker-marquee{animation:none}}
+
+/* Compact, plain-text ticker entries */
+.bet-ticker-group{display:flex;align-items:center;gap:7px;min-height:38px;padding:0 17px;border-right:1px solid #454545;white-space:nowrap}
+.bet-ticker-person{color:var(--yellow);font-size:10px;font-weight:900;letter-spacing:.3px;text-transform:none}
+.bet-ticker-picks{display:inline;white-space:nowrap}
+.bet-ticker-pick{padding:0;background:none;border:0;border-radius:0;font-size:10px;font-weight:500;white-space:nowrap}
+.bet-ticker-separator{padding:0 6px;color:#777;font-size:10px}
+.bet-ticker-price{color:#aaa;font-family:var(--body);font-size:9px;margin-left:4px}
+@media(max-width:640px){
+  .bet-ticker-group{gap:6px;min-height:36px;padding:0 10px}
+  .bet-ticker-person{font-size:9px}
+  .bet-ticker-pick{font-size:9px}
+  .bet-ticker-separator{padding:0 4px;font-size:9px}
+  .bet-ticker-price{font-size:8px;margin-left:3px}
+}

@@ -38,12 +38,12 @@ collections:
           - label: Best Bets Ticker
             name: bestBets
             widget: list
-            summary: "{{fields.poster}} — {{fields.selection}} ({{fields.odds}})"
+            summary: "{{fields.poster}} — {{fields.selection}}"
             fields:
               - { label: Poster, name: poster, widget: string }
               - { label: Personality ID, name: personalityId, widget: string, required: false, hint: "Optional profile ID, such as josh-king, ryan-bossart, or the-horse. Leave blank for unlisted voices." }
               - { label: Selection, name: selection, widget: string }
-              - { label: American Odds, name: odds, widget: number, value_type: int }
+              - { label: American Odds, name: odds, widget: number, value_type: int, required: false, hint: "Optional; leave blank if no price was posted." }
           - label: Site Copy
             name: siteCopy
             widget: object

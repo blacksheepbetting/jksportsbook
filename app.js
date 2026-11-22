@@ -260,17 +260,16 @@
       }
       group.bets.push(bet);
     });
-    const items = groups.map(group => `<div class="bet-ticker-group"><strong class="bet-ticker-person">${esc(group.poster)}</strong><div class="bet-ticker-picks">${group.bets.map(bet => {
+    const items = groups.map(group => `<div class="bet-ticker-group"><strong class="bet-ticker-person">${esc(group.poster)}:</strong><span class="bet-ticker-picks">${group.bets.map((bet, index) => {
       const odds = bet.odds === undefined || bet.odds === null || bet.odds === ''
         ? ''
-        : `<b class="bet-ticker-price">(${esc(oddsText(bet.odds))})</b>`;
-      return `<span class="bet-ticker-pick">${esc(bet.selection)}${odds}</span>`;
-    }).join('')}</div></div>`).join('');
+        : ` <b class="bet-ticker-price">(${esc(oddsText(bet.odds))})</b>`;
+      return `${index ? '<span class="bet-ticker-separator" aria-hidden="true"> · </span>' : ''}<span class="bet-ticker-pick">${esc(bet.selection)}${odds}</span>`;
+    }).join('')}</span></div>`).join('');
     target.innerHTML = groups.length
       ? `<div class="bets-ticker-marquee"><div class="bets-ticker-sequence">${items}</div><div class="bets-ticker-sequence" aria-hidden="true">${items}</div></div>`
       : '<span class="bets-ticker-loading">No current board posted.</span>';
   }
-
   function renderFeaturedVideo() {
     const target = $('[data-featured-video]');
     if (!target) return;

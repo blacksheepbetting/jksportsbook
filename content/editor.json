@@ -95,6 +95,18 @@
   ],
   "bestBets": [
     {
+      "poster": "Q",
+      "selection": "CHI −11"
+    },
+    {
+      "poster": "Q",
+      "selection": "JAX −6"
+    },
+    {
+      "poster": "Q",
+      "selection": "ARZ/KC Under 41"
+    },
+    {
       "poster": "Horse",
       "personalityId": "the-horse",
       "selection": "CHI −11"
@@ -108,18 +120,6 @@
       "poster": "Horse",
       "personalityId": "the-horse",
       "selection": "DEN −10"
-    },
-    {
-      "poster": "Q",
-      "selection": "CHI −11"
-    },
-    {
-      "poster": "Q",
-      "selection": "JAX −6"
-    },
-    {
-      "poster": "Q",
-      "selection": "ARZ/KC Under 41"
     },
     {
       "poster": "Bossart",

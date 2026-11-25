@@ -95,46 +95,43 @@
   ],
   "bestBets": [
     {
-      "poster": "Q",
-      "selection": "CHI −11"
-    },
-    {
-      "poster": "Q",
-      "selection": "JAX −6"
-    },
-    {
-      "poster": "Q",
-      "selection": "ARZ/KC Under 41"
+      "poster": "Horse",
+      "personalityId": "the-horse",
+      "selection": "Seahawks +3"
     },
     {
       "poster": "Horse",
       "personalityId": "the-horse",
-      "selection": "CHI −11"
+      "selection": "Vikings -7"
     },
     {
       "poster": "Horse",
       "personalityId": "the-horse",
-      "selection": "TB ML"
+      "selection": "Packers +2.5"
     },
     {
-      "poster": "Horse",
-      "personalityId": "the-horse",
-      "selection": "DEN −10"
+      "poster": "Josh",
+      "selection": "Browns -4"
     },
     {
-      "poster": "Bossart",
-      "personalityId": "ryan-bossart",
-      "selection": "LAC −3.5"
+      "poster": "Josh",
+      "selection": "Colts +6.5"
     },
     {
-      "poster": "Bossart",
-      "personalityId": "ryan-bossart",
-      "selection": "DEN −10"
+      "poster": "Josh",
+      "selection": "Metcalf TD"
     },
     {
-      "poster": "Bossart",
-      "personalityId": "ryan-bossart",
-      "selection": "MIN/SF Under 46"
+      "poster": "Q",
+      "selection": "Packers ML"
+    },
+    {
+      "poster": "Q",
+      "selection": "Patriots ML"
+    },
+    {
+      "poster": "Q",
+      "selection": "Dolphins ML"
     }
   ],
   "radarStoryIds": [

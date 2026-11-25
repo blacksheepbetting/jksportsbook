@@ -379,6 +379,14 @@
   },
   "soundbites": [
     {
+      "id": "horse-aaron-rodgers-pittsburgh-split",
+      "personalityId": "the-horse",
+      "title": "Horse Reacts to Aaron Rodgers’ Pittsburgh Split",
+      "publishedAt": "2026-11-25",
+      "audioUrl": "assets/uploads/horse-soundbites/horse-aaron-rodgers-pittsburgh-split.mp3",
+      "description": "Horse reacts to Aaron Rodgers’ Pittsburgh split after his tell-all on The Pat McAfee Show."
+    },
+    {
       "id": "horse-raiders-seattle",
       "personalityId": "the-horse",
       "title": "Horse Loses It Over Raiders Loss to Seattle",

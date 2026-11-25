@@ -2,7 +2,7 @@
   "source": "nflverse",
   "sourceUrl": "https://github.com/nflverse/nflverse-data/releases/tag/schedules",
   "season": 2026,
-  "updatedAt": "2026-11-25T08:32:58Z",
+  "updatedAt": "2026-11-25T21:41:32Z",
   "games": [
     {
       "id": "2026_01_NE_SEA",
@@ -1839,20 +1839,6 @@
       "completed": true
     },
     {
-      "id": "2026_09_LV_SF",
-      "season": 2026,
-      "week": "9",
-      "gameType": "REG",
-      "date": "2026-11-08",
-      "weekday": "Sunday",
-      "time": "16:25",
-      "awayTeam": "LV",
-      "homeTeam": "SF",
-      "awayScore": 17,
-      "homeScore": 38,
-      "completed": true
-    },
-    {
       "id": "2026_09_GB_NE",
       "season": 2026,
       "week": "9",
@@ -1878,6 +1864,20 @@
       "homeTeam": "SEA",
       "awayScore": 3,
       "homeScore": 17,
+      "completed": true
+    },
+    {
+      "id": "2026_09_LV_SF",
+      "season": 2026,
+      "week": "9",
+      "gameType": "REG",
+      "date": "2026-11-08",
+      "weekday": "Sunday",
+      "time": "16:25",
+      "awayTeam": "LV",
+      "homeTeam": "SF",
+      "awayScore": 17,
+      "homeScore": 38,
       "completed": true
     },
     {
@@ -2203,17 +2203,17 @@
       "completed": true
     },
     {
-      "id": "2026_11_JAX_NYG",
+      "id": "2026_11_PIT_PHI",
       "season": 2026,
       "week": "11",
       "gameType": "REG",
       "date": "2026-11-22",
       "weekday": "Sunday",
-      "time": "16:25",
-      "awayTeam": "JAX",
-      "homeTeam": "NYG",
-      "awayScore": 18,
-      "homeScore": 23,
+      "time": "13:00",
+      "awayTeam": "PIT",
+      "homeTeam": "PHI",
+      "awayScore": 16,
+      "homeScore": 19,
       "completed": true
     },
     {
@@ -2245,17 +2245,17 @@
       "completed": true
     },
     {
-      "id": "2026_11_PIT_PHI",
+      "id": "2026_11_JAX_NYG",
       "season": 2026,
       "week": "11",
       "gameType": "REG",
       "date": "2026-11-22",
       "weekday": "Sunday",
-      "time": "13:00",
-      "awayTeam": "PIT",
-      "homeTeam": "PHI",
-      "awayScore": 16,
-      "homeScore": 19,
+      "time": "16:25",
+      "awayTeam": "JAX",
+      "homeTeam": "NYG",
+      "awayScore": 18,
+      "homeScore": 23,
       "completed": true
     },
     {
@@ -2371,20 +2371,6 @@
       "completed": false
     },
     {
-      "id": "2026_12_LV_CLE",
-      "season": 2026,
-      "week": "12",
-      "gameType": "REG",
-      "date": "2026-11-29",
-      "weekday": "Sunday",
-      "time": "20:20",
-      "awayTeam": "LV",
-      "homeTeam": "CLE",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
-    },
-    {
       "id": "2026_12_BAL_HOU",
       "season": 2026,
       "week": "12",
@@ -2408,6 +2394,20 @@
       "time": "13:00",
       "awayTeam": "NYG",
       "homeTeam": "IND",
+      "awayScore": null,
+      "homeScore": null,
+      "completed": false
+    },
+    {
+      "id": "2026_12_TEN_JAX",
+      "season": 2026,
+      "week": "12",
+      "gameType": "REG",
+      "date": "2026-11-29",
+      "weekday": "Sunday",
+      "time": "13:00",
+      "awayTeam": "TEN",
+      "homeTeam": "JAX",
       "awayScore": null,
       "homeScore": null,
       "completed": false
@@ -2441,15 +2441,15 @@
       "completed": false
     },
     {
-      "id": "2026_12_TEN_JAX",
+      "id": "2026_12_NE_LAC",
       "season": 2026,
       "week": "12",
       "gameType": "REG",
       "date": "2026-11-29",
       "weekday": "Sunday",
-      "time": "13:00",
-      "awayTeam": "TEN",
-      "homeTeam": "JAX",
+      "time": "16:05",
+      "awayTeam": "NE",
+      "homeTeam": "LAC",
       "awayScore": null,
       "homeScore": null,
       "completed": false
@@ -2483,15 +2483,15 @@
       "completed": false
     },
     {
-      "id": "2026_12_NE_LAC",
+      "id": "2026_12_LV_CLE",
       "season": 2026,
       "week": "12",
       "gameType": "REG",
       "date": "2026-11-29",
       "weekday": "Sunday",
-      "time": "16:05",
-      "awayTeam": "NE",
-      "homeTeam": "LAC",
+      "time": "20:20",
+      "awayTeam": "LV",
+      "homeTeam": "CLE",
       "awayScore": null,
       "homeScore": null,
       "completed": false

@@ -2,7 +2,7 @@
   "source": "nflverse",
   "sourceUrl": "https://github.com/nflverse/nflverse-data/releases/tag/schedules",
   "season": 2026,
-  "updatedAt": "2026-11-25T21:41:32Z",
+  "updatedAt": "2026-11-26T08:16:29Z",
   "games": [
     {
       "id": "2026_01_NE_SEA",
@@ -2296,9 +2296,9 @@
       "time": "20:00",
       "awayTeam": "GB",
       "homeTeam": "LA",
-      "awayScore": null,
-      "homeScore": null,
-      "completed": false
+      "awayScore": 13,
+      "homeScore": 26,
+      "completed": true
     },
     {
       "id": "2026_12_CHI_DET",

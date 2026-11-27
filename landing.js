@@ -8,13 +8,27 @@
   const get = path => path.split('.').reduce((o,k)=>o && o[k],copy);
   const dateText = value => {
     if (!value) return '';
-    const match = String(value).match(/^(\\d{4})-(\\d{2})-(\\d{2})$/);
+    const match = String(value).match(/^(\d{4})-(\d{2})-(\d{2})$/);
     const date = match ? new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3])) : new Date(value);
     return Number.isNaN(date.getTime()) ? String(value) : new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(date);
   };
   document.querySelectorAll('[data-site-copy]').forEach(el=>{const v=get(el.dataset.siteCopy);if(typeof v==='string')el.textContent=v;});
   const stories = Array.isArray(content.stories) ? content.stories : [];
   const pageCopy = copy.pages || {};
+  const articlePortrait = story => {
+    const profiles = Array.isArray(content.writers) ? content.writers : [];
+    const author = String(story?.author || '').replace(/\s*\|.*$/, '').trim().toLowerCase();
+    const normalized = author.replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    const writer = story?.authorId
+      ? profiles.find(profile => profile.id === story.authorId)
+      : profiles.find(profile => profile.id === normalized || String(profile.name || '').toLowerCase() === author);
+    const rawPhoto = String(writer?.photo || '').trim();
+    if (!rawPhoto) return '';
+    const photo = /^https:\/\//i.test(rawPhoto)
+      ? rawPhoto
+      : rawPhoto.replace(/^\/?jksportsbook\//, '').replace(/^\/+/, '');
+    return '<img class="landing-author-avatar" src="' + esc(photo) + '" alt="" loading="lazy" decoding="async">';
+  };
   const articles = list => list.length ? list.map(s=>{const meta='<span class="meta">'+esc(s.author)+' / '+esc(s.readTime)+(s.publishedAt?' / '+esc(dateText(s.publishedAt)):'')+'</span>';const photo=articlePortrait(s);return '<article class="landing-article"><span class="category">'+esc(s.sport)+' / '+esc(s.category)+'</span><h3><a href="stories/'+esc(s.id)+'/">'+esc(s.title)+'</a></h3><p>'+esc(s.deck)+'</p>'+(photo?'<div class="landing-article-byline">'+photo+meta+'</div>':meta)+'</article>';}).join('') : '<p class="landing-empty">'+esc(pageCopy.noStories || 'No stories have been published in this section yet.')+'</p>';
   const landingSections = (copyKey,storiesFor) => {
     const data=get(copyKey)||{};
